@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1714775926 source:c:\users\fercho\desktop\proyecto 2024 lab 2\camping sol-luna\camping sol luna\src\fecha.cpp
+	"Fecha.h"
+
+1714775926 c:\users\fercho\desktop\proyecto 2024 lab 2\camping sol-luna\camping sol luna\include\fecha.h
+	<iostream>
+	"rlutil.h"
+
+1571584339 c:\users\fercho\desktop\proyecto 2024 lab 2\camping sol-luna\camping sol luna\include\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1714775881 source:c:\users\fercho\desktop\proyecto 2024 lab 2\camping sol-luna\camping sol luna\main.cpp
+	<iostream>
+	"Funcion Generales.h"
+
+1714777061 c:\users\fercho\desktop\proyecto 2024 lab 2\camping sol-luna\camping sol luna\include\funcion generales.h
+	"rlutil.h"
+
