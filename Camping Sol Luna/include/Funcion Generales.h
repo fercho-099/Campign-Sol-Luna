@@ -6,6 +6,7 @@
 void Reservas();
 void Clientes();
 void Informes();
+void FechaActual(Fecha);
 
 //DEFINICION DE METODOS GLOBALES
 void Reservas(){
