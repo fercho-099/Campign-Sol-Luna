@@ -20,9 +20,9 @@ void TipoDePago::Cargar()
     do
     {
         cout<<"Ingrese el Sector correcpondiente (A-C): ";
-        cin>>IDSertor;
+        cin>>IDSector;
 
-        if((strcmp(IDSector,"a")!=0) || (strcmp(IDSector,"A")!=0) || (strcmp(IDSector,"b")!=0) || (strcmp(IDSector,"B")!=0) || (strcmp(IDSector,"c")!=0) || (strcmp(IDSector,"C")!=0){
+        if((strcmp(IDSector,"a")!=0) || (strcmp(IDSector,"A")!=0) || (strcmp(IDSector,"b")!=0) || (strcmp(IDSector,"B")!=0) || (strcmp(IDSector,"c")!=0) || (strcmp(IDSector,"C")!=0)){
         cout<<"Opcion Incorrecta, ingrese nuevamente una opcion valida"<<endl;
         system("pause");
         }

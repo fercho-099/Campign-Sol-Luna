@@ -10,8 +10,9 @@ void Reservas::Cargar(){
 
     Fecha aux;
     datos.Cargar();
-    Desde = aux.cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
-    Hasta.Cargar();
+    aux.cargar();
+    Desde = aux;///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
+    Hasta.cargar();
 
 }
 
@@ -20,12 +21,10 @@ void Reservas::Mostrar()
 
     system("cls");
     Fecha aux;
-    Datos.Mostrar();
-    Aux.to_string(Desde);
-    Aux.to_string(Hasta
+    datos.Mostrar();
+    aux.to_string(Desde);
+    aux.to_string(Hasta);
 };
-
-}
 
 void Reservas::setTipoDePago(TipoDePago info) ///verificar que se copie el objeto correctamente
 {
@@ -68,4 +67,10 @@ return datos;
 
 }
 
+void Reservas::setEstado(bool e){
+    estado=e;
+}
 
+bool Reservas::getEstado(){
+    return estado;
+}

@@ -3,7 +3,7 @@
 #include "Fecha.h"
 #include "Cliente.h"
 
-class TipODePago
+class TipoDePago
 {
    private:
 

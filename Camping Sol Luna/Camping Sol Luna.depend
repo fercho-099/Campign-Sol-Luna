@@ -55,3 +55,33 @@
 	<iostream>
 	"rlutil.h"
 
+1716830414 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\fecha.cpp
+	"Fecha.h"
+
+1716831878 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\fecha.h
+	<iostream>
+	"rlutil.h"
+
+1716830414 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1716831174 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\cliente.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"Cliente.h"
+
+1716831629 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\cliente.h
+	<iostream>
+
