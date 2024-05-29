@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 #include<iostream>
 #include<cstdlib>
 
@@ -121,5 +121,5 @@ bool ArchivoClientes::GrabarEnDisco(Cliente obj){
 
 return valor;
 
->>>>>>> Stashed changes
+
 }

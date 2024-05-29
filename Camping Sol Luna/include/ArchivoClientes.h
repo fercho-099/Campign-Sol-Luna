@@ -1,5 +1,8 @@
-<<<<<<< Updated upstream
 #pragma once
+#ifndef ARCHIVOCLIENTES_H
+#define ARCHIVOCLIENTES_H
+#include "Cliente.h"
+#include <cstring>
 
 class ArchivoClientes{
 private:
@@ -14,11 +17,7 @@ public:
 	bool listarRegistros();
 	void verificarEstadoReserva(int dni);
 };
-=======
-#ifndef ARCHIVOCLIENTES_H
-#define ARCHIVOCLIENTES_H
-#include "Cliente.h"
-#include <cstring>
+
 class ArchivoClientes
 {
     public:

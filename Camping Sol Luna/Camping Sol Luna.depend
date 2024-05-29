@@ -34,7 +34,7 @@
 1715451701 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\funcion generales.h
 	"rlutil.h"
 
-1715217792 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\rlutil.h
+1716856283 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -48,25 +48,19 @@
 	<sys/types.h>
 	<sys/time.h>
 
-<<<<<<< Updated upstream
-1715217792 source:c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\src\fecha.cpp
+1716831629 ated upstream
+
+1716942659 source:c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\src\fecha.cpp
 	"Fecha.h"
 
-1715451701 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\fecha.h
+1716942659 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\fecha.h
 	<iostream>
 	"rlutil.h"
 
-=======
-1716932558 source:c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\src\fecha.cpp
-	"Fecha.h"
+1715451701 
 
-1716932558 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\fecha.h
-	<iostream>
-	"rlutil.h"
+1716911081 shed changes
 
-1716911910 ated upstream
-
->>>>>>> Stashed changes
 1716830414 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\fecha.cpp
 	"Fecha.h"
 
@@ -97,14 +91,18 @@
 1716831629 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\cliente.h
 	<iostream>
 
-<<<<<<< Updated upstream
-=======
 1716932663 source:c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\src\general.cpp
 	<iostream>
 	"General.h"
 
 1716932663 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\general.h
 
-1716911081 shed changes
+1716942659 source:c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\src\cliente.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"Cliente.h"
 
->>>>>>> Stashed changes
+1716942659 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\cliente.h
+	<iostream>
+
