@@ -1,52 +1,19 @@
-
-#include<iostream>
-#include<cstdlib>
+#include "ArchivoClientes.h"
 
 using namespace std;
 
-#include "ArchivoClientes.h"
+#include<iostream>
+#include<cstdlib>
+#include <cstring>
 
-bool ArchivoClientes::grabarRegistro(Cliente obj){
-	FILE *p;
-	p=fopen(nombre, "ab");
-	if(p==NULL) return false;
-	bool escribio=fwrite(&obj, sizeof obj, 1, p);
-	fclose(p);
-	return escribio;
+ArchivoClientes::ArchivoClientes(const char *aperturaArchivo)
+{
+    strcpy(AperturaArchivo, aperturaArchivo);
 }
 
 
-bool ArchivoClientes::listarRegistros(){
-	FILE *p;
-	Cliente obj;
-	p=fopen(nombre, "rb");
-	if(p==NULL) return false;
-	while(fread(&obj, sizeof obj, 1, p)==1){
-		obj.Mostrar();
-		cout<<endl;
-	}
-	fclose(p);
-	return true;
-}
 
-int ArchivoClientes::buscarRegistro(int dni){
-	FILE *p;
-	Cliente obj;
-	p=fopen(nombre, "rb");
-	int pos=0;
-	if(p==NULL) return -1;
-	while(fread(&obj, sizeof obj, 1, p)==1){
-		if(obj.getDni()==num){
-			fclose(p);
-			return pos;
-		}
-		pos++;
-	}
-	fclose(p);
-	return -2;
-}
-
-Cliente ArchivoClientes::leerRegistro(int pos){
+/*Cliente ArchivoClientes::leerArchivos(Cliente datos, int Cantidad){
 	FILE *p;
 	Cliente obj;
 	p=fopen(nombre, "rb");
@@ -56,45 +23,24 @@ Cliente ArchivoClientes::leerRegistro(int pos){
 	fread(&obj, sizeof obj, 1, p);
 	fclose(p);
 	return obj;
+}*/
+
+void ArchivoCliente::LeerArchivos(Cliente Datos, int TotalRegistros){///ver como se carga en el objeto sin modificar
+
+FILE *P=fopen(AperturaArchivo, "rb");
+
+if(P==nullptr){
+        system("cls");
+cout<<"No se pudo abrir el archivo"<<endl;
+system("pause");
+
 }
 
-bool ArchivoClientes::modificarRegistro(Cliente obj, int pos){
-	FILE *p;
-	p=fopen(nombre, "rb+");
-	if(p==NULL) return false;
-	fseek(p, pos*sizeof obj,0);
-	bool escribio=fwrite(&obj, sizeof obj, 1, p);
-	fclose(p);
-	return escribio;
-}
+fwrite(&Datos, sizeof(Cliente), TotalRegistros,P);
 
-int ArchivoClientes::contarRegistros(){
-	FILE *p;
-	p=fopen(nombre, "rb");
-	if(p==NULL) return -1;
-	fseek(p, 0,2);
-	int tam=ftell(p);
-	fclose(p);
-	return tam/sizeof(Cliente);
-}
+fclose(P);
+return;
 
-void verificarEstadoReserva(int dni){
-    ArchivoClientes.reg;
-    Cliente aux;
-    int pos=reg.buscarRegistro(dni);
-    aux=reg.leerRegistro(pos);
-    if(aux.getEstado()==false){
-        cout<<"El cliente se encuentra borrado"<<endl;
-    }else cout<<"El cliente se encuantra habilitado"<<endl;
-=======
-#include <iostream>
-
-using namespace std;
-#include "ArchivoClientes.h"
-
-ArchivoClientes::ArchivoClientes(const char *aperturaArchivo)
-{
-    strcpy(AperturaArchivo, aperturaArchivo);
 }
 
 void ArchivoClientes::LeerArchivo(Cliente info, int TotalRegistros){
@@ -110,16 +56,81 @@ void ArchivoClientes::LeerArchivo(Cliente info, int TotalRegistros){
 
 }
 
-bool ArchivoClientes::GrabarEnDisco(Cliente obj){
-
-    FILE *P=fopen(AperturaArchivo, "ab");
-    if(P==nullptr)return false;
-
-    bool valor = fwrite(&obj, sizeof (Cliente), 1, P);
-
-    fclose(P);
-
-return valor;
 
 
+bool ArchivoClientes::grabarRegistro(Cliente obj){
+	FILE *p;
+	p=fopen(AperturaArchivo, "ab");
+	if(p==NULL) return false;
+	bool escribio=fwrite(&obj, sizeof obj, 1, p);
+	fclose(p);
+	return escribio;
 }
+
+
+bool ArchivoClientes::modificarRegistro(Cliente Datos, int pos){
+	FILE *p;
+	p=fopen(nombre, "rb+");
+	if(p==NULL) return false;
+	fseek(p, pos*sizeof obj,0);
+	bool escribio=fwrite(&Datos, sizeof obj, 1, p);
+	fclose(p);
+	return escribio;
+}
+
+
+int ArchivoClientes::ContarRegistros(){
+	FILE *p;
+	p=fopen(AperturaArchivo, "rb");
+	if(p==NULL) return -1;
+	fseek(p, 0,2);
+	int tam=ftell(p);
+	fclose(p);
+	return tam/sizeof(Cliente);
+}
+
+
+/*void verificarEstadoReserva(int dni){
+    ArchivoClientes.reg;
+    Cliente aux;
+    int pos=reg.buscarRegistro(dni);
+    aux=reg.leerRegistro(pos);
+    if(aux.getEstado()==false){
+        cout<<"El cliente se encuentra borrado"<<endl;
+    }else cout<<"El cliente se encuantra habilitado"<<endl;
+
+}*/
+
+Cliente ArchivoClientes::buscarRegistro(int DNI){
+	FILE *p;
+	Cliente Dato;
+	Dato.setDNI(-1);
+	p=fopen(AperturaArchivo, "rb");
+
+	if(p==NULL) return Dato;
+	while(fread(&Dato, sizeof Dato, 1, p)==1){
+		if(obj.getDni()==num){
+			fclose(p);
+			return pos;
+		}
+		pos++;
+	}
+	fclose(p);
+	return -2;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
