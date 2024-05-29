@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+<<<<<<< Updated upstream
 #include "Fecha.h"
 #include "Funcion Generales.h"
 #include "Cliente.h"
@@ -7,6 +8,23 @@ using namespace std;
 #include "Reservas.h"
 #include "MenuReservas.h"
 #include "Archivo Reservas.h"
+=======
+
+#include "Funcion Generales.h"
+
+#include "MenuReservas.h" /// O lo hacemos un menu conn un .h aparte o lo hacemos abaho de este main.
+//#include "Fecha.h"
+//#include "Funcion Generales.h"
+//#include "Cliente.h"
+//#include "TipODePago.h"
+//#include "Reservas.h"///Para que sirve esto
+#include "Archivo Reservas.h"
+
+
+void Informes();
+void Reservas();
+void Clientes();
+>>>>>>> Stashed changes
 
 int main()
 {
@@ -61,7 +79,10 @@ int main()
     return 0;
 }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 void Reservas(){
     int opc;

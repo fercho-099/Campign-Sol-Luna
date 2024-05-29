@@ -1,4 +1,9 @@
 #pragma once
+<<<<<<< Updated upstream
+=======
+
+#include "Reservas.h"
+>>>>>>> Stashed changes
 
 class ArchivoReservas{
 private:

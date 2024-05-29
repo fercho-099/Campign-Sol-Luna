@@ -34,12 +34,23 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+<<<<<<< Updated upstream
+=======
+		<Unit filename="include/Archivo Reservas.h" />
+		<Unit filename="include/ArchivoClientes.h" />
+		<Unit filename="include/Cliente.h" />
+>>>>>>> Stashed changes
 		<Unit filename="include/Fecha.h" />
 		<Unit filename="include/Funcion Generales.h" />
 		<Unit filename="include/Reservas.h" />
 		<Unit filename="include/TipODePago.h" />
-		<Unit filename="include/rlutil.h" />
 		<Unit filename="main.cpp" />
+<<<<<<< Updated upstream
+=======
+		<Unit filename="src/Archivo Reservas.cpp" />
+		<Unit filename="src/ArchivoClientes.cpp" />
+		<Unit filename="src/Cliente.cpp" />
+>>>>>>> Stashed changes
 		<Unit filename="src/Fecha.cpp" />
 		<Unit filename="src/Reservas.cpp" />
 		<Unit filename="src/TipODePago.cpp" />

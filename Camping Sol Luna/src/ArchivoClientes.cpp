@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #include<iostream>
 #include<cstdlib>
 
@@ -85,4 +86,40 @@ void verificarEstadoReserva(int dni){
     if(aux.getEstado()==false){
         cout<<"El cliente se encuentra borrado"<<endl;
     }else cout<<"El cliente se encuantra habilitado"<<endl;
+=======
+#include <iostream>
+
+using namespace std;
+#include "ArchivoClientes.h"
+
+ArchivoClientes::ArchivoClientes(const char *aperturaArchivo)
+{
+    strcpy(AperturaArchivo, aperturaArchivo);
+}
+
+void ArchivoClientes::LeerArchivo(Cliente info, int TotalRegistros){
+
+    system("cls");
+
+    for(int x=0; x<TotalRegistros; x++){
+
+        info[x].Mostrar();
+    }
+
+    system("pause");
+
+}
+
+bool ArchivoClientes::GrabarEnDisco(Cliente obj){
+
+    FILE *P=fopen(AperturaArchivo, "ab");
+    if(P==nullptr)return false;
+
+    bool valor = fwrite(&obj, sizeof (Cliente), 1, P);
+
+    fclose(P);
+
+return valor;
+
+>>>>>>> Stashed changes
 }
