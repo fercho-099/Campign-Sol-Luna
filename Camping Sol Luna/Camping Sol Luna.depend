@@ -34,7 +34,7 @@
 1715451701 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\funcion generales.h
 	"rlutil.h"
 
-1715217792 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\rlutil.h
+1716856283 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -48,10 +48,121 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1715217792 source:c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\src\fecha.cpp
+1716831629 ated upstream
+
+1716942659 source:c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\src\fecha.cpp
 	"Fecha.h"
 
-1715451701 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\fecha.h
+1716942659 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\fecha.h
 	<iostream>
 	"rlutil.h"
+
+1715451701 
+
+1716911081 shed changes
+
+1717089046 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\fecha.cpp
+	"Fecha.h"
+
+1717085949 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\fecha.h
+	<iostream>
+
+1716830414 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1717085635 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\cliente.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"Cliente.h"
+
+1717085635 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\cliente.h
+	<iostream>
+
+1716932663 source:c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\src\general.cpp
+	<iostream>
+	"General.h"
+
+1716932663 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\general.h
+
+1716942659 source:c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\src\cliente.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"Cliente.h"
+
+1716942659 c:\users\fercho\documents\github\camping sol-luna\campign-sol-luna\camping sol luna\include\cliente.h
+	<iostream>
+
+1717085964 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\general.cpp
+	<iostream>
+	"General.h"
+
+1717085634 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\general.h
+
+1717085635 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
+	"ArchivoClientes.h"
+
+1717085634 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\archivoclientes.h
+
+1717085635 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\archivo reservas.cpp
+	<iostream>
+	<cstdlib>
+	"Archivo Reservas.h"
+
+1717089569 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\archivo reservas.h
+	"Reservas.h"
+
+1717089654 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\archivocabanias.cpp
+	<iostream>
+	<cstdlib>
+	"ArchivoCabanias.h"
+	<cstdlib>
+	<cstring>
+
+1717085634 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\archivocabanias.h
+
+1717086011 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\reservas.h
+	"Fecha.h"
+	"TipODePago.h"
+
+1717089063 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\tipodepago.h
+	"Fecha.h"
+	"Cliente.h"
+
+1717082569 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\archivocarpas.cpp
+	<iostream>
+	<cstdlib>
+	"ArchivoCarpas.h"
+
+1717082710 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\archivocarpas.h
+	"Reservas.h"
+
+1717089374 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\main.cpp
+	<iostream>
+	<cstring>
+	"Reservas.h"
+
+1717089063 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\tipodepago.cpp
+	<iostream>
+	"TipODePago.h"
+	<cstring>
+
+1717089262 source:c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\src\reservas.cpp
+	<iostream>
+	"Reservas.h"
+	<cstring>
+
+1717084871 c:\users\leone\desktop\l\programacion\laboratorio ii\2024\campign-sol-luna\camping sol luna\include\funcion generales.h
 

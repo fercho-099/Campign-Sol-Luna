@@ -4,15 +4,13 @@ using namespace std;
 #include "Reservas.h"
 #include <cstring>
 
-
 void Reservas::Cargar(){
     system("cls");
-
     Fecha aux;
     datos.Cargar();
-    Desde = aux.cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
+    ///Desde = aux.Cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
+    Desde.Cargar();
     Hasta.Cargar();
-
 }
 
 void Reservas::Mostrar()
@@ -20,11 +18,11 @@ void Reservas::Mostrar()
 
     system("cls");
     Fecha aux;
-    Datos.Mostrar();
-    Aux.to_string(Desde);
-    Aux.to_string(Hasta
-};
-
+    datos.Mostrar();
+    Desde.Mostrar();
+    Hasta.Mostrar();
+    ///aux.to_string(Desde);
+    ///aux.to_string(Hasta);
 }
 
 void Reservas::setTipoDePago(TipoDePago info) ///verificar que se copie el objeto correctamente
@@ -57,15 +55,20 @@ Fecha Reservas::getFechaDesde()
 
 Fecha Reservas::getFechaHasta()
 {
-
     return Hasta;
-
 }
 
-TipODePago getTipoDePago(){
-
-return datos;
-
+TipoDePago Reservas::getTipoDePago(){
+    return datos;
 }
+
+void Reservas::setEstado(bool e){
+    estado=e;
+}
+
+bool Reservas::getEstado(){
+    return estado;
+}
+
 
 

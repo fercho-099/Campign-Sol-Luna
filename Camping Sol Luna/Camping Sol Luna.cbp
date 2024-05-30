@@ -34,13 +34,18 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/ArchivoClientes.h" />
+		<Unit filename="include/Cliente.h" />
 		<Unit filename="include/Fecha.h" />
 		<Unit filename="include/Funcion Generales.h" />
+		<Unit filename="include/General.h" />
 		<Unit filename="include/Reservas.h" />
 		<Unit filename="include/TipODePago.h" />
-		<Unit filename="include/rlutil.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/ArchivoClientes.cpp" />
+		<Unit filename="src/Cliente.cpp" />
 		<Unit filename="src/Fecha.cpp" />
+		<Unit filename="src/General.cpp" />
 		<Unit filename="src/Reservas.cpp" />
 		<Unit filename="src/TipODePago.cpp" />
 		<Extensions>

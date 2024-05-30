@@ -1,8 +1,8 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
-#include "Funcion Generales.h"
 
-
+#include "Reservas.h"
 
 int main()
 {
@@ -23,18 +23,22 @@ int main()
        switch(Opcion){
 
    case 1:
-            Reservas();
-
+            ///OpcionesDeReservas();
+            {
+            Reservas objeto;
+            objeto.Cargar();
+            objeto.Mostrar();
+            system("pause");
+            }
             break;
 
    case 2:
-            Clientes();
+            ///OpcionesDeClientes();
 
             break;
 
    case 3:
-
-            Informes();
+            ///OpcionesDeInformes();
 
             break;
 

@@ -1,12 +1,23 @@
 #ifndef FECHA_H
 #define FECHA_H
 #include <iostream>
-#include "rlutil.h"
 using namespace std;
 
 class Fecha
 {
- private: int dia;
+ private:
+     int dia, mes, anio;
+ public:
+    Fecha();
+    void setDia(int);
+    void setMes(int);
+    void setAnio(int);
+    int getDia();
+    int getMes();
+    int getAnio();
+    void Cargar();
+    void Mostrar();
+
 };
 
 #endif // FECHA_H

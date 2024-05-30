@@ -9,13 +9,16 @@ class Reservas
 
         TipoDePago datos;
         Fecha Desde, Hasta;
+        bool estado;
 
         public:
           void Cargar();
           void Mostrar();
           void setTipoDePago(TipoDePago );
-          void setFechaDesde(Fecha );
-          void setFechaHasta(Fecha );
+          void setFechaDesde(Fecha);
+          void setFechaHasta(Fecha);
+          void setEstado(bool e);
+          bool getEstado();
           TipoDePago getTipoDePago();
           Fecha getFechaDesde();
           Fecha getFechaHasta();

@@ -1,14 +1,18 @@
 #ifndef FUNCION_GENERALES_H_INCLUDED
 #define FUNCION_GENERALES_H_INCLUDED
-#include "rlutil.h"
 
 //DECLARACION DE METODOS GLOBALES
 void Reservas();
 void Clientes();
 void Informes();
-void FechaActual(Fecha);
+<<<<<<< Updated upstream
+void FechaActual(Fecha obj);
+=======
+///void FechaActual(Fecha);
+>>>>>>> Stashed changes
 
 //DEFINICION DE METODOS GLOBALES
+/*
 void Reservas(){
 
     system("cls");
@@ -173,7 +177,6 @@ void Informes(){
 
 return;
 }
-
-
+*/
 
 #endif // FUNCION_GENERALES_H_INCLUDED
