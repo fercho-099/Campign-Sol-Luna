@@ -17,7 +17,8 @@ class Cliente
 
 	public:
 	Cliente(int DNI, const char *nombre, const char *apellido, int telefono);
-	bool Cargar();
+	Cliente();
+	void Cargar();
 	void Mostrar();
 	void setDNI(int DNI);
 	void setNombre(const char *nombre);

@@ -6,7 +6,7 @@ using namespace std;
 
 #include <cstring>
 
-
+/*
 void TipoDePago::Cargar()
 {
 
@@ -135,3 +135,4 @@ bool TipoDePago::getEstado(){
     return Estado;
 
 }
+*/

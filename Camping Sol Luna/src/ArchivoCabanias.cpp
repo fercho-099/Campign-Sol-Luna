@@ -3,9 +3,16 @@
 
 using namespace std;
 
+<<<<<<< Updated upstream
 #include "ArchivoCabanias.h"
 
 bool ArchivoCabanias::grabarRegistro(Reservas obj){
+=======
+#include<cstdlib>
+#include <cstring>
+/*
+Reservas ArchivoCabanias::leerRegistro(int pos){///No esta definido en el diagrama
+>>>>>>> Stashed changes
 	FILE *p;
 	p=fopen(nombre, "ab");
 	if(p==NULL) return false;
@@ -44,6 +51,7 @@ int ArchivoCabanias::buscarRegistro(int dni){
 	fclose(p);
 	return -2;
 }
+<<<<<<< Updated upstream
 
 Reservas ArchivoCabanias::leerRegistro(int pos){
 	FILE *p;
@@ -56,6 +64,9 @@ Reservas ArchivoCabanias::leerRegistro(int pos){
 	fclose(p);
 	return obj;
 }
+=======
+*/
+>>>>>>> Stashed changes
 
 bool ArchivoCabanias::modificarRegistro(Reservas obj, int pos){
 	FILE *p;

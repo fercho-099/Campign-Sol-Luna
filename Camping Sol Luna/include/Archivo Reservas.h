@@ -1,10 +1,14 @@
 #pragma once
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 
 #include "Reservas.h"
 >>>>>>> Stashed changes
 
+=======
+/*
+>>>>>>> Stashed changes
 class ArchivoReservas{
 private:
 	char nombre[30];
@@ -18,5 +22,9 @@ public:
 	bool listarRegistros();
 	void verificarEstadoReserva(int dni);
 };
+<<<<<<< Updated upstream
 
 
+=======
+*/
+>>>>>>> Stashed changes

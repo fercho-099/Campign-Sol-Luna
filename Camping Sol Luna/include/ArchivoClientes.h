@@ -1,8 +1,5 @@
 #pragma once
-
-#include "Cliente.h"
-#include <cstring>
-
+/*
 class ArchivoClientes
 {
     public:
@@ -12,8 +9,7 @@ class ArchivoClientes
         bool GrabarEnDisco(Cliente obj);
         bool ModificarRegistro(Cliente datos, int DNI);///Se busca por dni y devuelve un bool todo la modificacion se realiza dentro de la clase????
         int ContarRegistros();/// no tiene por que recibir la posicicion de lo que va a leer, si cuenta la totalidad de registros
-        ///void VerificarEstadoReservas(int NumeroReserva, int IDServicio);///no deberia ser void por que solo en la funcion informaria si esta ocupado o no, pero del otro lado de la programacion, se necesita que retorne un valor para saber como seguir la ejecucion del programa.
-                ///por que verificar estado reserva esta en clientes?????
+        void VerificarEstadoCliente(int NumeroReserva, int IDServicio);
         void CrearBackUpManual();
         Reservas BuscarRegistros(int DNI);
 
@@ -22,5 +18,5 @@ class ArchivoClientes
 
         const char *AperturaArchivo;
 };
-
+*/
 

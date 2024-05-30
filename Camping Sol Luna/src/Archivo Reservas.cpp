@@ -5,6 +5,7 @@ using namespace std;
 
 #include "Archivo Reservas.h"
 
+/*
 bool ArchivoReservas::grabarRegistro(Reservas obj){
 	FILE *p;
 	p=fopen(nombre, "ab");
@@ -86,3 +87,4 @@ void verificarEstadoReserva(int dni){
         cout<<"La reserva se encuentra deshabilitada"<<endl;
     }else cout<<"La reserva se encuentra habilitada"<<endl;
 }
+*/

@@ -5,7 +5,20 @@
 using namespace std;
 
 #include "Cliente.h"
-
+///LEO
+///Meti esta funcion aca por ahora para que ande nomas luego habra que cambiarla
+void cargarCadena(char *palabra, int tamano){
+    int i=0;
+    fflush(stdin);
+    for (i=0; i<tamano; i++){
+        palabra[i]=cin.get();
+        if (palabra[i]=='\n'){
+            break;
+        }
+    }
+    palabra[i]='\0';
+    fflush(stdin);
+}
 
 Cliente::Cliente(int DNI, const char *nombre, const char *apellido, int telefono)
 {
@@ -13,6 +26,35 @@ Cliente::Cliente(int DNI, const char *nombre, const char *apellido, int telefono
 	setNombre(nombre);
 	setApellido(apellido);
 	setTelefono(telefono);
+}
+///LEO
+///Tuve que crear un constructor con parametros por omision para que el programa me deje crear un objeto sin mandarle ningun parametro
+Cliente::Cliente()
+{
+	_DNI=0;
+	strcpy(_nombre,"NULL");
+	strcpy(_apellido,"NULL");
+	_telefono=12345;
+}
+///LEO
+///Cree esta funcion que no estaba hecha
+void Cliente::Cargar(){
+    cout<<"Ingrese el Dni: ";
+    cin>>_DNI;
+    cout<<"Ingrese el nombre: ";
+    cargarCadena(_nombre,30);
+    cout<<"Ingrese el apellido: ";
+    cargarCadena(_apellido,30);
+    cout<<"Ingrese el telefono: ";
+    cin>>_telefono;
+}
+///LEO
+///Esta funcion tambien faltaba
+void Cliente::Mostrar(){
+    cout<<"Dni: "<<_DNI<<endl;
+    cout<<"Nombre: "<<_nombre<<endl;
+    cout<<"Apellido: "<<_apellido<<endl;
+    cout<<"Telefono: "<<_telefono<<endl;
 }
 
 void Cliente::setDNI(int DNI)

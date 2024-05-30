@@ -1,19 +1,11 @@
 #include "ArchivoClientes.h"
-
-using namespace std;
-
-#include<iostream>
-#include<cstdlib>
-#include <cstring>
-
+/*
 ArchivoClientes::ArchivoClientes(const char *aperturaArchivo)
 {
     strcpy(AperturaArchivo, aperturaArchivo);
 }
 
-
-
-/*Cliente ArchivoClientes::leerArchivos(Cliente datos, int Cantidad){
+Cliente ArchivoClientes::leerArchivos(Cliente datos, int Cantidad){
 	FILE *p;
 	Cliente obj;
 	p=fopen(nombre, "rb");
@@ -23,7 +15,7 @@ ArchivoClientes::ArchivoClientes(const char *aperturaArchivo)
 	fread(&obj, sizeof obj, 1, p);
 	fclose(p);
 	return obj;
-}*/
+}
 
 void ArchivoCliente::LeerArchivos(Cliente Datos, int TotalRegistros){///ver como se carga en el objeto sin modificar
 
@@ -90,7 +82,7 @@ int ArchivoClientes::ContarRegistros(){
 }
 
 
-/*void verificarEstadoReserva(int dni){
+void verificarEstadoCliente(int dni){
     ArchivoClientes.reg;
     Cliente aux;
     int pos=reg.buscarRegistro(dni);
@@ -99,7 +91,7 @@ int ArchivoClientes::ContarRegistros(){
         cout<<"El cliente se encuentra borrado"<<endl;
     }else cout<<"El cliente se encuantra habilitado"<<endl;
 
-}*/
+}
 
 Cliente ArchivoClientes::buscarRegistro(int DNI){
 	FILE *p;

@@ -4,8 +4,14 @@
 using namespace std;
 
 #include "ArchivoCarpas.h"
+<<<<<<< Updated upstream
 
 bool ArchivoCarpas::grabarRegistro(Reservas obj){
+=======
+/*
+bool ArchivoCarpas::leerRegistro(int pos){///¿Por que devuelve Reservas? si ya es un registro de una carpa ya efectuado sea de alta-todavia sigue el tipo usando la carpa que alquilo- o de baja- el tipo ya dejo el alquiler-.
+
+>>>>>>> Stashed changes
 	FILE *p;
 	p=fopen(nombre, "ab");
 	if(p==NULL) return false;
@@ -26,6 +32,19 @@ bool ArchivoCarpas::listarRegistros(){
 	}
 	fclose(p);
 	return true;
+<<<<<<< Updated upstream
+=======
+}
+
+bool ArchivoCarpas::modificarRegistro(Reservas obj, int pos){
+	FILE *p;
+	p=fopen(AperturaArchivo, "rb+");///nombre no va, el atributo se definio como AperturaArchivo
+	if(p==NULL) return false;
+	fseek(p, pos*sizeof (Reservas),0);
+	bool escribio=fwrite(&obj, sizeof (Reservas), 1, p);///hay que ver si es sizeof reservas o obj
+	fclose(p);
+	return escribio;
+>>>>>>> Stashed changes
 }
 
 int ArchivoCarpas::buscarRegistro(int dni){
@@ -44,6 +63,7 @@ int ArchivoCarpas::buscarRegistro(int dni){
 	fclose(p);
 	return -2;
 }
+<<<<<<< Updated upstream
 
 Reservas ArchivoCarpas::leerRegistro(int pos){
 	FILE *p;
@@ -56,6 +76,9 @@ Reservas ArchivoCarpas::leerRegistro(int pos){
 	fclose(p);
 	return obj;
 }
+=======
+*/
+>>>>>>> Stashed changes
 
 bool ArchivoCarpas::modificarRegistro(Reservas obj, int pos){
 	FILE *p;
