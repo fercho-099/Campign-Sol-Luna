@@ -4,11 +4,11 @@
 using namespace std;
 
 #include "ArchivoCarpas.h"
-<<<<<<< Updated upstream
 
-bool ArchivoCarpas::grabarRegistro(Reservas obj){
-=======
 /*
+bool ArchivoCarpas::grabarRegistro(Reservas obj){
+
+
 bool ArchivoCarpas::leerRegistro(int pos){///¿Por que devuelve Reservas? si ya es un registro de una carpa ya efectuado sea de alta-todavia sigue el tipo usando la carpa que alquilo- o de baja- el tipo ya dejo el alquiler-.
 
 >>>>>>> Stashed changes
@@ -77,8 +77,6 @@ Reservas ArchivoCarpas::leerRegistro(int pos){
 	return obj;
 }
 =======
-*/
->>>>>>> Stashed changes
 
 bool ArchivoCarpas::modificarRegistro(Reservas obj, int pos){
 	FILE *p;
@@ -109,3 +107,4 @@ void verificarEstadoReserva(int dni){
         cout<<"La reserva se encuentra deshabilitada"<<endl;
     }else cout<<"La reserva se encuentra habilitada"<<endl;
 }
+*/

@@ -3,14 +3,14 @@
 
 using namespace std;
 
-<<<<<<< Updated upstream
-#include "ArchivoCabanias.h"
 
+#include "ArchivoCabanias.h"
+/*
 bool ArchivoCabanias::grabarRegistro(Reservas obj){
-=======
+
 #include<cstdlib>
 #include <cstring>
-/*
+
 Reservas ArchivoCabanias::leerRegistro(int pos){///No esta definido en el diagrama
 >>>>>>> Stashed changes
 	FILE *p;
@@ -65,8 +65,8 @@ Reservas ArchivoCabanias::leerRegistro(int pos){
 	return obj;
 }
 =======
-*/
->>>>>>> Stashed changes
+
+
 
 bool ArchivoCabanias::modificarRegistro(Reservas obj, int pos){
 	FILE *p;
@@ -97,3 +97,4 @@ void verificarEstadoReserva(int dni){
         cout<<"La reserva se encuentra deshabilitada"<<endl;
     }else cout<<"La reserva se encuentra habilitada"<<endl;
 }
+*/
