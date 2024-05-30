@@ -3,31 +3,14 @@
 using namespace std;
 #include "Reservas.h"
 #include <cstring>
-<<<<<<< Updated upstream
 
-
-=======
-#include <cstdlib>
-/*
->>>>>>> Stashed changes
 void Reservas::Cargar(){
     system("cls");
-
     Fecha aux;
     datos.Cargar();
-<<<<<<< Updated upstream
-    aux.cargar();
-    Desde = aux;///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
-    Hasta.cargar();
-=======
-
     ///Desde = aux.Cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
-
     Desde.Cargar();
-
     Hasta.Cargar();
->>>>>>> Stashed changes
-
 }
 
 void Reservas::Mostrar()
@@ -35,17 +18,12 @@ void Reservas::Mostrar()
 
     system("cls");
     Fecha aux;
-<<<<<<< Updated upstream
     datos.Mostrar();
-    aux.to_string(Desde);
-    aux.to_string(Hasta);
-=======
-
-    Datos.Mostrar();
-    Aux.to_string(Desde);
-    Aux.to_string(Hasta);
->>>>>>> Stashed changes
-};
+    Desde.Mostrar();
+    Hasta.Mostrar();
+    ///aux.to_string(Desde);
+    ///aux.to_string(Hasta);
+}
 
 void Reservas::setTipoDePago(TipoDePago info) ///verificar que se copie el objeto correctamente
 {
@@ -77,22 +55,13 @@ Fecha Reservas::getFechaDesde()
 
 Fecha Reservas::getFechaHasta()
 {
-
     return Hasta;
-
 }
 
-<<<<<<< Updated upstream
-TipODePago getTipoDePago(){
-=======
-TipODePago Reservas::getTipoDePago(){
->>>>>>> Stashed changes
-
-return datos;
-
+TipoDePago Reservas::getTipoDePago(){
+    return datos;
 }
 
-<<<<<<< Updated upstream
 void Reservas::setEstado(bool e){
     estado=e;
 }
@@ -100,6 +69,6 @@ void Reservas::setEstado(bool e){
 bool Reservas::getEstado(){
     return estado;
 }
-=======
-*/
->>>>>>> Stashed changes
+
+
+

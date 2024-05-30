@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#include "General.h"
+/*
 int main(){
      int opc;
 
@@ -39,8 +41,6 @@ int main(){
 	system("pause");
 	return 0;
 
-}#include "General.h"
-
 General::General()
 {
     //ctor
@@ -50,3 +50,4 @@ General::~General()
 {
     //dtor
 }
+*/

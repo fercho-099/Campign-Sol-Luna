@@ -15,15 +15,10 @@ class Reservas
           void Cargar();
           void Mostrar();
           void setTipoDePago(TipoDePago );
-<<<<<<< Updated upstream
-          void setFechaDesde(Fecha );
-          void setFechaHasta(Fecha );
-          void setEstado(bool e);
-          bool getEstado();
-=======
           void setFechaDesde(Fecha);
           void setFechaHasta(Fecha);
->>>>>>> Stashed changes
+          void setEstado(bool e);
+          bool getEstado();
           TipoDePago getTipoDePago();
           Fecha getFechaDesde();
           Fecha getFechaHasta();

@@ -6,7 +6,6 @@ using namespace std;
 
 #include <cstring>
 
-/*
 void TipoDePago::Cargar()
 {
 
@@ -34,15 +33,14 @@ void TipoDePago::Cargar()
 
     }while(sectordisponible);///esto verifica que el sector ingresado sea el correcto de la letra "a" a la "c" verifica que sea tanto mayuscula como minuscula habilitados para poner un sector valido.
 
-            cout<<" Medio a pagar: ";
-            cin>>ModoPago;
+            cout<<" Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
+            cin>>modoDePago;
             cout<<endl;
             FechaPago.Cargar();
             cout<<"Ingrese el Monto: ";
             cin>>Monto;
             cout<<endl;
-            Estado = 1; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
-    }
+            estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
 }
 
 void TipoDePago::Mostrar(){
@@ -51,12 +49,15 @@ void TipoDePago::Mostrar(){
         InfoCliente.Mostrar();
         cout<<"Servicio: "<<IDServicio<<endl;
         cout<<"Sector asignado: "<<IDSector<<endl;
-        cout<<"Estado de Reserva: "<<Estado<<endl;///informar el estado en palabras no en numeros.
-       cout<<"Modo de Pago: "ModoPago<<endl;
-       cout<<" Fecha de Pago"<<endl;
-       cout<<FechaPago<<endl;
-       cout<<"Monto abonado: "<<Monto<<endl;
-       system("pause");
+        ///cout<<"Estado de Reserva: "<<Estado<<endl;///informar el estado en palabras no en numeros.
+        cout<<"Modo de Pago: ";
+        if(modoDePago==1){
+            cout<<"Efectivo "<<endl;
+        }else cout<<"Tarjeta de debito/credito "<<endl;
+        cout<<" Fecha de Pago"<<endl;
+        FechaPago.Mostrar();
+        cout<<"Monto abonado: "<<Monto<<endl;
+        system("pause");
 }
 
 void TipoDePago::setCliente(Cliente datos){
@@ -76,12 +77,12 @@ void TipoDePago::setIDSector(const char * idsector){
 
 }
 
-void TipoDePago::setModoPago(const char *modopago){
+void TipoDePago::setModoDePago(int _modopago){
 
-    strcpy(ModoPago,modopago);
+    modoDePago=_modopago;
 }
 
-void TipoDePago::setFechaPago(Fecha fechaopago){
+void TipoDePago::setFechaPago(Fecha fechapago){
 
     FechaPago = fechapago;
 
@@ -92,15 +93,15 @@ void TipoDePago::setMonto(float monto){
     Monto = monto;
 }
 
-void TipoDePago::setEstado(bool estado){
+void TipoDePago::setEstado(bool _estado){
 
-    Estado = estado;
+    estado = _estado;
 
 }
 
 Cliente TipoDePago::getCliente(){
 
-    return InfoClientes;
+    return InfoCliente;
 
 }
 
@@ -109,17 +110,17 @@ int TipoDePago::getIDServicio(){
     return IDServicio;
 }
 
-char TipoDePago::getIDSector(){
+const char* TipoDePago::getIDSector(){
 
     return IDSector;
 }
 
-char TipoDePago::getModoPago(){
+int TipoDePago::getModoDePago(){
 
-    return ModoPago;
+    return modoDePago;
 }
 
-Fecha TipoDePago::getFechaPago(){
+Fecha TipoDePago::getFechaDePago(){
 
     return FechaPago;
 }
@@ -132,7 +133,7 @@ float TipoDePago::getMonto(){
 
 bool TipoDePago::getEstado(){
 
-    return Estado;
+    return estado;
 
 }
-*/
+

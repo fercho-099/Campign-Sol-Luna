@@ -15,13 +15,9 @@ class Fecha
     int getDia();
     int getMes();
     int getAnio();
-<<<<<<< Updated upstream
-    void cargar();
-    void mostrar();
-=======
     void Cargar();
     void Mostrar();
->>>>>>> Stashed changes
+
 };
 
 #endif // FECHA_H
