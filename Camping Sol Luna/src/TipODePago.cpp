@@ -21,14 +21,15 @@ void TipoDePago::Cargar()
         cout<<"Ingrese el Sector correcpondiente (A-C): ";
         cin>>IDSector;
 
-        if((strcmp(IDSector,"a")!=0) || (strcmp(IDSector,"A")!=0) || (strcmp(IDSector,"b")!=0) || (strcmp(IDSector,"B")!=0) || (strcmp(IDSector,"c")!=0) || (strcmp(IDSector,"C")!=0)){
-        cout<<"Opcion Incorrecta, ingrese nuevamente una opcion valida"<<endl;
-        system("pause");
+        if((strcmp(IDSector,"a")==0) || (strcmp(IDSector,"A")==0) || (strcmp(IDSector,"b")==0) || (strcmp(IDSector,"B")==0) || (strcmp(IDSector,"c")==0) || (strcmp(IDSector,"C")==0)){
+
+            sectordisponible = false;
         }
 
         else
         {
-            sectordisponible = false;
+            cout<<"Opcion Incorrecta, ingrese nuevamente una opcion valida"<<endl;
+            system("pause");
         }
 
     }while(sectordisponible);///esto verifica que el sector ingresado sea el correcto de la letra "a" a la "c" verifica que sea tanto mayuscula como minuscula habilitados para poner un sector valido.
@@ -42,6 +43,8 @@ void TipoDePago::Cargar()
             cout<<endl;
             estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
 }
+
+
 
 void TipoDePago::Mostrar(){
 

@@ -34,14 +34,23 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Archivo Reservas.h" />
+		<Unit filename="include/ArchivoCabanias.h" />
+		<Unit filename="include/ArchivoCarpas.h" />
 		<Unit filename="include/ArchivoClientes.h" />
 		<Unit filename="include/Cliente.h" />
 		<Unit filename="include/Fecha.h" />
 		<Unit filename="include/Funcion Generales.h" />
 		<Unit filename="include/General.h" />
+		<Unit filename="include/MenuClientes.h" />
+		<Unit filename="include/MenuInformes.h" />
+		<Unit filename="include/MenuReservas.h" />
 		<Unit filename="include/Reservas.h" />
 		<Unit filename="include/TipODePago.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Archivo Reservas.cpp" />
+		<Unit filename="src/ArchivoCabanias.cpp" />
+		<Unit filename="src/ArchivoCarpas.cpp" />
 		<Unit filename="src/ArchivoClientes.cpp" />
 		<Unit filename="src/Cliente.cpp" />
 		<Unit filename="src/Fecha.cpp" />
