@@ -3,6 +3,7 @@
 using namespace std;
 
 #include "Reservas.h"
+#include "ArchivoClientes.h"
 
 int main()
 {
@@ -24,12 +25,7 @@ int main()
 
    case 1:
             ///OpcionesDeReservas();
-            {
-            Reservas objeto;
-            objeto.Cargar();
-            objeto.Mostrar();
-            system("pause");
-            }
+
             break;
 
    case 2:

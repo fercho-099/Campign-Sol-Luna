@@ -1,22 +1,21 @@
-#pragma once
-/*
-class ArchivoClientes
-{
-    public:
+#ifndef ARCHIVOCLIENTES_H
+#define ARCHIVOCLIENTES_H
 
-        ArchivoClientes(const char *aperturaArchivo);
-        void LeerArchivos(Cliente Datos, int TotalRegistros);///se le necesita mandar el objeto cargado
-        bool GrabarEnDisco(Cliente obj);
-        bool ModificarRegistro(Cliente datos, int DNI);///Se busca por dni y devuelve un bool todo la modificacion se realiza dentro de la clase????
-        int ContarRegistros();/// no tiene por que recibir la posicicion de lo que va a leer, si cuenta la totalidad de registros
-        void VerificarEstadoCliente(int NumeroReserva, int IDServicio);
-        void CrearBackUpManual();
-        Reservas BuscarRegistros(int DNI);
+#include "Cliente.h"
+#include "Reservas.h"
 
-
-    private:
-
-        const char *AperturaArchivo;
+class ArchivoClientes{
+private:
+	char nombre[30];
+public:
+	ArchivoClientes();
+	bool grabarRegistro(Cliente obj);
+	Cliente leerRegistro(int pos);
+	int buscarRegistro(int dni);
+	int contarRegistros();
+	bool modificarRegistro(Cliente obj, int pos);
+	bool listarRegistros();
+	void verificarEstadoCliente(int dni);
 };
-*/
 
+#endif
