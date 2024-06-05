@@ -24,7 +24,7 @@ int main()
        switch(Opcion){
 
    case 1:
-            ///OpcionesDeReservas();
+           OpcionesDeReservas();
 
             break;
 

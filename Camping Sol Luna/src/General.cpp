@@ -3,51 +3,48 @@
 using namespace std;
 
 #include "General.h"
-/*
-int main(){
-     int opc;
-
-
-    while(true){
-        system("cls");
-        cout<<"-------MENU PRINCIPAL -------"<<endl;
-        cout<<"1.   "<<endl;
-        cout<<"2.   "<<endl;
-        cout<<"3.   "<<endl;
-        cout<<"0.   SALIR"<<endl;
-        cout<<"-----------------------------"<<endl<<endl;
-        cout<<"OPCION: ";
-        cin>>opc;
-        system("cls");
-        switch(opc){
-            case 1:
-                    break;
-            case 2:
-                    break;
-            case 3:
-                    break;
-
-            case 0:
-                    return 0;
-
-                    break;
-
-        }
-        system("pause");
-
-    }
-
-	cout<<endl;
-	system("pause");
-	return 0;
+#include "Archivo Reservas.h"
+#include "ArchivoCabanias.h"
+#include "ArchivoCarpas.h"
+#include "ArchivoClientes.h"
+#include "Reservas.h"
+#include "Cliente.h"
 
 General::General()
 {
-    //ctor
+
 }
 
-General::~General()
+void General::InformeMensual()
 {
-    //dtor
+       ArchivoClientes InfoCliente("Clientes.dat");
+       Clientes clientes;
+
+       ArchivoCabanias InfoCabanias("Cabanias.dat");
+
+       ArchivoCarpas InfoCarpas("Carpas.dat");
+       Archivo Reservas  ("Reservas.dat");
+
+
 }
-*/
+
+void General::InformeUltimo30Dias()
+{
+
+}
+
+void General::facturacionTotal()
+{
+
+}
+
+void General::mostrarCabaniasEnUso()
+{
+
+}
+
+
+void General::mostrarCarpasEnUso()
+{
+
+}

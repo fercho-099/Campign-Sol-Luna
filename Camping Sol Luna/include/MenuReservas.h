@@ -1,20 +1,19 @@
-<<<<<<< Updated upstream
+
 #pragma once
-=======
+
 /*
 #ifndef MENURESERVAS_H
 #define MENURESERVAS_H
 
 #include "Reservas.h"
 #include "Archivo Reservas.h"
->>>>>>> Stashed changes
+
 
 void cargarReserva();
 void modificarReserva();
 void borrarReserva();
 
-<<<<<<< Updated upstream
-=======
+
 void OpcionesDeReservas();
 
 void OpcionesDeReservas(){
@@ -82,4 +81,4 @@ void borrarReserva(){
 
 #endif
 */
->>>>>>> Stashed changes
+
