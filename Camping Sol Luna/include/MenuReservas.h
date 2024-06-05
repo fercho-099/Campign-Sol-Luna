@@ -1,20 +1,20 @@
 
 #pragma once
 
-/*
+
 #ifndef MENURESERVAS_H
 #define MENURESERVAS_H
 
 #include "Reservas.h"
 #include "Archivo Reservas.h"
-
+void OpcionesDeReservas();
 
 void cargarReserva();
 void modificarReserva();
 void borrarReserva();
 
 
-void OpcionesDeReservas();
+
 
 void OpcionesDeReservas(){
 system("cls");
@@ -56,10 +56,18 @@ system("cls");
 
 }
 
->>>>>>> Stashed changes
 void cargarReserva(){
-    Reservas obj;
+
+    Reservas DatosReservas;
+    ArchivoReservas InfoReservas;
     obj.Cargar();
+    if(InfoReservas.grabarRegistro(DatosReservas)) {std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
+    system("pause");
+    }
+    else{
+        std::cout<<"No se Gestionar la reserva"<<std::endl;
+        system("pause");
+    }
 }
 
 void modificarReserva(){
@@ -75,10 +83,8 @@ void borrarReserva(){
     cin>>dni;
     ///FALTA TERMINAR
 }
-<<<<<<< Updated upstream
-=======
 
 
 #endif
-*/
+
 

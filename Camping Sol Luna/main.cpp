@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
-
+#include "MenuReservas.h"
 #include "Reservas.h"
 #include "ArchivoClientes.h"
 
