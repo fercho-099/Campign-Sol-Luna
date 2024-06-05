@@ -242,3 +242,75 @@
 	"TipODePago.h"
 	<cstring>
 
+1717553027 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\main.cpp
+	<iostream>
+	<cstring>
+	"Reservas.h"
+	"ArchivoClientes.h"
+
+1717553027 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\reservas.h
+	"Fecha.h"
+	"TipODePago.h"
+
+1717553027 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\fecha.h
+	<iostream>
+
+1717553027 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\tipodepago.h
+	"Fecha.h"
+	"Cliente.h"
+
+1717553027 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\cliente.h
+	<iostream>
+
+1717553027 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivoclientes.h
+	"Cliente.h"
+	"Reservas.h"
+
+1717553027 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivo reservas.cpp
+	<iostream>
+	<cstdlib>
+	"Archivo Reservas.h"
+
+1717553027 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivo reservas.h
+	"Reservas.h"
+
+1717553027 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivocabanias.cpp
+	<iostream>
+	<cstdlib>
+	"ArchivoCabanias.h"
+	<cstdlib>
+	<cstring>
+
+1717553027 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivocabanias.h
+
+1717553027 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivocarpas.cpp
+	<iostream>
+	<cstdlib>
+	"ArchivoCarpas.h"
+
+1717553027 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivocarpas.h
+
+1717553027 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
+	"ArchivoClientes.h"
+	<cstring>
+
+1717553027 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\cliente.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"Cliente.h"
+
+1717553027 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\fecha.cpp
+	"Fecha.h"
+
+1717553027 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\general.cpp
+	<iostream>
+	"General.h"
+
+1717553027 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\general.h
+
+1717553027 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\reservas.cpp
+	<iostream>
+	"Reservas.h"
+	<cstring>
+

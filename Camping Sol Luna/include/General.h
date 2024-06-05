@@ -6,11 +6,11 @@ class General
 {
     public:
         General();
-        virtual ~General();
 
-    protected:
 
     private:
+
+
 };
 
 #endif // GENERAL_H
