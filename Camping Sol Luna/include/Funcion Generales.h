@@ -5,11 +5,11 @@
 void Reservas();
 void Clientes();
 void Informes();
-<<<<<<< Updated upstream
-void FechaActual(Fecha obj);
-=======
+
+//void FechaActual(Fecha obj);
+
 ///void FechaActual(Fecha);
->>>>>>> Stashed changes
+
 
 //DEFINICION DE METODOS GLOBALES
 /*

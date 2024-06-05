@@ -1,20 +1,17 @@
-<<<<<<< Updated upstream
 #pragma once
-=======
-/*
 #ifndef MENURESERVAS_H
 #define MENURESERVAS_H
 
-#include "Reservas.h"
+#include<iostream>
+using namespace std;
+
 #include "Archivo Reservas.h"
->>>>>>> Stashed changes
+#include "Reservas.h"
 
 void cargarReserva();
 void modificarReserva();
 void borrarReserva();
 
-<<<<<<< Updated upstream
-=======
 void OpcionesDeReservas();
 
 void OpcionesDeReservas(){
@@ -57,11 +54,12 @@ system("cls");
 
 }
 
->>>>>>> Stashed changes
-void cargarReserva(){
+/*void cargarReserva(){
     Reservas obj;
     obj.Cargar();
-}
+
+}*/
+
 
 void modificarReserva(){
     int dni;
@@ -76,10 +74,6 @@ void borrarReserva(){
     cin>>dni;
     ///FALTA TERMINAR
 }
-<<<<<<< Updated upstream
-=======
-
 
 #endif
-*/
->>>>>>> Stashed changes
+

@@ -1,10 +1,10 @@
 #pragma once
-
+#include <iostream>
+#include <cstring>
+#include<cstdlib>
 #include "Reservas.h"
 
-/*
->>>>>>> Stashed changes
-class ArchivoReservas{
+/*class ArchivoReservas{
 private:
 	char nombre[30];
 public:
@@ -16,9 +16,5 @@ public:
 	bool modificarRegistro(Reservas obj, int pos);
 	bool listarRegistros();
 	void verificarEstadoReserva(int dni);
-};
-<<<<<<< Updated upstream
+};*/
 
-
-=======
-*/
