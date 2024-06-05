@@ -1,27 +1,18 @@
-
 #pragma once
 
-
-#ifndef MENURESERVAS_H
-#define MENURESERVAS_H
-
+#include "ArchivoReservas.h"
 #include "Reservas.h"
-#include "Archivo Reservas.h"
-void OpcionesDeReservas();
 
-void cargarReserva();
+/*void cargarReserva();
 void modificarReserva();
-void borrarReserva();
-
-
+void borrarReserva();*/
 
 
 void OpcionesDeReservas(){
 system("cls");
  int opc;
  bool loop=true;
- ///Reservas datos;
- ///ArchivoReservas info("Reservas.dat");
+
 
     do{
         cout<<"-----Camping SOL-LUNA-----"<<endl;
@@ -55,12 +46,13 @@ system("cls");
     }while(loop);
 
 }
+///Fer: Cargar Reserva en teoria tiene que estar lista.
 
 void cargarReserva(){
 
     Reservas DatosReservas;
     ArchivoReservas InfoReservas;
-    obj.Cargar();
+    DatosReservas.Cargar();
     if(InfoReservas.grabarRegistro(DatosReservas)) {std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
     system("pause");
     }
@@ -71,10 +63,26 @@ void cargarReserva(){
 }
 
 void modificarReserva(){
+
+    Reservas *DatosReservas, aux;
+    ArchivoReservas InfoReservas;
+    int TotalRegistros = InfoReservas.contarRegistros();
+
+    if(TotalRegistros<0){
+        std::cout<<"No hay reservas gestionadas, realice una"<<std::endl;
+        system("pause");
+        return;
+    }
+
+    DatosReservas = new Reservas[TotalRegistros];
+
+    InfoReservas.LeerRegistrosTotales(*DatosReservas, TotalRegistros);///debe tener todos los registros metidos en ram
     int dni;
     cout<<"Ingrese el Dni del cliente de la reserva que desea modificar: "<<endl;
     cin>>dni;
-    ///FALTA TERMINAR
+    InfoReservas.BuscarRegistros(*DatosReservas, TotalRegistros, dni);
+
+delete[]DatosReservas;
 }
 
 void borrarReserva(){
@@ -85,6 +93,5 @@ void borrarReserva(){
 }
 
 
-#endif
 
 

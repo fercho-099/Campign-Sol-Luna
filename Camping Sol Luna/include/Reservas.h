@@ -7,9 +7,9 @@ class Reservas
 {
     private:
 
-        TipoDePago datos;
+        TipoDePago Datos;
         Fecha Desde, Hasta;
-        bool estado;
+        int Estado;///Fer
 
         public:
           void Cargar();
@@ -17,11 +17,11 @@ class Reservas
           void setTipoDePago(TipoDePago );
           void setFechaDesde(Fecha);
           void setFechaHasta(Fecha);
-          void setEstado(bool e);
-          bool getEstado();
+          void setEstado(int e);
+          int getEstado();
           TipoDePago getTipoDePago();
           Fecha getFechaDesde();
           Fecha getFechaHasta();
-};
+
 
 #endif // RESERVAS_H
