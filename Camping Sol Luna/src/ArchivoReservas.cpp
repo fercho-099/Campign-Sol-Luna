@@ -72,7 +72,7 @@ int ArchivoReservas::buscarRegistro(int dni){
 	return -2;
 }
 
-/*void ArchivosReservas::BuscarRegistros(Reservas &Datos, int TotalRegistros, int Dni){
+void ArchivosReservas::BuscarRegistros(Reservas &Datos, int TotalRegistros, int Dni){
 
     int opcion, pos=0;
     Reservas aux;
@@ -94,7 +94,7 @@ int ArchivoReservas::buscarRegistro(int dni){
 
     if(obj.ModificarRegistros(aux)){
 
-            if(obj.grabarRegistro(aux, pos){
+            if(obj.grabarRegistro(aux, pos)){
         std::cout<<"Se modifico correctamente"<<std::endl;
         system("pause");
             }
@@ -106,7 +106,7 @@ int ArchivoReservas::buscarRegistro(int dni){
     }
 
     }
-}*/
+
 
 int ArchivoReservas::contarRegistros(){
 	FILE *p;
@@ -143,7 +143,7 @@ bool ModificarRegistros(Reservas &obj){
     std::cout<<"0- Cancelar Modificacion"<<std::endl;
     switch(opc){
 
-    system("cls");
+
 
     case 1:
 

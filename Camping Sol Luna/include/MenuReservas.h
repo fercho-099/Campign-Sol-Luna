@@ -62,7 +62,7 @@ void cargarReserva(){
     }
 }
 
-/*void modificarReserva(){
+void modificarReserva(){
 
     Reservas *DatosReservas, aux;
     ArchivoReservas InfoReservas;
@@ -83,7 +83,7 @@ void cargarReserva(){
     InfoReservas.BuscarRegistros(*DatosReservas, TotalRegistros, dni);
 
 delete[]DatosReservas;
-}*/
+}
 
 void borrarReserva(){
     int dni;

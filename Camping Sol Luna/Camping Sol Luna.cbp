@@ -48,10 +48,10 @@
 		<Unit filename="include/Reservas.h" />
 		<Unit filename="include/TipODePago.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Archivo Reservas.cpp" />
 		<Unit filename="src/ArchivoCabanias.cpp" />
 		<Unit filename="src/ArchivoCarpas.cpp" />
 		<Unit filename="src/ArchivoClientes.cpp" />
+		<Unit filename="src/ArchivoReservas.cpp" />
 		<Unit filename="src/Cliente.cpp" />
 		<Unit filename="src/Fecha.cpp" />
 		<Unit filename="src/General.cpp" />
