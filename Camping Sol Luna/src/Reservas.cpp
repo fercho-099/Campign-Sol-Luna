@@ -17,10 +17,10 @@ void Reservas::Cargar(){
 
 Reservas::Reservas()
 {
-    datos;
+    Datos;
     Desde;
     Hasta;
-    estado = false;
+    Estado = 0;
 }
 
 void Reservas::Mostrar()
