@@ -19,6 +19,10 @@ system("cls");
         cout<<"1 - Crear una reserva "<<endl;
         cout<<"2 - Modificar una reserva "<<endl;
         cout<<"3 - Borrar una reserva"<<endl;
+        cout<<"4 - Listar todas las reservas"<<endl;
+        cout<<"5 - Buscar una reserva"<<endl;
+        cout<<"6 - Verificar estado de reserva"<<endl;
+        cout<<"7 - Crear una copia de seguridad de las reservas"<<endl;
         cout<<"0 - Volver al menu anterior"<<endl;
         cout<<endl;
         cout<<"Ingrese una opcion: ";
@@ -53,11 +57,11 @@ void cargarReserva(){
     Reservas DatosReservas;
     ArchivoReservas InfoReservas;
     DatosReservas.Cargar();
-    if(InfoReservas.grabarRegistro(DatosReservas)) {std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
+    if(InfoReservas.grabarRegistro(DatosReservas)) {std::cout<<"Se guardo correctamente la reserva"<<std::endl;
     system("pause");
     }
     else{
-        std::cout<<"No se Gestionar la reserva"<<std::endl;
+        std::cout<<"No se pudo gestionar la reserva"<<std::endl;
         system("pause");
     }
 }
