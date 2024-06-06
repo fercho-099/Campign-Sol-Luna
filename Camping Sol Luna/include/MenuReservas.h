@@ -1,25 +1,18 @@
 #pragma once
-#ifndef MENURESERVAS_H
-#define MENURESERVAS_H
 
-#include<iostream>
-#include<cstdlib>
-using namespace std;
-
+#include "ArchivoReservas.h"
 #include "Reservas.h"
-#include "Archivo Reservas.h"
 
-void OpcionesDeReservas();
 void cargarReserva();
 void modificarReserva();
 void borrarReserva();
+
 
 void OpcionesDeReservas(){
 system("cls");
  int opc;
  bool loop=true;
- //Reservas datos;
- ///ArchivoReservas info("Reservas.dat");
+
 
     do{
         cout<<"-----Camping SOL-LUNA-----"<<endl;
@@ -35,7 +28,7 @@ system("cls");
             cargarReserva();
             break;
         case 2:
-            modificarReserva();
+            //modificarReserva();
             break;
         case 3:
             borrarReserva();
@@ -53,18 +46,44 @@ system("cls");
     }while(loop);
 
 }
+///Fer: Cargar Reserva en teoria tiene que estar lista.
 
 void cargarReserva(){
 
+    Reservas DatosReservas;
+    ArchivoReservas InfoReservas;
+    DatosReservas.Cargar();
+    if(InfoReservas.grabarRegistro(DatosReservas)) {std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
+    system("pause");
+    }
+    else{
+        std::cout<<"No se Gestionar la reserva"<<std::endl;
+        system("pause");
+    }
 }
 
+/*void modificarReserva(){
 
-void modificarReserva(){
+    Reservas *DatosReservas, aux;
+    ArchivoReservas InfoReservas;
+    int TotalRegistros = InfoReservas.contarRegistros();
+
+    if(TotalRegistros<0){
+        std::cout<<"No hay reservas gestionadas, realice una"<<std::endl;
+        system("pause");
+        return;
+    }
+
+    DatosReservas = new Reservas[TotalRegistros];
+
+    InfoReservas.LeerRegistrosTotales(*DatosReservas, TotalRegistros);///debe tener todos los registros metidos en ram
     int dni;
     cout<<"Ingrese el Dni del cliente de la reserva que desea modificar: "<<endl;
     cin>>dni;
-    ///FALTA TERMINAR
-}
+    InfoReservas.BuscarRegistros(*DatosReservas, TotalRegistros, dni);
+
+delete[]DatosReservas;
+}*/
 
 void borrarReserva(){
     int dni;
@@ -73,5 +92,6 @@ void borrarReserva(){
     ///FALTA TERMINAR
 }
 
-#endif
+
+
 
