@@ -22,6 +22,5 @@ class Reservas
           TipoDePago getTipoDePago();
           Fecha getFechaDesde();
           Fecha getFechaHasta();
-
-
+};
 #endif // RESERVAS_H

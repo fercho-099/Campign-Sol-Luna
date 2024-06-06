@@ -69,7 +69,7 @@ void Reservas::setEstado(int e){
 }
 
 int Reservas::getEstado(){
-    return eEstado;
+    return Estado;
 }
 
 

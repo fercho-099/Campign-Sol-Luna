@@ -3,9 +3,9 @@
 #include "ArchivoReservas.h"
 #include "Reservas.h"
 
-/*void cargarReserva();
+void cargarReserva();
 void modificarReserva();
-void borrarReserva();*/
+void borrarReserva();
 
 
 void OpcionesDeReservas(){
@@ -28,7 +28,7 @@ system("cls");
             cargarReserva();
             break;
         case 2:
-            modificarReserva();
+            //modificarReserva();
             break;
         case 3:
             borrarReserva();
@@ -62,7 +62,7 @@ void cargarReserva(){
     }
 }
 
-void modificarReserva(){
+/*void modificarReserva(){
 
     Reservas *DatosReservas, aux;
     ArchivoReservas InfoReservas;
@@ -83,7 +83,7 @@ void modificarReserva(){
     InfoReservas.BuscarRegistros(*DatosReservas, TotalRegistros, dni);
 
 delete[]DatosReservas;
-}
+}*/
 
 void borrarReserva(){
     int dni;

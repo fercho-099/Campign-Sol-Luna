@@ -3,10 +3,10 @@
 
 using namespace std;
 
-#include "Archivo Reservas.h"
+#include "ArchivoReservas.h"
 
 
-bool Archivo Reservas::grabarRegistro(Reservas obj){
+bool ArchivoReservas::grabarRegistro(Reservas obj){
 	FILE *p;
 	p=fopen(AperturaArchivo, "ab");
 	if(p==NULL) return false;
@@ -15,12 +15,12 @@ bool Archivo Reservas::grabarRegistro(Reservas obj){
 	return escribio;
 }
 
-bool Archivo Reservas::grabarRegistro(Reservas obj, int Pos){
+bool ArchivoReservas::grabarRegistro(Reservas obj, int Pos){
 
     FILE *p;
     p=fopen(AperturaArchivo, "rb+");
     if(p==NULL) return false;
-    bool escribio=fwrite(&obj, sizeof (Reservas)*pos, 1, p);
+    bool escribio=fwrite(&obj, sizeof (Reservas)*Pos, 1, p);
     fclose(p);
     return escribio;
 
@@ -30,7 +30,7 @@ Reservas ArchivoReservas::leerRegistro(int pos){
 	FILE *p;
 	Reservas obj;
 	p=fopen(AperturaArchivo, "rb");
-	obj.setDni(-5);
+	//obj.setTipoDePago()
 	if(p==NULL) return obj;
 	fseek(p, pos*sizeof obj,0);
 	fread(&obj, sizeof obj, 1, p);
@@ -62,7 +62,7 @@ int ArchivoReservas::buscarRegistro(int dni){
 	int pos=0;
 	if(p==NULL) return -1;
 	while(fread(&obj, sizeof obj, 1, p)==1){
-		if(obj.getDni()==num){
+		if(obj.getTipoDePago().getCliente().getDNI()==dni){
 			fclose(p);
 			return pos;
 		}
@@ -72,7 +72,7 @@ int ArchivoReservas::buscarRegistro(int dni){
 	return -2;
 }
 
-void ArchivosReservas::BuscarRegistros(Reservas &Datos, int TotalRegistros, int Dni){
+/*void ArchivosReservas::BuscarRegistros(Reservas &Datos, int TotalRegistros, int Dni){
 
     int opcion, pos=0;
     Reservas aux;
@@ -106,7 +106,7 @@ void ArchivosReservas::BuscarRegistros(Reservas &Datos, int TotalRegistros, int 
     }
 
     }
-}
+}*/
 
 int ArchivoReservas::contarRegistros(){
 	FILE *p;

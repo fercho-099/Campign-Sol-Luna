@@ -3,7 +3,7 @@
 using namespace std;
 
 #include "General.h"
-#include "Archivo Reservas.h"
+#include "ArchivoReservas.h"
 #include "ArchivoCabanias.h"
 #include "ArchivoCarpas.h"
 #include "ArchivoClientes.h"
@@ -15,10 +15,10 @@ General::General()
 
 }
 
-void General::InformeMensual()
+/*void General::InformeMensual()
 {
        ArchivoClientes InfoCliente("Clientes.dat");
-       Clientes clientes;
+       Cliente cliente;
 
        ArchivoCabanias InfoCabanias("Cabanias.dat");
 
@@ -26,7 +26,7 @@ void General::InformeMensual()
        Archivo Reservas  ("Reservas.dat");
 
 
-}
+}*/
 
 void General::InformeUltimo30Dias()
 {

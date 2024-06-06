@@ -1,6 +1,6 @@
 #ifndef GENERAL_H
 #define GENERAL_H
-#include "Archivo Reservas.h"
+#include "ArchivoReservas.h"
 #include "ArchivoCabanias.h"
 #include "ArchivoCarpas.h"
 #include "ArchivoClientes.h"
