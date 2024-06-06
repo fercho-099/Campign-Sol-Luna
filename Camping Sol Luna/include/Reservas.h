@@ -12,6 +12,7 @@ class Reservas
         bool estado;
 
         public:
+          Reservas();
           void Cargar();
           void Mostrar();
           void setTipoDePago(TipoDePago );

@@ -15,6 +15,7 @@ class TipoDePago
        bool estado;
 
    public:
+    TipoDePago();
     void Cargar();
     void Mostrar();
     void setCliente(Cliente );

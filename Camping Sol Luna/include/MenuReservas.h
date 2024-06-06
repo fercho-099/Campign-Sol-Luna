@@ -3,22 +3,22 @@
 #define MENURESERVAS_H
 
 #include<iostream>
+#include<cstdlib>
 using namespace std;
 
-#include "Archivo Reservas.h"
 #include "Reservas.h"
+#include "Archivo Reservas.h"
 
+void OpcionesDeReservas();
 void cargarReserva();
 void modificarReserva();
 void borrarReserva();
-
-void OpcionesDeReservas();
 
 void OpcionesDeReservas(){
 system("cls");
  int opc;
  bool loop=true;
- ///Reservas datos;
+ //Reservas datos;
  ///ArchivoReservas info("Reservas.dat");
 
     do{
@@ -54,11 +54,9 @@ system("cls");
 
 }
 
-/*void cargarReserva(){
-    Reservas obj;
-    obj.Cargar();
+void cargarReserva(){
 
-}*/
+}
 
 
 void modificarReserva(){

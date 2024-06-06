@@ -63,6 +63,18 @@ void TipoDePago::Mostrar(){
         system("pause");
 }
 
+TipoDePago::TipoDePago()
+{
+       InfoCliente;
+       IDServicio = 0;
+       modoDePago = 0;
+       strcpy(IDSector,"NULL");
+       FechaPago;
+       Monto = 0;
+       estado = false;
+}
+
+
 void TipoDePago::setCliente(Cliente datos){
 
     InfoCliente = datos;

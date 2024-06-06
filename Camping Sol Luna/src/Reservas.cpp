@@ -13,6 +13,14 @@ void Reservas::Cargar(){
     Hasta.Cargar();
 }
 
+Reservas::Reservas()
+{
+    datos;
+    Desde;
+    Hasta;
+    estado = false;
+}
+
 void Reservas::Mostrar()
 {
 
