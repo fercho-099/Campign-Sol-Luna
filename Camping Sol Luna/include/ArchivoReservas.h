@@ -14,9 +14,10 @@ public:
 	void LeerRegistrosTotales(Reservas &, int );///Fer
 	int buscarRegistro(int dni);
 	void BuscarRegistros(Reservas &, int, int );///Fer
+	void BuscarRegistros(int );
 	int contarRegistros();
 	bool modificarRegistro(Reservas obj, int pos);
-	bool ModificarRegistros(Reservas &obj);
+	bool ModificarRegistros(Reservas obj);
 	bool listarRegistros();
 	void verificarEstadoReserva(int dni);
 

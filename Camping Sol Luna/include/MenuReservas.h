@@ -64,11 +64,11 @@ void cargarReserva(){
 
 void modificarReserva(){
 
-    Reservas *DatosReservas, aux;
+    /*Reservas *DatosReservas, aux;*/
     ArchivoReservas InfoReservas;
-    int TotalRegistros = InfoReservas.contarRegistros();
+    /*int TotalRegistros = InfoReservas.contarRegistros();
 
-    if(TotalRegistros<0){
+    if(TotalRegistros<=0){
         std::cout<<"No hay reservas gestionadas, realice una"<<std::endl;
         system("pause");
         return;
@@ -76,13 +76,13 @@ void modificarReserva(){
 
     DatosReservas = new Reservas[TotalRegistros];
 
-    InfoReservas.LeerRegistrosTotales(*DatosReservas, TotalRegistros);///debe tener todos los registros metidos en ram
+    InfoReservas.LeerRegistrosTotales(*DatosReservas, TotalRegistros);*/ ///debe tener todos los registros metidos en ram
     int dni;
     cout<<"Ingrese el Dni del cliente de la reserva que desea modificar: "<<endl;
     cin>>dni;
-    InfoReservas.BuscarRegistros(*DatosReservas, TotalRegistros, dni);
-
-delete[]DatosReservas;
+   ///InfoReservas.BuscarRegistros(*DatosReservas, TotalRegistros, dni);
+    InfoReservas.BuscarRegistros( dni);
+///delete[]DatosReservas;
 }
 
 void borrarReserva(){

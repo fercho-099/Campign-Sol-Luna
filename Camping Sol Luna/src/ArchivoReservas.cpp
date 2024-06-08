@@ -1,9 +1,11 @@
+#include "../include/ArchivoReservas.h"
 #include<iostream>
+
 #include<cstdlib>
 
 using namespace std;
 
-#include "ArchivoReservas.h"
+
 
 
 bool ArchivoReservas::grabarRegistro(Reservas obj){
@@ -72,7 +74,7 @@ int ArchivoReservas::buscarRegistro(int dni){
 	return -2;
 }
 
-void ArchivosReservas::BuscarRegistros(Reservas &Datos, int TotalRegistros, int Dni){
+/*void ArchivoReservas::BuscarRegistros(Reservas &Datos, int TotalRegistros, int Dni){
 
     int opcion, pos=0;
     Reservas aux;
@@ -105,8 +107,58 @@ void ArchivosReservas::BuscarRegistros(Reservas &Datos, int TotalRegistros, int 
         system("pause");
     }
 
+    }*/
+
+void ArchivoReservas::BuscarRegistros(int Dni){
+
+    Reservas *DatosReservas, aux;
+    ArchivoReservas InfoReservas;
+    int TotalRegistros = InfoReservas.contarRegistros();
+    int pos=0, opcion;
+
+
+    if(TotalRegistros<0){
+        std::cout<<"No hay reservas gestionadas, realice una"<<std::endl;
+        system("pause");
+        return;
     }
 
+    DatosReservas = new Reservas[TotalRegistros];
+
+    InfoReservas.LeerRegistrosTotales(*DatosReservas, TotalRegistros);
+
+    for(int x=0; x<TotalRegistros; x++){
+
+        if(DatosReservas[x].getTipoDePago().getCliente().getDNI() == Dni){
+                pos++;
+            DatosReservas[x].Mostrar();
+            std::cout<<"¿Desea Modificar este registro? 1-si 2-no: ";
+            std::cin>>opcion;
+            if(opcion==1){
+
+                aux = DatosReservas[x];///ver si se copia correctamente
+                x=TotalRegistros;
+            }
+        }
+    }
+        delete[]DatosReservas;
+
+
+    if(InfoReservas.ModificarRegistros(aux)==true){
+
+            if(InfoReservas.grabarRegistro(aux, pos)){
+        std::cout<<"Se modifico correctamente"<<std::endl;
+        system("pause");
+            }
+    }
+
+    else{
+        std::cout<<"No se realizaron cambios en la reserva"<<std::endl;
+        system("pause");
+    }
+
+
+}
 
 int ArchivoReservas::contarRegistros(){
 	FILE *p;
@@ -141,6 +193,8 @@ bool ModificarRegistros(Reservas &obj){
     std::cout<<"2- Fecha de final Estadia"<<std::endl;
     std::cout<<"3- Cancelar Reserva"<<std::endl;
     std::cout<<"0- Cancelar Modificacion"<<std::endl;
+    std::cout<<"Seleccione una opcion: ";
+    std::cin>>opc;
     switch(opc){
 
 
