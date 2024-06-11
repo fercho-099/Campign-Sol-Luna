@@ -78,13 +78,16 @@ void ModificarReserva(){/// se necesita verificar QUE RESERVA se debe modificar 
         return;
     }
     DatoReserva = new Reservas[TotalRegistros];
+    InfoReservas.LeerRegistrosTotales(*DatoReserva, TotalRegistros);///agregue esto
 
     int dni;
     cout<<"Ingrese el Dni del cliente de la reserva que desea modificar: "<<endl;
     cin>>dni;
 
-    pos = InfoReservas.BuscarRegistro(dni);///usar memoria dinamica, aca se usa memoria comun
-    aux = InfoReservas.LeerRegistro(pos);
+    /*pos = InfoReservas.BuscarRegistro(dni);///usar memoria dinamica, aca se usa memoria comun
+    aux = InfoReservas.LeerRegistro(pos);///usar memotia dinamica*/
+    pos = InfoReservas.BuscarRegistro(DatoReserva, TotalRegistros, dni);
+    aux = InfoReservas.LeerRegistrosDinamicos(DatoReserva, pos);
 
     InfoReservas.ModificarRegistros(aux);///ver si se modifica correctamente
     if(InfoReservas.grabarRegistros(aux, pos)){

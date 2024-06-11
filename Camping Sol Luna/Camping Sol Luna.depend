@@ -249,7 +249,7 @@
 	"Reservas.h"
 	"ArchivoClientes.h"
 
-1718077173 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\reservas.h
+1718077415 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\reservas.h
 	"Fecha.h"
 	"TipODePago.h"
 	<cstdlib>
@@ -257,7 +257,7 @@
 1717553027 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\fecha.h
 	<iostream>
 
-1718077083 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\tipodepago.h
+1718077415 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\tipodepago.h
 	"Fecha.h"
 	"Cliente.h"
 
@@ -324,17 +324,17 @@
 	"Reservas.h"
 	"Cliente.h"
 
-1718076915 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\reservas.cpp
+1718077415 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\reservas.cpp
 	<iostream>
 	"Reservas.h"
 	<cstring>
 
-1718077083 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\tipodepago.cpp
+1718077415 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\tipodepago.cpp
 	<iostream>
 	"TipODePago.h"
 	<cstring>
 
-1718077362 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menureservas.h
+1718136774 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menureservas.h
 	"ArchivoReservas.h"
 	"Reservas.h"
 
@@ -433,7 +433,7 @@
 	"Reservas.h"
 	"Cliente.h"
 
-1718076000 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivoreservas.h
+1718136774 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivoreservas.h
 	<cstring>
 	"Reservas.h"
 

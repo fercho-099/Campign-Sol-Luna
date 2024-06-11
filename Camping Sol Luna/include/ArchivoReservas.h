@@ -18,9 +18,10 @@ public:
 
     Reservas LeerRegistro(int pos);///se usa
 	void LeerRegistrosTotales(Reservas &, int );///se usa
+    Reservas LeerRegistrosDinamicos(Reservas *DatoReserva, int pos);///agregue esto
 
 	int BuscarRegistro(int dni);///ver si no es pretendida por ningun otro metodo donde necesita el retorno
-
+    int BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, int dni);///Agregue esto
 
 	int contarRegistros();///se usa
 

@@ -72,6 +72,17 @@ Reservas ArchivoReservas::LeerRegistro(int pos){
 	return obj;
 }
 
+Reservas ArchivoReservas::LeerRegistrosDinamicos(Reservas *DatoReserva, int pos){///probando dinamico
+
+Reservas aux;
+
+        aux = DatoReserva[pos];
+
+        return aux;
+
+
+}
+
 void ArchivoReservas::LeerRegistrosTotales(Reservas &obj, int TotalRegistros){
 
     FILE *P=fopen("Reservas.dat", "rb");
@@ -106,7 +117,30 @@ int ArchivoReservas::BuscarRegistro(int dni){///ver si no es pretendida por ning
 	return -2;
 }
 
+int ArchivoReservas::BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, int dni){///probando dinamico
 
+    int pos, Opcion;
+
+    for(int x=0; x<TotalRegistros; x++){
+
+        pos=x;
+
+        if(DatoReserva[x].getTipoDePago().getCliente().getDNI() == dni){
+
+            system("cls");
+            DatoReserva[x].Mostrar();
+            std::cout<<"----------"<<std::endl;
+            std::cout<<"Desea Modificar O borrar Este registro? 1 - SI / 2 - NO: ";
+            std::cin>>Opcion;
+            if(Opcion == 1){
+
+                return pos;
+            }
+
+        }
+    }
+    return -1;
+}
 
 int ArchivoReservas::contarRegistros(){
 	FILE *p;
