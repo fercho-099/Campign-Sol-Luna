@@ -9,11 +9,11 @@ using namespace std;
 void TipoDePago::Cargar()
 {
 
-    bool sectordisponible = true;
+    bool sectorValido= true;
     system("cls");
 
     InfoCliente.Cargar();
-    cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabaña): ";
+    cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
     cin>>IDServicio;
     cout<<endl;
     do
@@ -23,7 +23,7 @@ void TipoDePago::Cargar()
 
         if((strcmp(IDSector,"a")==0) || (strcmp(IDSector,"A")==0) || (strcmp(IDSector,"b")==0) || (strcmp(IDSector,"B")==0) || (strcmp(IDSector,"c")==0) || (strcmp(IDSector,"C")==0)){
 
-            sectordisponible = false;
+            sectorValido = false;
         }
 
         else
@@ -32,12 +32,13 @@ void TipoDePago::Cargar()
             system("pause");
         }
 
-    }while(sectordisponible);///esto verifica que el sector ingresado sea el correcto de la letra "a" a la "c" verifica que sea tanto mayuscula como minuscula habilitados para poner un sector valido.
+    }while(sectorValido);///esto verifica que el sector ingresado sea el correcto de la letra "a" a la "c" verifica que sea tanto mayuscula como minuscula habilitados para poner un sector valido.
 
             cout<<" Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
             cin>>modoDePago;
             cout<<endl;
-            FechaPago.Cargar();
+            std::cout<<"Se procedera a cargar la fecha de pago"<<std::endl;
+            FechaPago.Cargar();/// poner fecha modo automatico preguntando si paga en el momento o no.
             cout<<"Ingrese el Monto: ";
             cin>>Monto;
             cout<<endl;
@@ -63,7 +64,7 @@ void TipoDePago::Mostrar(){
         system("pause");
 }
 
-TipoDePago::TipoDePago()
+/*TipoDePago::TipoDePago()
 {
        InfoCliente;
        IDServicio = 0;
@@ -72,7 +73,7 @@ TipoDePago::TipoDePago()
        FechaPago;
        Monto = 0;
        estado = false;
-}
+}*/
 
 
 void TipoDePago::setCliente(Cliente datos){

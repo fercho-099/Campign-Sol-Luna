@@ -12,10 +12,10 @@ class TipoDePago
        char IDSector[30];
        Fecha FechaPago;
        float Monto;
-       bool estado;
+       bool estado;///verifica si se realizo el pago en su totalidad o no.
 
    public:
-    TipoDePago();
+    ///TipoDePago();
     void Cargar();
     void Mostrar();
     void setCliente(Cliente );

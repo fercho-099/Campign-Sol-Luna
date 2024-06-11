@@ -6,9 +6,17 @@
 using namespace std;
 
 
+ArchivoReservas::ArchivoReservas(){
 
+    strcpy(AperturaArchivo,"Reservas.dat");
+    }
 
-bool ArchivoReservas::grabarRegistro(Reservas obj){
+ArchivoReservas::ArchivoReservas(const char *n){
+
+    strcpy(AperturaArchivo,n);
+}
+
+bool ArchivoReservas::GrabarRegistro(Reservas obj){
 	FILE *p;
 	p=fopen(AperturaArchivo, "ab");
 	if(p==NULL) return false;
@@ -17,20 +25,44 @@ bool ArchivoReservas::grabarRegistro(Reservas obj){
 	return escribio;
 }
 
-bool ArchivoReservas::grabarRegistro(Reservas obj, int Pos){
+bool ArchivoReservas::GrabarRegistro(Reservas obj, int TotalRegistros){
+	FILE *p;
+	p=fopen(AperturaArchivo, "ab");
+	if(p==NULL) return false;
+	bool escribio=fwrite(&obj, sizeof obj, TotalRegistros, p);
+	fclose(p);
+	return escribio;
+}
 
-    FILE *p;
-    p=fopen(AperturaArchivo, "rb+");
-    if(p==NULL) return false;
-    bool escribio=fwrite(&obj, sizeof (Reservas)*Pos, 1, p);
-    fclose(p);
-    return escribio;
+bool ArchivoReservas::grabarRegistros(Reservas obj, int pos){
+
+    bool retorno;
+    FILE *P=fopen(AperturaArchivo,"rb+");
+    if(P==nullptr){
+
+        retorno = false;
+        return retorno;
+    }
+    retorno = fwrite(&obj, sizeof (Reservas)*pos, 1, P);
+    fclose(P);
+    return retorno;
 
 }
 
-Reservas ArchivoReservas::leerRegistro(int pos){
+void ArchivoReservas :: grabarRegistroNuevo(Reservas obj){
+
+    FILE *p;
+	p=fopen(AperturaArchivo, "wb");
+	if(p==NULL) return;
+	fwrite(&obj, sizeof obj, 1, p);
+	fclose(p);
+	return;
+}
+
+Reservas ArchivoReservas::LeerRegistro(int pos){
 	FILE *p;
 	Reservas obj;
+	obj.setEstado(-4);
 	p=fopen(AperturaArchivo, "rb");
 	//obj.setTipoDePago()
 	if(p==NULL) return obj;
@@ -57,7 +89,7 @@ void ArchivoReservas::LeerRegistrosTotales(Reservas &obj, int TotalRegistros){
 
 }
 
-int ArchivoReservas::buscarRegistro(int dni){
+int ArchivoReservas::BuscarRegistro(int dni){///ver si no es pretendida por ningun otro metodo donde necesite el retorno
 	FILE *p;
 	Reservas obj;
 	p=fopen(AperturaArchivo, "rb");
@@ -74,91 +106,7 @@ int ArchivoReservas::buscarRegistro(int dni){
 	return -2;
 }
 
-/*void ArchivoReservas::BuscarRegistros(Reservas &Datos, int TotalRegistros, int Dni){
 
-    int opcion, pos=0;
-    Reservas aux;
-    ArchivoReservas obj;
-    for(int x=0; x<TotalRegistros; x++){
-
-        if(Datos[x].getTipoDePago().getCliente().getDNI() == Dni){
-                pos++;
-            Datos[x].Mostrar();
-            std::cout<<"¿Desea Modificar este registro? 1-si 2-no: ";
-            std::cin>>opcion;
-            if(opcion==1){
-
-                aux = Datos[x];///ver si se copia correctamente
-                x=TotalRegistros;
-            }
-        }
-    }
-
-    if(obj.ModificarRegistros(aux)){
-
-            if(obj.grabarRegistro(aux, pos)){
-        std::cout<<"Se modifico correctamente"<<std::endl;
-        system("pause");
-            }
-    }
-
-    else{
-        std::cout<<"No se realizaron cambios en la reserva"<<std::endl;
-        system("pause");
-    }
-
-    }*/
-
-void ArchivoReservas::BuscarRegistros(int Dni){
-
-    Reservas *DatosReservas, aux;
-    ArchivoReservas InfoReservas;
-    int TotalRegistros = InfoReservas.contarRegistros();
-    int pos=0, opcion;
-
-
-    if(TotalRegistros<0){
-        std::cout<<"No hay reservas gestionadas, realice una"<<std::endl;
-        system("pause");
-        return;
-    }
-
-    DatosReservas = new Reservas[TotalRegistros];
-
-    InfoReservas.LeerRegistrosTotales(*DatosReservas, TotalRegistros);
-
-    for(int x=0; x<TotalRegistros; x++){
-
-        if(DatosReservas[x].getTipoDePago().getCliente().getDNI() == Dni){
-                pos++;
-            DatosReservas[x].Mostrar();
-            std::cout<<"¿Desea Modificar este registro? 1-si 2-no: ";
-            std::cin>>opcion;
-            if(opcion==1){
-
-                aux = DatosReservas[x];///ver si se copia correctamente
-                x=TotalRegistros;
-            }
-        }
-    }
-        delete[]DatosReservas;
-
-
-    if(InfoReservas.ModificarRegistros(aux)==true){
-
-            if(InfoReservas.grabarRegistro(aux, pos)){
-        std::cout<<"Se modifico correctamente"<<std::endl;
-        system("pause");
-            }
-    }
-
-    else{
-        std::cout<<"No se realizaron cambios en la reserva"<<std::endl;
-        system("pause");
-    }
-
-
-}
 
 int ArchivoReservas::contarRegistros(){
 	FILE *p;
@@ -170,72 +118,94 @@ int ArchivoReservas::contarRegistros(){
 	return tam/sizeof(Reservas);
 }
 
-bool ArchivoReservas::modificarRegistro(Reservas obj, int pos){
-	FILE *p;
-	p=fopen(AperturaArchivo, "rb+");
-	if(p==NULL) return false;
-	fseek(p, pos*sizeof obj,0);
-	bool escribio=fwrite(&obj, sizeof obj, 1, p);
-	fclose(p);
-	return escribio;
-}
+void ArchivoReservas::ModificarRegistros(Reservas &aux){
 
-bool ModificarRegistros(Reservas &obj){
+    std::cout<<"------"<<std::endl;
+    int OpcSwitch;
+    Fecha fecha;
+    int dia, mes, anio;
+    bool ciclo=true;
 
-    system("cls");
-    int opc;
-    obj.Mostrar();
-    Fecha dato;
+    do{
 
+        std::cout<<"Digite la opcion correcta"<<std::endl;
+        std::cout<<"1 - Si desea cancelar la reserva"<<std::endl;
+        std::cout<<"2 - Si desea cambiar la fecha de entrada"<<std::endl;
+        std::cout<<"3 - Si desea cambiar la fecha de salida"<<std::endl;
+        std::cout<<"4 - Desestimar cambio"<<std::endl;
+        std::cout<<"Ingrese una opcion: ";
+        std::cin>>OpcSwitch;
 
-    std::cout<<"¿Que desea Modificar?"<<std::endl;
-    std::cout<<"1- Fecha principio"<<std::endl;
-    std::cout<<"2- Fecha de final Estadia"<<std::endl;
-    std::cout<<"3- Cancelar Reserva"<<std::endl;
-    std::cout<<"0- Cancelar Modificacion"<<std::endl;
-    std::cout<<"Seleccione una opcion: ";
-    std::cin>>opc;
-    switch(opc){
-
-
+        switch(OpcSwitch){
 
     case 1:
-
-        dato.Cargar();
-        ///funcion que verifica disponibilidad mediante if
-        obj.setFechaDesde(dato);
-        return true;
+                aux.setEstado(2);
         break;
-
 
     case 2:
-
-        dato.Cargar();
-        ///funcion que verifica disponibilidad mediante if
-        obj.setFechaHasta(dato);
-        return true;
-        break;
+        std::cout<<"Ingrese Dia: ";
+        std::cin>>dia;
+        std::cout<<std::endl;
+        std::cout<<"Ingrese Mes: ";
+        std::cin>>mes;
+        std::cout<<std::endl;
+        std::cout<<"Ingrese anio: ";
+        std::cin>>anio;
+            fecha.setAnio(anio);
+            fecha.setMes(mes);
+            fecha.setDia(dia);
+            aux.setFechaDesde(fecha);
+                    break;
 
     case 3:
 
-        obj.setEstado(2);
-        return true;
+        std::cout<<"Ingrese Dia: ";
+        std::cin>>dia;
+        std::cout<<std::endl;
+        std::cout<<"Ingrese Mes: ";
+        std::cin>>mes;
+        std::cout<<std::endl;
+        std::cout<<"Ingrese anio: ";
+        std::cin>>anio;
+            fecha.setAnio(anio);
+            fecha.setMes(mes);
+            fecha.setDia(dia);
+            aux.setFechaHasta(fecha);
+
         break;
 
-
-    case 0:
-
-        return false;
+    case 4:
+                ciclo = false;
         break;
 
     default:
-            return false;
-        }
 
+        std::cout<<"Opcion Incorrecta"<<std::endl;
+        system("pause");
+        }
+    }while(ciclo);
+}
+
+bool ArchivoReservas::CrearBackUpManual(){
+
+    int TotalRegistros = this->contarRegistros();
+    if(TotalRegistros<=0)return false;
+
+    Reservas *RegistrosReservas;
+    RegistrosReservas = new Reservas[TotalRegistros];
+    this->LeerRegistrosTotales(*RegistrosReservas, TotalRegistros);
+    ///this("Reservas.bak");
+    ArchivoReservas backup("Reservas.bak");
+
+    bool grabo = false;
+
+    grabo = backup.GrabarRegistro(*RegistrosReservas, TotalRegistros);
+
+    return grabo;
 
 }
 
-bool ArchivoReservas::listarRegistros(){
+/*bool ArchivoReservas::listarRegistros(){
 	FILE *p;
 	Reservas obj;
 	p=fopen(AperturaArchivo, "rb");
@@ -246,9 +216,9 @@ bool ArchivoReservas::listarRegistros(){
 	}
 	fclose(p);
 	return true;
-}
+}*/
 
-void verificarEstadoReserva(int dni){
+/*void verificarEstadoReserva(int dni){
     ArchivoReservas reg;
     Reservas aux;
     int pos=reg.buscarRegistro(dni);
@@ -256,5 +226,5 @@ void verificarEstadoReserva(int dni){
     if(aux.getEstado()==false){
         cout<<"La reserva se encuentra deshabilitada"<<endl;
     }else cout<<"La reserva se encuentra habilitada"<<endl;
-}
+}*/
 

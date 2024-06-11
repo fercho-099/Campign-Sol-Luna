@@ -9,19 +9,23 @@ void Reservas::Cargar(){
     Fecha aux;
     Datos.Cargar();
     ///Desde = aux.Cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
+    system("cls");
+    std::cout<<"Se procedera a la carga fecha de entrada"<<std::endl;
     Desde.Cargar();
+    system("cls");
+    std::cout<<"Fecha de salida"<<std::endl;
     Hasta.Cargar();
     Estado = 1;
 
 }
 
-Reservas::Reservas()
+/*Reservas::Reservas()
 {
     Datos;
     Desde;
     Hasta;
     Estado = 0;
-}
+}*/
 
 void Reservas::Mostrar()
 {
