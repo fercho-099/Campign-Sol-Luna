@@ -32,7 +32,8 @@ public:
 
 
     bool CrearBackUpManual();///se usa
-	bool ListarRegistros();
-	void VerificarEstadoReserva(int dni);
+	void ListarRegistros();
+	///void VerificarEstadoReserva(int dni);   PREGUNTAR A LEO
+	void verificarEstadoReserva(Reservas *DatosReservas, int TotalRegistros, int dni);
 
 };

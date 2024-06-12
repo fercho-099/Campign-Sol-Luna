@@ -6,8 +6,8 @@
 void CargarReserva();
 void ModificarReserva();
 void BorrarReserva();
-
-
+void EstadoReserva();
+void MostrarArchivoReservas();
 void OpcionesDeReservas(){
 system("cls");
  int opc;
@@ -20,6 +20,7 @@ system("cls");
         cout<<"1 - Crear una reserva "<<endl;
         cout<<"2 - Modificar una reserva "<<endl;
         cout<<"3 - Borrar una reserva"<<endl;
+        cout<<"4 - Verificar Reserva"<<endl;
         cout<<"0 - Volver al menu anterior"<<endl;
         cout<<endl;
         cout<<"Ingrese una opcion: ";
@@ -34,11 +35,15 @@ system("cls");
         case 3:
             BorrarReserva();
             break;
+        case 4:
+            EstadoReserva();
+            break;
+        case 5:
+            MostrarArchivoReservas();
+            break;
         case 0:
             loop=false;
-
             break;
-
         default:
 
             std::cout<<"Ingrese una opcion correcta"<<std::endl;
@@ -105,6 +110,7 @@ void ModificarReserva(){/// se necesita verificar QUE RESERVA se debe modificar 
 delete []DatoReserva;
 }
 
+///Borrar Reservas Lista
 void BorrarReserva(){
     system("cls");
     int dni, TotalCantidad, Opcion;
@@ -169,10 +175,36 @@ void BorrarReserva(){
 
 
 
-
+delete []vec;
 
 }
 
+void EstadoReserva(){
 
+system("cls");
+ArchivoReservas InfoReservas;
+Reservas *DatosReservas;
+int dni;
+int TotalRegistros = InfoReservas.contarRegistros();
+if(TotalRegistros<=0){
 
+    std::cout<<"No hay reservas gestionadas"<<std::endl;
+    system("pause");
+    return;
 
+}
+DatosReservas = new Reservas[TotalRegistros];
+std::cout<<"Ingrese el Dni de la persona que realizo la reserva: ";
+std::cin>>dni;
+
+InfoReservas.verificarEstadoReserva(DatosReservas, TotalRegistros, dni);
+
+delete []DatosReservas;
+
+}
+
+void MostrarArchivoReservas(){
+
+ArchivoReservas InfoReservas;
+InfoReservas.ListarRegistros();
+}

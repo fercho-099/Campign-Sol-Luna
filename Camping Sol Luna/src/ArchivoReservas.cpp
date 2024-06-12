@@ -239,26 +239,66 @@ bool ArchivoReservas::CrearBackUpManual(){
 
 }
 
-/*bool ArchivoReservas::listarRegistros(){
+void ArchivoReservas::ListarRegistros(){
 	FILE *p;
 	Reservas obj;
 	p=fopen(AperturaArchivo, "rb");
-	if(p==NULL) return false;
+	if(p==NULL){
+
+        std::cout<<"No se pudo abrir el archivo / No existe el archivo"<<std::endl;
+        system("pause");
+        return;
+	}
 	while(fread(&obj, sizeof obj, 1, p)==1){
 		obj.Mostrar();
 		cout<<endl;
 	}
 	fclose(p);
-	return true;
-}*/
+	system("pause");
+	return;
+}
 
-/*void verificarEstadoReserva(int dni){
+/**void verificarEstadoReserva(int dni){ PREGUNTAR A LEO SI PUEDO BORRAR YA QUE SE TRABAJA CON MEMORIA DINAMICA
     ArchivoReservas reg;
     Reservas aux;
     int pos=reg.buscarRegistro(dni);
     aux=reg.leerRegistro(pos);
     if(aux.getEstado()==false){
         cout<<"La reserva se encuentra deshabilitada"<<endl;
-    }else cout<<"La reserva se encuentra habilitada"<<endl;
+    }
+    else cout<<"La reserva se encuentra habilitada"<<endl;
 }*/
 
+void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalRegistros, int dni){
+
+    for(int x=0; x<TotalRegistros; x++){
+
+        if(DatosReservas[x].getTipoDePago().getCliente().getDNI() == dni){
+
+            if(DatosReservas[x].getEstado() == 1){
+
+                DatosReservas[x].Mostrar();
+                std::cout<<std::endl;
+                std::cout<<"La reserva se encuentra activa"<<std::endl;
+                system("pause");
+            }
+
+            else if(DatosReservas[x].getEstado() == 2){
+
+                DatosReservas[x].Mostrar();
+                std::cout<<std::endl;
+                std::cout<<"La reserva se encuentra cancelada"<<std::endl;
+                system("pause");
+            }
+
+            else{
+
+                DatosReservas[x].Mostrar();
+                std::cout<<std::endl;
+                std::cout<<"La reserva se encuentra Gestionada. Verificar el archivo de servicio contratado para mas informacion"<<std::endl;
+                system("pause");
+            }
+        }
+    }
+
+}
