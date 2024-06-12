@@ -38,9 +38,13 @@ void TipoDePago::Cargar()
             cin>>modoDePago;
             cout<<endl;
             std::cout<<"Se procedera a cargar la fecha de pago"<<std::endl;
-            FechaPago.Cargar();/// poner fecha modo automatico preguntando si paga en el momento o no.
+            FechaPago.CargarActual();/// poner fecha modo automatico preguntando si paga en el momento o no.
             cout<<"Ingrese el Monto: ";
             cin>>Monto;
+            if(Monto <= 0){
+                cout<<"Ingrese un Monto mayor a 0: ";
+                cin>>Monto;
+            }
             cout<<endl;
             estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
 }

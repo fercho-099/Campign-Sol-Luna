@@ -5,6 +5,7 @@
 using namespace std;
 
 #include "Cliente.h"
+#include "Funciones.h"
 
 ///LEO
 ///Meti esta funcion aca por ahora para que ande nomas luego habra que cambiarla
@@ -42,14 +43,16 @@ Cliente::Cliente()
 ///LEO
 ///Cree esta funcion que no estaba hecha
 void Cliente::Cargar(){
+
+
     cout<<"Ingrese el Dni: ";
-    cin>>_DNI;
+    _DNI = IngresoNumero();
     cout<<"Ingrese el nombre: ";
     cargarCadena(_nombre,30);
     cout<<"Ingrese el apellido: ";
     cargarCadena(_apellido,30);
     cout<<"Ingrese el telefono: ";
-    cin>>_telefono;
+    _telefono = IngresoNumero();
     setEstado(true);
 }
 ///LEO
