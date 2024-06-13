@@ -240,6 +240,7 @@ bool ArchivoReservas::CrearBackUpManual(){
 }
 
 void ArchivoReservas::ListarRegistros(){
+    system("cls");
 	FILE *p;
 	Reservas obj;
 	p=fopen(AperturaArchivo, "rb");

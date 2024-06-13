@@ -21,6 +21,7 @@ system("cls");
         cout<<"2 - Modificar una reserva "<<endl;
         cout<<"3 - Borrar una reserva"<<endl;
         cout<<"4 - Verificar Reserva"<<endl;
+        cout<<"5 - Mostrar Reservas"<<endl;
         cout<<"0 - Volver al menu anterior"<<endl;
         cout<<endl;
         cout<<"Ingrese una opcion: ";
@@ -66,6 +67,7 @@ void CargarReserva(){
         std::cout<<"No se Gestionar la reserva"<<std::endl;
         system("pause");
     }
+
 }
 
 ///Modificar Reserva lista
@@ -204,6 +206,7 @@ delete []DatosReservas;
 }
 
 void MostrarArchivoReservas(){
+
 
 ArchivoReservas InfoReservas;
 InfoReservas.ListarRegistros();
