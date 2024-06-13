@@ -47,12 +47,22 @@ void Cliente::Cargar(){
 
     cout<<"Ingrese el Dni: ";
     _DNI = IngresoNumero();
+    if(_DNI < 1000000)
+        {
+         cout<<"Ingrese un dni valido: ";
+         _DNI = IngresoNumero();
+        }
     cout<<"Ingrese el nombre: ";
     cargarCadena(_nombre,30);
     cout<<"Ingrese el apellido: ";
     cargarCadena(_apellido,30);
     cout<<"Ingrese el telefono: ";
     _telefono = IngresoNumero();
+    if(_telefono<10000000)
+        {
+          cout<<"Ingrese un telefono valido: ";
+          _telefono = IngresoNumero();
+        }
     setEstado(true);
 }
 ///LEO

@@ -18,7 +18,7 @@ void TipoDePago::Cargar()
     cout<<endl;
     do
     {
-        cout<<"Ingrese el Sector correcpondiente (A-C): ";
+        cout<<"Ingrese el Sector correspondiente (A-C): ";
         cin>>IDSector;
 
         if((strcmp(IDSector,"a")==0) || (strcmp(IDSector,"A")==0) || (strcmp(IDSector,"b")==0) || (strcmp(IDSector,"B")==0) || (strcmp(IDSector,"c")==0) || (strcmp(IDSector,"C")==0)){
@@ -34,11 +34,13 @@ void TipoDePago::Cargar()
 
     }while(sectorValido);///esto verifica que el sector ingresado sea el correcto de la letra "a" a la "c" verifica que sea tanto mayuscula como minuscula habilitados para poner un sector valido.
 
-            cout<<" Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
+            cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
             cin>>modoDePago;
             cout<<endl;
-            std::cout<<"Se procedera a cargar la fecha de pago"<<std::endl;
+            std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
             FechaPago.CargarActual();/// poner fecha modo automatico preguntando si paga en el momento o no.
+            system("pause");
+            system("cls");
             cout<<"Ingrese el Monto: ";
             cin>>Monto;
             if(Monto <= 0){

@@ -9,6 +9,7 @@ int main()
 {
     bool Ejecutar = true;
     int Opcion;
+    Fecha obj;
 
     do{
         system("cls");
@@ -30,7 +31,7 @@ int main()
 
    case 2:
             ///OpcionesDeClientes();
-
+            system("pause");
             break;
 
    case 3:
