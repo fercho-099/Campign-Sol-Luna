@@ -11,7 +11,7 @@ class Cliente
 	int _DNI;
 	char _nombre[30];
 	char _apellido[30];
-	int _telefono;
+	long long int _telefono;
 	bool _estado;
 
 	public:

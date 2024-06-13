@@ -15,7 +15,7 @@ void TipoDePago::Cargar()
     InfoCliente.Cargar();
     cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
     cin>>IDServicio;
-    cout<<endl;
+
     do
     {
         cout<<"Ingrese el Sector correcpondiente (A-C): ";
@@ -34,14 +34,12 @@ void TipoDePago::Cargar()
 
     }while(sectorValido);///esto verifica que el sector ingresado sea el correcto de la letra "a" a la "c" verifica que sea tanto mayuscula como minuscula habilitados para poner un sector valido.
 
-            cout<<" Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
+            cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
             cin>>modoDePago;
-            cout<<endl;
             std::cout<<"Se procedera a cargar la fecha de pago"<<std::endl;
             FechaPago.Cargar();/// poner fecha modo automatico preguntando si paga en el momento o no.
             cout<<"Ingrese el Monto: ";
             cin>>Monto;
-            cout<<endl;
             estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
 }
 
@@ -49,7 +47,7 @@ void TipoDePago::Cargar()
 
 void TipoDePago::Mostrar(){
 
-        system("cls");
+
         InfoCliente.Mostrar();
         cout<<"Servicio: "<<IDServicio<<endl;
         cout<<"Sector asignado: "<<IDSector<<endl;
@@ -57,11 +55,12 @@ void TipoDePago::Mostrar(){
         cout<<"Modo de Pago: ";
         if(modoDePago==1){
             cout<<"Efectivo "<<endl;
-        }else cout<<"Tarjeta de debito/credito "<<endl;
-        cout<<" Fecha de Pago"<<endl;
+        }
+        else cout<<"Tarjeta de debito/credito"<<endl;
+        cout<<"Fecha de Pago"<<endl;
         FechaPago.Mostrar();
         cout<<"Monto abonado: "<<Monto<<endl;
-        system("pause");
+
 }
 
 /*TipoDePago::TipoDePago()
