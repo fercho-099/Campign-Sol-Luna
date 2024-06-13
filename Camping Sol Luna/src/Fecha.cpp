@@ -33,6 +33,7 @@ int Fecha::getAnio(){
     return anio;
 }
 
+//Alan
 void Fecha::CargarActual()
 {
     time_t now = time(0); // Captura fecha y hora actual
@@ -43,6 +44,7 @@ void Fecha::CargarActual()
     int anio = localTime->tm_year + 1900; // Sumamos 1900 para obtener el año actual
 }
 
+//Alan
 bool Fecha::ValidarFecha(int dia, int mes, int anio )
 {
  // Obtener la fecha actual

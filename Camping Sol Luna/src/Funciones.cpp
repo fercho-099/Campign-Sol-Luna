@@ -6,6 +6,8 @@ using namespace std;
 
 #include "Funciones.h"
 
+///Alan
+///Valida que el ingreso sea un numero y que sea dntro de los rngos posibles
 int IngresoNumero()
 {
     int numeros;
