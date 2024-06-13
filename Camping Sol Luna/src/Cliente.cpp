@@ -58,6 +58,7 @@ void Cliente::Cargar(){
     cargarCadena(_apellido,30);
     cout<<"Ingrese el telefono: ";
     _telefono = IngresoNumero();
+    //_telefono =
     if(_telefono<10000000)
         {
           cout<<"Ingrese un telefono valido: ";

@@ -8,10 +8,10 @@ using namespace std;
 class Cliente
 {
 	private:
-	int _DNI;
+    int _DNI;
 	char _nombre[30];
 	char _apellido[30];
-	int _telefono;
+    int _telefono;
 	bool _estado;
 
 	public:
