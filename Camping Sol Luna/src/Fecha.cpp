@@ -39,10 +39,12 @@ void Fecha::CargarActual()
     time_t now = time(0); // Captura fecha y hora actual
     tm* localTime = localtime(&now); // Creamos el puntero localTime y lo referenciamos al objeto time
     // Accedemos a los atributos de la estructura tm
-    int dia = localTime->tm_mday;
-    int mes = localTime->tm_mon + 1; // Sumamos 1 porque los meses están indexados desde 0
-    int anio = localTime->tm_year + 1900; // Sumamos 1900 para obtener el año actual
+    dia = localTime->tm_mday;
+    mes = localTime->tm_mon + 1; // Sumamos 1 porque los meses están indexados desde 0
+    anio = localTime->tm_year + 1900; // Sumamos 1900 para obtener el año actual
 }
+
+
 
 //Alan
 bool Fecha::ValidarFecha(int dia, int mes, int anio )

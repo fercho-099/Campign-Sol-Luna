@@ -15,6 +15,7 @@ int main()
         system("cls");
        cout<<"-----Camping SOL-LUNA-----"<<endl;
        cout<<"1 - Reservas "<<endl;
+       cout<<"2 - Pruebas Fecha "<<endl;
        cout<<"2 - Clientes "<<endl;
        cout<<"3 - Informes "<<endl;
        cout<<"0 - Cerrar Programa "<<endl;
@@ -30,8 +31,10 @@ int main()
             break;
 
    case 2:
-            ///OpcionesDeClientes();
+            obj.CargarActual();
+            obj.Mostrar();
             system("pause");
+            ///OpcionesDeClientes();
             break;
 
    case 3:

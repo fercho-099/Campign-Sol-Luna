@@ -3,8 +3,9 @@
 using namespace std;
 
 #include "TipODePago.h"
-
+#include "Reservas.h"
 #include <cstring>
+
 
 void TipoDePago::Cargar()
 {
@@ -50,6 +51,34 @@ void TipoDePago::Cargar()
             estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
 }
 
+/*void TipoDePago::CargarPrueba()
+{
+    Reservas obj;
+    bool Disponible = true;
+
+    cout<<"Por favor, cargue la fecha de entrada";
+    obj.Desde.Cargar();
+
+    cout<<"Por favor, cargue la fecha de salida";
+    obj.Hasta.Cargar();
+
+    cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
+    cin>>IDServicio;
+    ///Alan
+    ///Aca tendria que contar los registros de los dos archivos, cabaña y carpa, y en caso
+    ///de que se ingrese 1 o 2 hacer un switch asi lee el idservicio correspondiente
+    ///despues de esa preguntar la disponibilidad por las fechas ingresadas
+    ///listar los id de carpa o cabaña disponible segun el idservicio correspondiente
+    ///Ingresar el id para que guarde la reserva, el monto deberia ser estatico entonces aca
+    ///lo que se hace es hacer la resta entre fecha de ingreso y salida para que
+    ///me de el total de dias que van a ocupar el servicio y multiplicarlo x el monto
+    ///asi me da el total que el cliente debe abonar, despues se pregunta si desea continuar
+    ///con la reserva S/N, si desea continuar se consulta como abona, efectivo o tarjeta
+    ///selecciona una de estas opciones y se procede a cargar la fecha de pago y se realiza
+    ///la reserva
+
+    estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
+}*/
 
 
 void TipoDePago::Mostrar(){
@@ -68,18 +97,6 @@ void TipoDePago::Mostrar(){
         cout<<"Monto abonado: "<<Monto<<endl;
         system("pause");
 }
-
-/*TipoDePago::TipoDePago()
-{
-       InfoCliente;
-       IDServicio = 0;
-       modoDePago = 0;
-       strcpy(IDSector,"NULL");
-       FechaPago;
-       Monto = 0;
-       estado = false;
-}*/
-
 
 void TipoDePago::setCliente(Cliente datos){
 

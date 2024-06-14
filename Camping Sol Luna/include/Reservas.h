@@ -14,6 +14,7 @@ class Reservas
         public:
           ///Reservas();
           void Cargar();
+          void CargarPrueba();
           void Mostrar();
           void setTipoDePago(TipoDePago );
           void setFechaDesde(Fecha);

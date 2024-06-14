@@ -17,6 +17,7 @@ class TipoDePago
    public:
     ///TipoDePago();
     void Cargar();
+    void CargarPrueba();
     void Mostrar();
     void setCliente(Cliente );
     void setIDServicio(int );
