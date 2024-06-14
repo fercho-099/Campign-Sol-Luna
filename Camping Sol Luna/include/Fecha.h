@@ -18,9 +18,7 @@ class Fecha
     void Cargar();
     void Mostrar();
     void CargarActual();
-    bool CargarPrueba();
     bool ValidarFecha(int,int,int);
-
 };
 
 #endif // FECHA_H
