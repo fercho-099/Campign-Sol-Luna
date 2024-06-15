@@ -2,8 +2,6 @@
 #include <cstring>
 using namespace std;
 #include "MenuReservas.h"
-#include "MenuClientes.h"
-#include "MenuInformes.h"
 #include "Reservas.h"
 #include "ArchivoClientes.h"
 
@@ -11,13 +9,15 @@ int main()
 {
     bool Ejecutar = true;
     int Opcion;
+    Fecha obj;
 
     do{
         system("cls");
        cout<<"-----Camping SOL-LUNA-----"<<endl;
-       cout<<"1 - Ingresar a menu reservas "<<endl;
-       cout<<"2 - Ingresar a menu clientes "<<endl;
-       cout<<"3 - Ingresar a menu informes "<<endl;
+       cout<<"1 - Reservas "<<endl;
+       cout<<"2 - Pruebas Fecha "<<endl;
+       cout<<"2 - Clientes "<<endl;
+       cout<<"3 - Informes "<<endl;
        cout<<"0 - Cerrar Programa "<<endl;
        cout<<endl;
        cout<<"Ingrese una opcion: ";
@@ -31,12 +31,14 @@ int main()
             break;
 
    case 2:
-            OpcionesDeClientes();
-
+            obj.CargarActual();
+            obj.Mostrar();
+            system("pause");
+            ///OpcionesDeClientes();
             break;
 
    case 3:
-            OpcionesDeInformes();
+            ///OpcionesDeInformes();
 
             break;
 

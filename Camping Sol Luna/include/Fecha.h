@@ -17,7 +17,8 @@ class Fecha
     int getAnio();
     void Cargar();
     void Mostrar();
-
+    void CargarActual();
+    bool ValidarFecha(int,int,int);
 };
 
 #endif // FECHA_H

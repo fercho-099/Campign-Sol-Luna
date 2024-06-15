@@ -6,18 +6,34 @@
 class ArchivoReservas{
 private:
 	char AperturaArchivo[30];
+
 public:
-	ArchivoReservas(const char *n="Reservas.dat"){strcpy(AperturaArchivo,n);}
-	bool grabarRegistro(Reservas obj);
-	bool grabarRegistro(Reservas obj, int pos);
-	Reservas leerRegistro(int pos);
-	void LeerRegistrosTotales(Reservas &, int );///Fer
-	int buscarRegistro(int dni);
-	void BuscarRegistros(Reservas &, int, int );///Fer
-	int contarRegistros();
-	bool modificarRegistro(Reservas obj, int pos);
-	bool ModificarRegistros(Reservas &obj);
-	bool listarRegistros();
-	void verificarEstadoReserva(int dni);
+    ArchivoReservas();///se usa
+	ArchivoReservas(const char *n);///se usa
+
+	bool GrabarRegistro(Reservas obj);
+	bool GrabarRegistro(Reservas obj, int TotalRegistros);
+	bool grabarRegistros(Reservas obj, int pos);
+    void grabarRegistroNuevo(Reservas obj);
+
+    Reservas LeerRegistro(int pos);///se usa
+	void LeerRegistrosTotales(Reservas &, int );///se usa
+    Reservas LeerRegistrosDinamicos(Reservas *DatoReserva, int pos);///agregue esto
+
+	int BuscarRegistro(int dni);///ver si no es pretendida por ningun otro metodo donde necesita el retorno
+    int BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, int dni);///Agregue esto
+
+	int contarRegistros();///se usa
+
+
+	bool ModificarRegistros(Reservas &obj, int pos);
+	void ModificarRegistros(Reservas &obj);///se usa
+
+
+
+    bool CrearBackUpManual();///se usa
+	void ListarRegistros();
+	///void VerificarEstadoReserva(int dni);   PREGUNTAR A LEO
+	void verificarEstadoReserva(Reservas *DatosReservas, int TotalRegistros, int dni);
 
 };
