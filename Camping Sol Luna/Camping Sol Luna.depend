@@ -503,3 +503,125 @@
 	<sstream>
 	"Funciones.h"
 
+1718412143 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\archivocabanias.cpp
+	<iostream>
+	<cstdlib>
+	"ArchivoCabanias.h"
+	<cstdlib>
+	<cstring>
+
+1718412143 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\archivocabanias.h
+
+1718412143 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\archivocarpas.cpp
+	<iostream>
+	<cstdlib>
+	"ArchivoCarpas.h"
+
+1718412143 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\archivocarpas.h
+
+1718419161 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
+	"ArchivoClientes.h"
+	<cstring>
+
+1718419161 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\archivoclientes.h
+	"Cliente.h"
+	"Reservas.h"
+
+1718412569 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\cliente.h
+	<iostream>
+
+1718412569 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\reservas.h
+	"Fecha.h"
+	"TipODePago.h"
+	<cstdlib>
+
+1718412569 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\fecha.h
+	<iostream>
+
+1718412569 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\tipodepago.h
+	"Fecha.h"
+	"Cliente.h"
+
+1718412569 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\archivoreservas.cpp
+	"../include/ArchivoReservas.h"
+	<iostream>
+	<cstdlib>
+
+1718412569 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\archivoreservas.h
+	<cstring>
+	"Reservas.h"
+
+1718412569 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\cliente.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"Cliente.h"
+	"Funciones.h"
+
+1718412569 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\funciones.h
+	<iostream>
+	<limits>
+
+1718412569 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\fecha.cpp
+	<ctime>
+	<chrono>
+	"Fecha.h"
+	"Funciones.h"
+
+1718412569 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\funciones.cpp
+	<iostream>
+	<limits>
+	<string>
+	<sstream>
+	"Funciones.h"
+
+1718414580 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\general.cpp
+	<iostream>
+	"General.h"
+	"ArchivoReservas.h"
+	"ArchivoCabanias.h"
+	"ArchivoCarpas.h"
+	"ArchivoClientes.h"
+	"Reservas.h"
+	"Cliente.h"
+
+1718414550 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\general.h
+	"ArchivoReservas.h"
+	"ArchivoCabanias.h"
+	"ArchivoCarpas.h"
+	"ArchivoClientes.h"
+	"Reservas.h"
+	"Cliente.h"
+
+1718412891 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\reservas.cpp
+	<iostream>
+	"Reservas.h"
+	<cstring>
+
+1718412569 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\tipodepago.cpp
+	<iostream>
+	"TipODePago.h"
+	"Reservas.h"
+	<cstring>
+
+1718415677 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\main.cpp
+	<iostream>
+	<cstring>
+	"MenuReservas.h"
+	"MenuClientes.h"
+	"MenuInformes.h"
+
+1718415332 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\menureservas.h
+	"ArchivoReservas.h"
+	"Reservas.h"
+
+1718418753 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\menuclientes.h
+	<cstdlib>
+	<cstring>
+	"ArchivoClientes.h"
+
+1718415303 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\menuinformes.h
+	<cstring>
+	<cstdlib>
+	"General.h"
+

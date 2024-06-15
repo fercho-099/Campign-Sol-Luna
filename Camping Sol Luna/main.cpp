@@ -2,20 +2,18 @@
 #include <cstring>
 using namespace std;
 #include "MenuReservas.h"
-#include "Reservas.h"
-#include "ArchivoClientes.h"
+#include "MenuClientes.h"
+#include "MenuInformes.h"
 
 int main()
 {
     bool Ejecutar = true;
     int Opcion;
-    Fecha obj;
-
+    ///Fecha obj; Porque un objeto fecha aca?
     do{
         system("cls");
        cout<<"-----Camping SOL-LUNA-----"<<endl;
        cout<<"1 - Reservas "<<endl;
-       cout<<"2 - Pruebas Fecha "<<endl;
        cout<<"2 - Clientes "<<endl;
        cout<<"3 - Informes "<<endl;
        cout<<"0 - Cerrar Programa "<<endl;
@@ -26,15 +24,12 @@ int main()
        switch(Opcion){
 
    case 1:
-           OpcionesDeReservas();
+            OpcionesDeReservas();
 
             break;
 
    case 2:
-            obj.CargarActual();
-            obj.Mostrar();
-            system("pause");
-            ///OpcionesDeClientes();
+            OpcionesDeClientes();
             break;
 
    case 3:

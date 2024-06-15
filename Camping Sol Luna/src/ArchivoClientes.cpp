@@ -86,3 +86,7 @@ void ArchivoClientes::verificarEstadoCliente(int dni){
         cout<<"El cliente se encuentra deshabilidato"<<endl;
     }else cout<<"El cliente se encuentra habilitado"<<endl;
 }
+
+void ArchivoClientes::crearBackupClientes(){
+
+}

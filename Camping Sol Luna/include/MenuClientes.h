@@ -1,9 +1,19 @@
 #ifndef MENUCLIENTES_H_INCLUDED
 #define MENUCLIENTES_H_INCLUDED
+
 #include <cstdlib>
 #include <cstring>
 
+#include "ArchivoClientes.h"
+
 void OpcionesDeClientes();
+void cargarCliente();
+void modificarCliente();
+void bajaCliente();
+void listarClientes();
+void buscarCliente();
+void verificarEstadoCliente();
+void crearBackupClientes();
 
 void OpcionesDeClientes(){
     system("cls");
@@ -24,13 +34,25 @@ void OpcionesDeClientes(){
         cin>>opc;
         switch(opc){
         case 1:
-            ///cargarCliente();
+            cargarCliente();
             break;
         case 2:
-            ///modificarCliente();
+            modificarCliente();
             break;
         case 3:
-            ///borrarCliente();
+            bajaCliente();
+            break;
+        case 4:
+            listarClientes();
+            break;
+        case 5:
+            buscarCliente();
+            break;
+        case 6:
+            verificarEstadoCliente();
+            break;
+        case 7:
+            crearBackupClientes();
             break;
         case 0:
             loop=false;
@@ -43,5 +65,67 @@ void OpcionesDeClientes(){
 
 }
 
-#endif // MENUCLIENTES_H_INCLUDED
+void cargarCliente(){
+    Cliente obj;
+    obj.Cargar();
+    ArchivoClientes archiC;
+    archiC.grabarRegistro(obj);
+}
 
+void modificarCliente(){
+    int dni;
+    char caracter;
+    Cliente aux;
+    cout<<"Ingrese el Dni del cliente a modificar:"<<endl;
+    cin>>dni;
+    ArchivoClientes archiC;
+    int pos=archiC.buscarRegistro(dni);
+    cout<<"¿Desea modificar este cliente?"<<endl;
+    archiC.leerRegistro(pos);
+    cout<<"S(si)/N(no)"<<endl;
+    cin>>caracter;
+    if(caracter=='S'||caracter=='s'){
+        aux.Cargar();
+        archiC.modificarRegistro(aux,pos);
+        cout<<"El cliente fue modificado con exito"<<endl;
+        return;
+    }
+    else if(caracter=='N'||caracter=='n'){
+        return;
+    }
+    else cout<<"Ingrese una opcion valida"<<endl;
+}
+///Falta terminar
+void bajaCliente(){
+    int dni;
+    cout<<"Ingrese el dni del cliente a dar de baja:"<<endl;
+    cin>>dni;
+}
+
+void listarClientes(){
+    ArchivoClientes archiC;
+    archiC.listarRegistros();
+}
+
+void buscarCliente(){
+    int dni;
+    ArchivoClientes archiC;
+    cout<<"Ingrese el dni del cliente a buscar:"<<endl;
+    cin>>dni;
+    int pos=archiC.buscarRegistro(dni);
+    archiC.leerRegistro(pos);
+}
+
+void verificarEstadoCliente(){
+    ArchivoClientes archiC;
+    int dni;
+    cout<<"Ingrese el dni del cliente a verificar:"<<endl;
+    cin>>dni;
+    archiC.verificarEstadoCliente(dni);
+}
+
+void crearBackupClientes(){
+
+}
+
+#endif // MENUCLIENTES_H_INCLUDED

@@ -16,7 +16,7 @@ void Reservas::Cargar(){
 
 }
 
-void Reservas::CargarPrueba()
+/*void Reservas::CargarPrueba()
 {
     system("cls");
     Fecha aux;
@@ -30,8 +30,6 @@ void Reservas::CargarPrueba()
     Datos.CargarPrueba();
     ///Desde = aux.Cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
     Estado = 1;
-
-
 }
 
 /*Reservas::Reservas()

@@ -1,11 +1,9 @@
-
+/*
 #ifndef MENUINFORMES_H_INCLUDED
 #define MENUINFORMES_H_INCLUDED
 #include <cstring>
 #include <cstdlib>
 #include "General.h"
-void OpcionesDeInformes();
-
 
 void OpcionesDeInformes(){
     system("cls");
@@ -46,8 +44,7 @@ void OpcionesDeInformes(){
             system("pause");
         }
     }
-
 }
 
 #endif // MENUINFORMES_H_INCLUDED
-
+*/

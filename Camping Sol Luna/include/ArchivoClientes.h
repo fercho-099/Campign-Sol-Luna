@@ -16,6 +16,7 @@ public:
 	bool modificarRegistro(Cliente obj, int pos);
 	bool listarRegistros();
 	void verificarEstadoCliente(int dni);
+	void crearBackupClientes();
 };
 
 #endif

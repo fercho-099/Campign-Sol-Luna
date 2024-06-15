@@ -8,6 +8,7 @@ void ModificarReserva();
 void BorrarReserva();
 void EstadoReserva();
 void MostrarArchivoReservas();
+
 void OpcionesDeReservas(){
 system("cls");
  int opc;
