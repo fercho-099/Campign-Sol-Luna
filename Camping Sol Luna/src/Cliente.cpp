@@ -7,8 +7,6 @@ using namespace std;
 #include "Cliente.h"
 #include "Funciones.h"
 
-///LEO
-///Meti esta funcion aca por ahora para que ande nomas luego habra que cambiarla
 void cargarCadena(char *palabra, int tamano){
     int i=0;
     fflush(stdin);
@@ -30,8 +28,7 @@ Cliente::Cliente(int DNI, const char *nombre, const char *apellido, int telefono
 	setTelefono(telefono);
 	setEstado(true);
 }
-///LEO
-///Tuve que crear un constructor con parametros por omision para que el programa me deje crear un objeto sin mandarle ningun parametro
+
 Cliente::Cliente()
 {
 	_DNI=0;
@@ -40,11 +37,8 @@ Cliente::Cliente()
 	_telefono=12345;
 	_estado=false;
 }
-///LEO
-///Cree esta funcion que no estaba hecha
+
 void Cliente::Cargar(){
-
-
     cout<<"Ingrese el Dni: ";
     _DNI = IngresoNumero();
     if(_DNI < 1000000)
@@ -58,7 +52,6 @@ void Cliente::Cargar(){
     cargarCadena(_apellido,30);
     cout<<"Ingrese el telefono: ";
     _telefono = IngresoNumero();
-    //telefono =
     if(_telefono<10000000)
         {
           cout<<"Ingrese un telefono valido: ";
@@ -66,8 +59,7 @@ void Cliente::Cargar(){
         }
     setEstado(true);
 }
-///LEO
-///Esta funcion tambien faltaba
+
 void Cliente::Mostrar(){
     cout<<"Dni: "<<_DNI<<endl;
     cout<<"Nombre: "<<_nombre<<endl;

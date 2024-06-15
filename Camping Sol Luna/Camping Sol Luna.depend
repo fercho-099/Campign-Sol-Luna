@@ -519,11 +519,11 @@
 
 1718412143 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\archivocarpas.h
 
-1718419161 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
+1718468062 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
 	"ArchivoClientes.h"
 	<cstring>
 
-1718419161 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\archivoclientes.h
+1718465788 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\archivoclientes.h
 	"Cliente.h"
 	"Reservas.h"
 
@@ -551,7 +551,7 @@
 	<cstring>
 	"Reservas.h"
 
-1718412569 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\cliente.cpp
+1718464815 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\cliente.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -615,7 +615,7 @@
 	"ArchivoReservas.h"
 	"Reservas.h"
 
-1718418753 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\menuclientes.h
+1718468241 c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\include\menuclientes.h
 	<cstdlib>
 	<cstring>
 	"ArchivoClientes.h"
