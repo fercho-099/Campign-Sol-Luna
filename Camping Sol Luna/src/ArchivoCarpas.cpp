@@ -1,17 +1,21 @@
 #include<iostream>
 #include<cstdlib>
+#include<cstring>
 
 using namespace std;
 
 #include "ArchivoCarpas.h"
 
-/*
+ArchivoCarpas::ArchivoCarpas(){
+    const char *n="Carpas.dat";
+    strcpy(nombre,n);
+}
+
+ArchivoCarpas::ArchivoCarpas(const char *_nombre){
+    strcpy(nombre,_nombre);
+}
+
 bool ArchivoCarpas::grabarRegistro(Reservas obj){
-
-
-bool ArchivoCarpas::leerRegistro(int pos){///¿Por que devuelve Reservas? si ya es un registro de una carpa ya efectuado sea de alta-todavia sigue el tipo usando la carpa que alquilo- o de baja- el tipo ya dejo el alquiler-.
-
->>>>>>> Stashed changes
 	FILE *p;
 	p=fopen(nombre, "ab");
 	if(p==NULL) return false;
@@ -20,6 +24,16 @@ bool ArchivoCarpas::leerRegistro(int pos){///¿Por que devuelve Reservas? si ya e
 	return escribio;
 }
 
+Reservas ArchivoCarpas::leerRegistro(int pos){
+	FILE *p;
+	Reservas obj;
+	p=fopen(nombre, "rb");
+	if(p==NULL) return obj;
+	fseek(p, pos*sizeof obj,0);
+	fread(&obj, sizeof obj, 1, p);
+	fclose(p);
+	return obj;
+}
 
 bool ArchivoCarpas::listarRegistros(){
 	FILE *p;
@@ -32,19 +46,6 @@ bool ArchivoCarpas::listarRegistros(){
 	}
 	fclose(p);
 	return true;
-<<<<<<< Updated upstream
-=======
-}
-
-bool ArchivoCarpas::modificarRegistro(Reservas obj, int pos){
-	FILE *p;
-	p=fopen(AperturaArchivo, "rb+");///nombre no va, el atributo se definio como AperturaArchivo
-	if(p==NULL) return false;
-	fseek(p, pos*sizeof (Reservas),0);
-	bool escribio=fwrite(&obj, sizeof (Reservas), 1, p);///hay que ver si es sizeof reservas o obj
-	fclose(p);
-	return escribio;
->>>>>>> Stashed changes
 }
 
 int ArchivoCarpas::buscarRegistro(int dni){
@@ -54,7 +55,7 @@ int ArchivoCarpas::buscarRegistro(int dni){
 	int pos=0;
 	if(p==NULL) return -1;
 	while(fread(&obj, sizeof obj, 1, p)==1){
-		if(obj.getDni()==num){
+		if(obj.getTipoDePago().getCliente().getDNI()==dni){
 			fclose(p);
 			return pos;
 		}
@@ -63,20 +64,6 @@ int ArchivoCarpas::buscarRegistro(int dni){
 	fclose(p);
 	return -2;
 }
-<<<<<<< Updated upstream
-
-Reservas ArchivoCarpas::leerRegistro(int pos){
-	FILE *p;
-	Reservas obj;
-	p=fopen(nombre, "rb");
-	obj.setDni(-5);
-	if(p==NULL) return obj;
-	fseek(p, pos*sizeof obj,0);
-	fread(&obj, sizeof obj, 1, p);
-	fclose(p);
-	return obj;
-}
-=======
 
 bool ArchivoCarpas::modificarRegistro(Reservas obj, int pos){
 	FILE *p;
@@ -98,7 +85,7 @@ int ArchivoCarpas::contarRegistros(){
 	return tam/sizeof(Reservas);
 }
 
-void verificarEstadoReserva(int dni){
+void ArchivoCarpas::verificarEstadoReserva(int dni){
     ArchivoCarpas reg;
     Reservas aux;
     int pos=reg.buscarRegistro(dni);
@@ -107,4 +94,18 @@ void verificarEstadoReserva(int dni){
         cout<<"La reserva se encuentra deshabilitada"<<endl;
     }else cout<<"La reserva se encuentra habilitada"<<endl;
 }
-*/
+
+bool ArchivoCarpas::crearBackupCarpas(){
+    ArchivoCarpas archiB("BackupCarpas.dat");
+    FILE *p;
+	Reservas obj;
+	Reservas aux;
+	p=fopen("Carpas.dat", "rb");
+	if(p==NULL) return false;
+	while(fread(&obj, sizeof obj, 1, p)==1){
+		aux=obj;
+		archiB.grabarRegistro(aux);
+        }
+	fclose(p);
+	return true;
+}
