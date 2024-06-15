@@ -10,6 +10,10 @@ int main()
     bool Ejecutar = true;
     int Opcion;
     Fecha obj;
+    Reservas aux;
+    Fecha Fdesde;
+    Fecha Fhasta;
+    int valor;
 
     do{
         system("cls");
@@ -31,8 +35,14 @@ int main()
             break;
 
    case 2:
-            obj.CargarActual();
-            obj.Mostrar();
+
+            Fdesde.Cargar();
+            Fhasta.Cargar();
+            aux.setFechaDesde(Fdesde);
+            aux.setFechaHasta(Fhasta);
+            valor = aux.RestanteFecha();
+            cout<<"valor: "<<valor;
+
             system("pause");
             ///OpcionesDeClientes();
             break;
