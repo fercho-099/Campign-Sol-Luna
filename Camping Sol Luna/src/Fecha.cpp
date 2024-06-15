@@ -2,6 +2,7 @@
 #include <chrono>
 #include "Fecha.h"
 #include "Funciones.h"
+#include "Reservas.h"
 
 Fecha::Fecha(){
     dia=0;
@@ -43,8 +44,6 @@ void Fecha::CargarActual()
     mes = localTime->tm_mon + 1; // Sumamos 1 porque los meses están indexados desde 0
     anio = localTime->tm_year + 1900; // Sumamos 1900 para obtener el año actual
 }
-
-
 
 //Alan
 bool Fecha::ValidarFecha(int dia, int mes, int anio )

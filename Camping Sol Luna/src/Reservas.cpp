@@ -3,6 +3,7 @@
 using namespace std;
 #include "Reservas.h"
 #include <cstring>
+#include <chrono>
 
 void Reservas::Cargar(){
     system("cls");
@@ -19,7 +20,7 @@ void Reservas::Cargar(){
 
 }
 
-void Reservas::CargarPrueba()
+/*void Reservas::CargarPrueba()
 {
     system("cls");
     Fecha aux;
@@ -30,20 +31,36 @@ void Reservas::CargarPrueba()
     Hasta.Cargar();
     system("cls");
 
-    Datos.CargarPrueba();
+    //Datos.CargarPrueba();
     ///Desde = aux.Cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
     Estado = 1;
 
 
-}
-
-/*Reservas::Reservas()
-{
-    Datos;
-    Desde;
-    Hasta;
-    Estado = 0;
 }*/
+
+long long Reservas::RestanteFecha()
+{
+        int diaDesde, mesDesde, anioDesde, diaHasta,mesHasta,anioHasta;
+        diaDesde = Desde.getDia();
+        mesDesde = Desde.getMes();
+        anioDesde = Desde.getAnio();
+        diaHasta = Hasta.getDia();
+        mesHasta = Hasta.getMes();
+        anioHasta = Hasta.getAnio();
+
+        std::tm tmDesde = {0, 0, 0, diaDesde, mesDesde - 1, anioDesde - 1900};
+        std::tm tmHasta = {0, 0, 0, diaHasta, mesHasta - 1, anioHasta - 1900};
+
+        std::time_t tiempoDesde = std::mktime(&tmDesde);
+        std::time_t tiempoHasta = std::mktime(&tmHasta);
+
+        std::chrono::system_clock::time_point desde = std::chrono::system_clock::from_time_t(tiempoDesde);
+        std::chrono::system_clock::time_point hasta = std::chrono::system_clock::from_time_t(tiempoHasta);
+
+        auto diferencia = std::chrono::duration_cast<std::chrono::seconds>(hasta - desde);
+
+        return diferencia.count() / 86400; // Convertir segundos a días
+}
 
 void Reservas::Mostrar()
 {

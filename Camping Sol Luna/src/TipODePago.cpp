@@ -65,6 +65,11 @@ void TipoDePago::Cargar()
 
     cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
     cin>>IDServicio;
+
+    int restante = obj.RestanteFechas();
+
+
+
     ///Alan
     ///Aca tendria que contar los registros de los dos archivos, cabaña y carpa, y en caso
     ///de que se ingrese 1 o 2 hacer un switch asi lee el idservicio correspondiente
