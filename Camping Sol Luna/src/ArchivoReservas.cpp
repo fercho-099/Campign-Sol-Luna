@@ -240,6 +240,7 @@ bool ArchivoReservas::CrearBackUpManual(){
 }
 
 void ArchivoReservas::ListarRegistros(){
+    system("cls");
 	FILE *p;
 	Reservas obj;
 	p=fopen(AperturaArchivo, "rb");
@@ -251,7 +252,7 @@ void ArchivoReservas::ListarRegistros(){
 	}
 	while(fread(&obj, sizeof obj, 1, p)==1){
 		obj.Mostrar();
-		cout<<endl;
+		cout<<"-----------"<<endl;
 	}
 	fclose(p);
 	system("pause");

@@ -16,7 +16,7 @@ long long int IngresoNumero()
     while (!(cin >> numeros)) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Ingrese un caracter valido: ";
+        cout <<"Ingrese un caracter valido: ";
 
     }
 

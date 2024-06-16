@@ -16,7 +16,7 @@ void TipoDePago::Cargar()
     InfoCliente.Cargar();
     cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
     cin>>IDServicio;
-    cout<<endl;
+
     do
     {
         cout<<"Ingrese el Sector correspondiente (A-C): ";
@@ -37,18 +37,17 @@ void TipoDePago::Cargar()
 
             cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
             cin>>modoDePago;
-            cout<<endl;
+
             std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
             FechaPago.CargarActual();/// poner fecha modo automatico preguntando si paga en el momento o no.
-            system("pause");
-            system("cls");
+
             cout<<"Ingrese el Monto: ";
             cin>>Monto;
             if(Monto <= 0){
                 cout<<"Ingrese un Monto mayor a 0: ";
                 cin>>Monto;
             }
-            cout<<endl;
+
             estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
 }
 
@@ -89,7 +88,7 @@ void TipoDePago::Cargar()
 
 void TipoDePago::Mostrar(){
 
-        system("cls");
+
         InfoCliente.Mostrar();
         cout<<"Servicio: "<<IDServicio<<endl;
         cout<<"Sector asignado: "<<IDSector<<endl;

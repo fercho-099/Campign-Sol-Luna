@@ -9,7 +9,7 @@ using namespace std;
 #include "ArchivoClientes.h"
 #include "Reservas.h"
 #include "Cliente.h"
-
+/*
 General::General()
 {
 
@@ -26,7 +26,7 @@ General::General()
        Archivo Reservas  ("Reservas.dat");
 
 
-}*/
+}
 
 void General::InformeUltimo30Dias()
 {
@@ -48,3 +48,4 @@ void General::mostrarCarpasEnUso()
 {
 
 }
+*/

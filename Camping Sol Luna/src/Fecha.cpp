@@ -79,7 +79,7 @@ void Fecha::Cargar()
         dia = IngresoNumero();
         cout<<"Ingrese mes: ";
         mes = IngresoNumero();
-        cout<<"Ingrese año: ";
+        cout<<"Ingrese anio: ";
         anio = IngresoNumero();
 
         FechaValida = ValidarFecha(dia,mes,anio);

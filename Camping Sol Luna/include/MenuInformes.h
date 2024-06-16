@@ -4,13 +4,12 @@
 #include <cstring>
 #include <cstdlib>
 #include "General.h"
-void OpcionesDeInformes();
-
 
 void OpcionesDeInformes(){
-        system("cls");
-int opc;
-    while(true){
+    system("cls");
+    bool loop=true;
+    int opc;
+    while(loop){
         cout<<"-----Camping SOL-LUNA-----"<<endl;
         cout<<"1 - Informe mensual "<<endl;
         cout<<"2 - Informe ultimos 30 dias "<<endl;
@@ -23,25 +22,28 @@ int opc;
         cin>>opc;
         switch(opc){
         case 1:
-            informeMensual();
+            ///informeMensual();
             break;
         case 2:
-            informeUltimo30Dias();
+            ///informeUltimo30Dias();
             break;
         case 3:
-            facturacionTotal();
+            ///facturacionTotal();
             break;
         case 4:
-            mostrarCabaniasEnUso();
+            ///mostrarCabaniasEnUso();
             break;
         case 5:
-            mostrarCarpasEnUso();
+            ///mostrarCarpasEnUso();
             break;
         case 0:
-            false;
+            loop=false;
+            break;
+        default:
+            cout<<"Ingrese una opcion correcta"<<endl;
+            system("pause");
         }
     }
-
 }
 
 #endif // MENUINFORMES_H_INCLUDED
