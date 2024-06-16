@@ -38,28 +38,22 @@ void Reservas::Cargar(){
 
 }*/
 
+///Alan
+///Devuelve la cantidad de dia entre fecha de entrada y salida
 long long Reservas::RestanteFecha()
 {
-        int diaDesde, mesDesde, anioDesde, diaHasta,mesHasta,anioHasta;
-        diaDesde = Desde.getDia();
-        mesDesde = Desde.getMes();
-        anioDesde = Desde.getAnio();
-        diaHasta = Hasta.getDia();
-        mesHasta = Hasta.getMes();
-        anioHasta = Hasta.getAnio();
+        tm tmDesde = {0, 0, 0, Desde.getDia(), Desde.getMes() - 1, Desde.getAnio() - 1900};
+        tm tmHasta = {0, 0, 0, Hasta.getDia(), Hasta.getMes() - 1, Hasta.getAnio() - 1900};
 
-        std::tm tmDesde = {0, 0, 0, diaDesde, mesDesde - 1, anioDesde - 1900};
-        std::tm tmHasta = {0, 0, 0, diaHasta, mesHasta - 1, anioHasta - 1900};
+        time_t tiempoDesde = mktime(&tmDesde);///Las funciones mktime convierten las estructuras tm a time_t, que es el número de segundos transcurridos
+        time_t tiempoHasta = mktime(&tmHasta);
 
-        std::time_t tiempoDesde = std::mktime(&tmDesde);
-        std::time_t tiempoHasta = std::mktime(&tmHasta);
+        chrono::system_clock::time_point desde = chrono::system_clock::from_time_t(tiempoDesde); ///las variables time_t se convierten en time_point de chrono::system_clock, que se utilizan para operaciones de duración en la librería <chrono>
+        chrono::system_clock::time_point hasta = chrono::system_clock::from_time_t(tiempoHasta);
 
-        std::chrono::system_clock::time_point desde = std::chrono::system_clock::from_time_t(tiempoDesde);
-        std::chrono::system_clock::time_point hasta = std::chrono::system_clock::from_time_t(tiempoHasta);
+        auto diferencia = chrono::duration_cast<chrono::seconds>(hasta - desde); ///Calcula la diferenia en segundos
 
-        auto diferencia = std::chrono::duration_cast<std::chrono::seconds>(hasta - desde);
-
-        return diferencia.count() / 86400; // Convertir segundos a días
+        return diferencia.count() / 86400; ///Convertir segundos a días
 }
 
 void Reservas::Mostrar()

@@ -3,5 +3,5 @@
 #include <iostream>
 #include <limits>
 using namespace std;
-int IngresoNumero();
+long long int IngresoNumero();
 #endif // FUNCIONES_H_INCLUDED

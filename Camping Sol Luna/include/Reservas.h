@@ -25,10 +25,5 @@ public:
     Fecha getFechaDesde();
     Fecha getFechaHasta();
     long long int RestanteFecha();
-    /*int diasDeDiferencia()
-    {
-        return (Desde.getDia() - Hasta.getDia());
-
-    }*/
 };
 #endif // RESERVAS_H
