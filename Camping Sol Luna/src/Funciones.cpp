@@ -2,13 +2,15 @@
 #include <limits>
 #include <string>
 #include <sstream>
+#include <cctype>
+#include <cstring>
 using namespace std;
 
 #include "Funciones.h"
 
 ///Alan
 ///Valida que el ingreso sea un numero y que sea dntro de los rngos posibles
-int IngresoNumero()
+long long int IngresoNumero()
 {
     long long int numeros;
     while (!(cin >> numeros)) {
@@ -20,5 +22,4 @@ int IngresoNumero()
 
     return numeros;
 }
-
 

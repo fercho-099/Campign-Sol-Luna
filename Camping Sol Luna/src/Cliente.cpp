@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include<cstdlib>
+#include <cctype>
 
 using namespace std;
 
@@ -22,6 +23,38 @@ void cargarCadena(char *palabra, int tamano){
     fflush(stdin);
 }
 
+
+/*void cargarCadenaDos(char *palabra, int tamano) {
+    bool validInput;
+    do {
+        validInput = true;
+        cout << "Ingrese una cadena: ";
+        for (int i = 0; i < tamano - 1; i++) {
+            palabra[i] = cin.get();
+            if (i == 0 && palabra[i] == '\n') {
+                validInput = false;
+                cout << "Entrada inválida. Por favor, ingrese una cadena válida." << endl;
+                break;
+            }
+            if (palabra[i] == '\n') {
+                palabra[i] = '\0'; // Terminar la cadena
+                break;
+            }
+            if (!isalpha(static_cast<unsigned char>(palabra[i])) || palabra[i] == ' ') {
+                validInput = false;
+                cout << "Entrada inválida. La cadena contiene números u espacios. Por favor, ingrese nuevamente." << endl;
+                break;
+            }
+        }
+        if (!validInput) {
+            limpiarBuffer(); // Limpiar el buffer de entrada
+        }
+
+    } while (!validInput);
+}*/
+
+
+
 Cliente::Cliente(int DNI, const char *nombre, const char *apellido, int telefono)
 {
 	setDNI(DNI);
@@ -42,6 +75,8 @@ Cliente::Cliente()
 }
 ///LEO
 ///Cree esta funcion que no estaba hecha
+///Alan
+///Validaciones al ingresar datos
 void Cliente::Cargar(){
 
 
@@ -58,7 +93,6 @@ void Cliente::Cargar(){
     cargarCadena(_apellido,30);
     cout<<"Ingrese el telefono: ";
     _telefono = IngresoNumero();
-    //telefono =
     if(_telefono<10000000)
         {
           cout<<"Ingrese un telefono valido: ";
