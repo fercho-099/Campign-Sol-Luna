@@ -2,8 +2,8 @@
 #include <cstring>
 using namespace std;
 #include "MenuReservas.h"
+#include "MenuClientes.h"
 #include "Reservas.h"
-#include "ArchivoClientes.h"
 
 int main()
 {
@@ -30,7 +30,7 @@ int main()
        switch(Opcion){
 
    case 1:
-           OpcionesDeReservas();
+            OpcionesDeReservas();
 
             break;
 

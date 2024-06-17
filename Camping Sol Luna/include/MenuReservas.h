@@ -1,6 +1,8 @@
 #pragma once
 
 #include "ArchivoReservas.h"
+#include "ArchivoCarpas.h"
+#include "ArchivoCabanias.h"
 #include "Reservas.h"
 
 void CargarReserva();
@@ -61,8 +63,18 @@ void CargarReserva(){
     Reservas DatosReservas;
     ArchivoReservas InfoReservas;
     DatosReservas.Cargar();
-    if(InfoReservas.GrabarRegistro(DatosReservas)) {std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
-    system("pause");
+    if(InfoReservas.GrabarRegistro(DatosReservas)) {
+        std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
+    ///Leo: Agrego esta parte para que cuando se cargue una reserva dependiendo de que tipo de servicio tambien se guarde en el archivo correspondiente
+        if(DatosReservas.getTipoDePago().getIDServicio()==1){
+            ArchivoCarpas archiCarpas;
+            archiCarpas.grabarRegistro(DatosReservas);
+        }
+        else if(DatosReservas.getTipoDePago().getIDServicio()==2){
+            ArchivoCabanias archiCabanias;
+            archiCabanias.grabarRegistro(DatosReservas);
+        }
+        system("pause");
     }
     else{
         std::cout<<"No se Gestionar la reserva"<<std::endl;
