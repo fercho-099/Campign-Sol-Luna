@@ -6,6 +6,10 @@ ArchivoClientes::ArchivoClientes(){
     strcpy(nombre,n);
 }
 
+ArchivoClientes::ArchivoClientes(const char *_nombre){
+    strcpy(nombre,_nombre);
+}
+
 bool ArchivoClientes::grabarRegistro(Cliente obj){
 	FILE *p;
 	p=fopen(nombre, "ab");
@@ -41,6 +45,7 @@ int ArchivoClientes::buscarRegistro(int dni){
 		}
 		pos++;
 	}
+	cout<<"El cliente no se encuentra en sistema"<<endl;
 	fclose(p);
 	return -2;
 }
@@ -77,12 +82,34 @@ int ArchivoClientes::contarRegistros(){
 	return tam/sizeof(Cliente);
 }
 
-void ArchivoClientes::verificarEstadoCliente(int dni){
+bool ArchivoClientes::verificarEstadoCliente(int dni){
     ArchivoClientes reg;
     Cliente aux;
     int pos=reg.buscarRegistro(dni);
-    aux=reg.leerRegistro(pos);
-    if(aux.getEstado()==false){
-        cout<<"El cliente se encuentra deshabilidato"<<endl;
-    }else cout<<"El cliente se encuentra habilitado"<<endl;
+    if(pos>=0){
+        aux=reg.leerRegistro(pos);
+        if(aux.getEstado()==false){
+            cout<<"El cliente se encuentra deshabilitado"<<endl;
+            return false;
+        }
+        else{
+            cout<<"El cliente se encuentra habilitado"<<endl;
+            return true;
+        }
+    }
+}
+
+bool ArchivoClientes::crearBackupClientes(){
+    ArchivoClientes archiB("BackupClientes.dat");
+    FILE *p;
+	Cliente obj;
+	Cliente aux;
+	p=fopen("Clientes.dat", "rb");
+	if(p==NULL) return false;
+	while(fread(&obj, sizeof obj, 1, p)==1){
+		aux=obj;
+		archiB.grabarRegistro(aux);
+        }
+	fclose(p);
+	return true;
 }

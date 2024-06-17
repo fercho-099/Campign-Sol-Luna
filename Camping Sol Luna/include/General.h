@@ -6,7 +6,7 @@
 #include "ArchivoClientes.h"
 #include "Reservas.h"
 #include "Cliente.h"
-
+/*
 class General
 {
 public:
@@ -16,9 +16,8 @@ public:
     void facturacionTotal();
     void mostrarCabaniasEnUso();
     void mostrarCarpasEnUso();
-
 };
-
+*/
 
 
 

@@ -6,11 +6,14 @@ using namespace std;
 #include <chrono>
 
 void Reservas::Cargar(){
-
+    system("cls");
     Fecha aux;
     Datos.Cargar();
-    std::cout<<"Fecha de entrada"<<std::endl;
+    ///Desde = aux.Cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
+    system("cls");
+    std::cout<<"Se procedera a la carga fecha de entrada"<<std::endl;
     Desde.Cargar();
+    system("cls");
     std::cout<<"Fecha de salida"<<std::endl;
     Hasta.Cargar();
     Estado = 1;
@@ -56,13 +59,10 @@ long long Reservas::RestanteFecha()
 void Reservas::Mostrar()
 {
 
-    ///system("cls");
+    system("cls");
     Fecha aux;
     Datos.Mostrar();
-    std::cout<<"Fecha de Entrada: ";
     Desde.Mostrar();
-    ///std::cout<<std::endl;
-    std::cout<<"Fecha de salida: ";
     Hasta.Mostrar();
     ///aux.to_string(Desde);
     ///aux.to_string(Hasta);

@@ -1,19 +1,20 @@
 #include<iostream>
-#include<cstdlib>
+#include<cstring>
 
 using namespace std;
 
-
 #include "ArchivoCabanias.h"
 
-/*
+ArchivoCabanias::ArchivoCabanias(){
+    const char *n="Cabanias.dat";
+    strcpy(nombre,n);
+}
+
+ArchivoCabanias::ArchivoCabanias(const char *_nombre){
+    strcpy(nombre,_nombre);
+}
+
 bool ArchivoCabanias::grabarRegistro(Reservas obj){
-
-#include<cstdlib>
-#include <cstring>
-
-Reservas ArchivoCabanias::leerRegistro(int pos){///No esta definido en el diagrama
->>>>>>> Stashed changes
 	FILE *p;
 	p=fopen(nombre, "ab");
 	if(p==NULL) return false;
@@ -22,6 +23,16 @@ Reservas ArchivoCabanias::leerRegistro(int pos){///No esta definido en el diagra
 	return escribio;
 }
 
+Reservas ArchivoCabanias::leerRegistro(int pos){
+	FILE *p;
+	Reservas obj;
+	p=fopen(nombre, "rb");
+	if(p==NULL) return obj;
+	fseek(p, pos*sizeof obj,0);
+	fread(&obj, sizeof obj, 1, p);
+	fclose(p);
+	return obj;
+}
 
 bool ArchivoCabanias::listarRegistros(){
 	FILE *p;
@@ -43,7 +54,7 @@ int ArchivoCabanias::buscarRegistro(int dni){
 	int pos=0;
 	if(p==NULL) return -1;
 	while(fread(&obj, sizeof obj, 1, p)==1){
-		if(obj.getDni()==num){
+		if(obj.getTipoDePago().getCliente().getDNI()==dni){
 			fclose(p);
 			return pos;
 		}
@@ -52,22 +63,6 @@ int ArchivoCabanias::buscarRegistro(int dni){
 	fclose(p);
 	return -2;
 }
-<<<<<<< Updated upstream
-
-Reservas ArchivoCabanias::leerRegistro(int pos){
-	FILE *p;
-	Reservas obj;
-	p=fopen(nombre, "rb");
-	obj.setDni(-5);
-	if(p==NULL) return obj;
-	fseek(p, pos*sizeof obj,0);
-	fread(&obj, sizeof obj, 1, p);
-	fclose(p);
-	return obj;
-}
-=======
-
-
 
 bool ArchivoCabanias::modificarRegistro(Reservas obj, int pos){
 	FILE *p;
@@ -98,4 +93,18 @@ void verificarEstadoReserva(int dni){
         cout<<"La reserva se encuentra deshabilitada"<<endl;
     }else cout<<"La reserva se encuentra habilitada"<<endl;
 }
-*/
+
+bool ArchivoCabanias::crearBackupCabanias(){
+    ArchivoCabanias archiB("BackupCabanias.dat");
+    FILE *p;
+	Reservas obj;
+	Reservas aux;
+	p=fopen("Cabanias.dat", "rb");
+	if(p==NULL) return false;
+	while(fread(&obj, sizeof obj, 1, p)==1){
+		aux=obj;
+		archiB.grabarRegistro(aux);
+        }
+	fclose(p);
+	return true;
+}
