@@ -364,20 +364,20 @@
 	"ArchivoReservas.h"
 	"Reservas.h"
 
-1718508630 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\archivocarpas.cpp
+1718599014 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\archivocarpas.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
 	"ArchivoCarpas.h"
 
-1718508630 c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\include\archivocarpas.h
+1718599014 c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\include\archivocarpas.h
 	"Reservas.h"
 
-1718508630 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
+1718599014 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
 	"ArchivoClientes.h"
 	<cstring>
 
-1718508630 c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\include\archivoclientes.h
+1718599014 c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\include\archivoclientes.h
 	"Cliente.h"
 	"Reservas.h"
 
@@ -396,7 +396,7 @@
 	"Fecha.h"
 	"Cliente.h"
 
-1718598657 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\cliente.cpp
+1718599014 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\cliente.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -411,12 +411,12 @@
 	"Funciones.h"
 	"Reservas.h"
 
-1718508630 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\archivocabanias.cpp
+1718599014 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\archivocabanias.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCabanias.h"
 
-1718508630 c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\include\archivocabanias.h
+1718599014 c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\include\archivocabanias.h
 	"Reservas.h"
 
 1718508786 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\tipodepago.cpp
@@ -440,7 +440,7 @@
 	<cstring>
 	"Reservas.h"
 
-1718508786 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\reservas.cpp
+1718599014 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\reservas.cpp
 	<iostream>
 	"Reservas.h"
 	<cstring>
@@ -451,7 +451,7 @@
 	<cstdlib>
 	"ArchivoReservas.h"
 
-1718508630 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\general.cpp
+1718599014 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\general.cpp
 	<iostream>
 	"General.h"
 	"ArchivoReservas.h"
@@ -461,7 +461,7 @@
 	"Reservas.h"
 	"Cliente.h"
 
-1718508630 c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\include\general.h
+1718599014 c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\include\general.h
 	"ArchivoReservas.h"
 	"ArchivoCabanias.h"
 	"ArchivoCarpas.h"
@@ -640,11 +640,11 @@
 	<iostream>
 	<cstdlib>
 
-1718597700 c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\include\funciones.h
+1718599014 c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\include\funciones.h
 	<iostream>
 	<limits>
 
-1718598919 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\funciones.cpp
+1718599014 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\funciones.cpp
 	<iostream>
 	<limits>
 	<string>
