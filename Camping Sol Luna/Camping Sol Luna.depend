@@ -396,7 +396,7 @@
 	"Fecha.h"
 	"Cliente.h"
 
-1718597541 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\cliente.cpp
+1718598657 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\cliente.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -644,7 +644,7 @@
 	<iostream>
 	<limits>
 
-1718597784 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\funciones.cpp
+1718598919 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\funciones.cpp
 	<iostream>
 	<limits>
 	<string>

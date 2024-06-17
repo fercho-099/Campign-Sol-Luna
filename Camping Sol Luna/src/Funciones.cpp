@@ -10,7 +10,7 @@ using namespace std;
 
 ///Alan
 ///Valida que el ingreso sea un numero y que sea dntro de los rngos posibles
-long long int IngresoNumero()
+/*long long int IngresoNumero()
 {
     long long int numeros;
     while (!(cin >> numeros)) {
@@ -21,6 +21,35 @@ long long int IngresoNumero()
     }
 
     return numeros;
+}*/
+
+long long int IngresoNumero()
+{
+   long long int numero;
+    while (true) {
+        cin >> numero;
+
+        // Verificar si la entrada falló
+        if (cin.fail()) {
+            cin.clear(); // Limpiar el estado de error
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar hasta el siguiente newline
+            cout << "Ingrese un caracter valido: ";
+        } else {
+            // Verificar si hay caracteres adicionales en el buffer
+            char ch;
+            if (cin.get(ch) && !isspace(ch)) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Ingrese un caracter valido: ";
+            } else {
+                cin.unget(); // Devolver el carácter válido al buffer
+                break; // Entrada válida
+            }
+        }
+    }
+
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Limpiar el buffer de entrada
+    return numero;
 }
 
 void CargarCadenas(char *vec, int tam) {
@@ -40,7 +69,7 @@ void CargarCadenas(char *vec, int tam) {
 
         // Verificar si la entrada esta vacía
         if (input.empty()) {
-            cerr <<  "linea vacia. Intentelo de nuevo." <<endl;
+            cerr <<  "linea vacia, vuelva a ingresar el dato:";
             continue;
         }
 
@@ -48,7 +77,7 @@ void CargarCadenas(char *vec, int tam) {
         bool valid = true;
         for (char c : input) {
             if (!isalpha(c)) {
-                cerr << "La cadena contiene caracteres no validos. Intentelo de nuevo." <<endl;
+                cerr << "La informacion contiene caracteres no validos, vuelva a ingresar el dato: ";
                 valid = false;
                 break;
             }
