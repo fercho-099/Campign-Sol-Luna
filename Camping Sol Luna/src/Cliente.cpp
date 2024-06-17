@@ -10,7 +10,7 @@ using namespace std;
 
 ///LEO
 ///Meti esta funcion aca por ahora para que ande nomas luego habra que cambiarla
-void cargarCadena(char *palabra, int tamano){
+/*void cargarCadena(char *palabra, int tamano){
     int i=0;
     fflush(stdin);
     for (i=0; i<tamano; i++){
@@ -21,7 +21,7 @@ void cargarCadena(char *palabra, int tamano){
     }
     palabra[i]='\0';
     fflush(stdin);
-}
+}*/
 
 Cliente::Cliente(int DNI, const char *nombre, const char *apellido, int telefono)
 {
