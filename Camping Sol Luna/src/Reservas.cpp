@@ -20,7 +20,7 @@ void Reservas::Cargar(){
 
 }
 
-/*void Reservas::CargarPrueba()
+void Reservas::CargarPrueba()
 {
     system("cls");
     Fecha aux;
@@ -31,12 +31,12 @@ void Reservas::Cargar(){
     Hasta.Cargar();
     system("cls");
 
-    //Datos.CargarPrueba();
+    Datos.CargarPrueba();
     ///Desde = aux.Cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
     Estado = 1;
 
 
-}*/
+}
 
 ///Alan
 ///Devuelve la cantidad de dia entre fecha de entrada y salida
