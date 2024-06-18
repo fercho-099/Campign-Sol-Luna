@@ -10,7 +10,7 @@ using namespace std;
 
 ///LEO
 ///Meti esta funcion aca por ahora para que ande nomas luego habra que cambiarla
-void cargarCadena(char *palabra, int tamano){
+/*void cargarCadena(char *palabra, int tamano){
     int i=0;
     fflush(stdin);
     for (i=0; i<tamano; i++){
@@ -21,39 +21,7 @@ void cargarCadena(char *palabra, int tamano){
     }
     palabra[i]='\0';
     fflush(stdin);
-}
-
-
-/*void cargarCadenaDos(char *palabra, int tamano) {
-    bool validInput;
-    do {
-        validInput = true;
-        cout << "Ingrese una cadena: ";
-        for (int i = 0; i < tamano - 1; i++) {
-            palabra[i] = cin.get();
-            if (i == 0 && palabra[i] == '\n') {
-                validInput = false;
-                cout << "Entrada inválida. Por favor, ingrese una cadena válida." << endl;
-                break;
-            }
-            if (palabra[i] == '\n') {
-                palabra[i] = '\0'; // Terminar la cadena
-                break;
-            }
-            if (!isalpha(static_cast<unsigned char>(palabra[i])) || palabra[i] == ' ') {
-                validInput = false;
-                cout << "Entrada inválida. La cadena contiene números u espacios. Por favor, ingrese nuevamente." << endl;
-                break;
-            }
-        }
-        if (!validInput) {
-            limpiarBuffer(); // Limpiar el buffer de entrada
-        }
-
-    } while (!validInput);
 }*/
-
-
 
 Cliente::Cliente(int DNI, const char *nombre, const char *apellido, int telefono)
 {
@@ -88,9 +56,9 @@ void Cliente::Cargar(){
          _DNI = IngresoNumero();
         }
     cout<<"Ingrese el nombre: ";
-    cargarCadena(_nombre,30);
+    CargarCadenas(_nombre,30);
     cout<<"Ingrese el apellido: ";
-    cargarCadena(_apellido,30);
+    CargarCadenas(_apellido,30);
     cout<<"Ingrese el telefono: ";
     _telefono = IngresoNumero();
     if(_telefono<10000000)
