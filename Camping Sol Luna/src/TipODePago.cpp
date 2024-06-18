@@ -82,10 +82,10 @@ void TipoDePago::Mostrar(){
         if(modoDePago==1){
             cout<<"Efectivo "<<endl;
         }else cout<<"Tarjeta de debito/credito "<<endl;
-        cout<<" Fecha de Pago"<<endl;
+        cout<<"Fecha de Pago"<<endl;
         FechaPago.Mostrar();
         cout<<"Monto abonado: "<<Monto<<endl;
-        system("pause");
+
 }
 
 void TipoDePago::setCliente(Cliente datos){

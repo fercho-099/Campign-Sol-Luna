@@ -77,7 +77,7 @@ void CargarReserva(){
         system("pause");
     }
     else{
-        std::cout<<"No se Gestionar la reserva"<<std::endl;
+        std::cout<<"No se Gestiona la reserva"<<std::endl;
         system("pause");
     }
 
@@ -144,9 +144,9 @@ void BorrarReserva(){
         aux.setEstado(3);*/
 
         TotalCantidad = InfoReservas.contarRegistros();
-        vec = new Reservas[TotalCantidad];
+        vec = new Reservas[TotalCantidad];///fer: se le resta uno por que se borra 1 archivo especifico
 
-        InfoReservas.LeerRegistrosTotales(*vec, TotalCantidad);///hasta aca estamos bien
+        InfoReservas.LeerRegistrosTotales(*vec, TotalCantidad);
 
         for(int x=0; x<TotalCantidad; x++){
 
@@ -161,13 +161,13 @@ void BorrarReserva(){
 
                       NuevoRegistro = vec[x];
                        InfoReservas.grabarRegistroNuevo(NuevoRegistro);
-                       primeravez = false;
+                       primeravez = false;///Fer: Este if es por que se crea el nuevo archivo como "wb" asi borra el anterior, el que ya se guardo como back up, linea 170 revisar
                 }
 
                 else if( Opcion !=1){
 
                     NuevoRegistro = vec[x];
-                    if(InfoReservas.GrabarRegistro(NuevoRegistro)){}
+                    if(InfoReservas.GrabarRegistro(NuevoRegistro)){}///Este if es para guardar ya con el nuevo archivo creado, tiene apertura con "ab".
 
                 }
 
