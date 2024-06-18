@@ -4,6 +4,7 @@ using namespace std;
 
 #include "TipODePago.h"
 #include "Reservas.h"
+#include "ArchivoReservas.h"
 #include <cstring>
 
 
@@ -51,39 +52,38 @@ void TipoDePago::Cargar()
             estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
 }
 
-/*void TipoDePago::CargarPrueba()
+void TipoDePago::CargarPrueba()
 {
-    Reservas obj;
+    Reservas Reservas;
+    ArchivoReservas ArchivoReserva;
+    bool loop=true;
     bool Disponible = true;
-
-    cout<<"Por favor, cargue la fecha de entrada";
-    obj.Desde.Cargar();
-
-    cout<<"Por favor, cargue la fecha de salida";
-    obj.Hasta.Cargar();
 
     cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
     cin>>IDServicio;
 
-    int restante = obj.RestanteFechas();
+        switch(IDServicio){
+        case 1:
+            //Reservas.getFechaDesde();
+            //Reservas.getFechaHasta();
 
+            //int Contar = ArchivoReserva.contarRegistros();
 
+            break;
 
-    ///Alan
-    ///Aca tendria que contar los registros de los dos archivos, cabaña y carpa, y en caso
-    ///de que se ingrese 1 o 2 hacer un switch asi lee el idservicio correspondiente
-    ///despues de esa preguntar la disponibilidad por las fechas ingresadas
-    ///listar los id de carpa o cabaña disponible segun el idservicio correspondiente
-    ///Ingresar el id para que guarde la reserva, el monto deberia ser estatico entonces aca
-    ///lo que se hace es hacer la resta entre fecha de ingreso y salida para que
-    ///me de el total de dias que van a ocupar el servicio y multiplicarlo x el monto
-    ///asi me da el total que el cliente debe abonar, despues se pregunta si desea continuar
-    ///con la reserva S/N, si desea continuar se consulta como abona, efectivo o tarjeta
-    ///selecciona una de estas opciones y se procede a cargar la fecha de pago y se realiza
-    ///la reserva
+        case 2:
+            Reservas.getFechaDesde();
+            Reservas.getFechaHasta();
+            break;
+        case 0:
+            break;
+        default:
+            cout<<"Ingrese una opcion correcta"<<endl;
+            system("pause");
+        }
 
     estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
-}*/
+}
 
 
 void TipoDePago::Mostrar(){
@@ -142,6 +142,16 @@ void TipoDePago::setEstado(bool _estado){
 
 }
 
+void TipoDePago::setCabana(int _cabana)
+{
+    Cabana = _cabana;
+}
+
+void TipoDePago::setCarpa(int _carpa)
+{
+    Carpa = _carpa;
+}
+
 Cliente TipoDePago::getCliente(){
 
     return InfoCliente;
@@ -161,6 +171,16 @@ const char* TipoDePago::getIDSector(){
 int TipoDePago::getModoDePago(){
 
     return modoDePago;
+}
+
+int TipoDePago::getCabana()
+{
+    return Cabana;
+}
+
+int TipoDePago::getCarpa()
+{
+    return Carpa;
 }
 
 Fecha TipoDePago::getFechaDePago(){
