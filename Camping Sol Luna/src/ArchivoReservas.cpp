@@ -233,7 +233,7 @@ bool ArchivoReservas::CrearBackUpManual(){
 
     bool grabo = false;
 
-    grabo = backup.GrabarRegistro(*RegistrosReservas, TotalRegistros);
+    grabo = backup.GrabarRegistro(*RegistrosReservas, TotalRegistros);///ACA ESTA EL ERROR POR QUE VA A GRABAR LA CANTIDAD DE REGISTRO MENOS 1 POR QUE HAY UNO QUE SE BORRA
 
     return grabo;
 

@@ -221,6 +221,6 @@ delete []DatosReservas;
 void MostrarArchivoReservas(){
 
 
-ArchivoReservas InfoReservas;
+ArchivoReservas InfoReservas;//("Reservas.bak");
 InfoReservas.ListarRegistros();
 }

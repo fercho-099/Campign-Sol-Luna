@@ -264,12 +264,13 @@
 	"TipODePago.h"
 	<cstring>
 
-1718362285 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\main.cpp
+1718709993 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\main.cpp
 	<iostream>
 	<cstring>
 	"MenuReservas.h"
 	"Reservas.h"
 	"ArchivoClientes.h"
+	"MenuClientes.h"
 
 1718551038 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\reservas.h
 	"Fecha.h"
@@ -320,10 +321,11 @@
 	"ArchivoClientes.h"
 	<cstring>
 
-1718362285 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\cliente.cpp
+1718709907 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\cliente.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
+	<cctype>
 	"Cliente.h"
 	"Funciones.h"
 
@@ -364,8 +366,10 @@
 	"Reservas.h"
 	<cstring>
 
-1718362285 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menureservas.h
+1718712367 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menureservas.h
 	"ArchivoReservas.h"
+	"ArchivoCarpas.h"
+	"ArchivoCabanias.h"
 	"Reservas.h"
 
 1718599014 source:c:\users\alan\desktop\proyecto2\campign-sol-luna\camping sol luna\src\archivocarpas.cpp
@@ -506,15 +510,17 @@
 	<sstream>
 	"Funciones.h"
 
-1718709032 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\funciones.h
+1718709907 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\funciones.h
 	<iostream>
 	<limits>
 
-1718364331 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\funciones.cpp
+1718709907 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\funciones.cpp
 	<iostream>
 	<limits>
 	<string>
 	<sstream>
+	<cctype>
+	<cstring>
 	"Funciones.h"
 
 1718480378 source:c:\users\leone\onedrive\escritorio\facultad\laboratorio ii\campign-sol-luna\camping sol luna\src\archivocabanias.cpp
@@ -664,4 +670,9 @@
 	<cctype>
 	<cstring>
 	"Funciones.h"
+
+1718486909 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menuclientes.h
+	<cstdlib>
+	<cstring>
+	"ArchivoClientes.h"
 
