@@ -56,31 +56,16 @@ void TipoDePago::CargarPrueba()
 {
     Reservas Reservas;
     ArchivoReservas ArchivoReserva;
-    bool loop=true;
     bool Disponible = true;
 
     cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
     cin>>IDServicio;
 
-        switch(IDServicio){
-        case 1:
-            //Reservas.getFechaDesde();
-            //Reservas.getFechaHasta();
+    Reservas.getFechaDesde();
+    Reservas.getFechaHasta();
+    int Contar = ArchivoReserva.contarRegistros();
 
-            //int Contar = ArchivoReserva.contarRegistros();
 
-            break;
-
-        case 2:
-            Reservas.getFechaDesde();
-            Reservas.getFechaHasta();
-            break;
-        case 0:
-            break;
-        default:
-            cout<<"Ingrese una opcion correcta"<<endl;
-            system("pause");
-        }
 
     estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
 }
