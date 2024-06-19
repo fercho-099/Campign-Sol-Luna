@@ -88,7 +88,6 @@ void TipoDePago::CargarPrueba()
 
 void TipoDePago::Mostrar(){
 
-
         InfoCliente.Mostrar();
         cout<<"Servicio: "<<IDServicio<<endl;
         cout<<"Sector asignado: "<<IDSector<<endl;
@@ -100,7 +99,7 @@ void TipoDePago::Mostrar(){
         cout<<" Fecha de Pago"<<endl;
         FechaPago.Mostrar();
         cout<<"Monto abonado: "<<Monto<<endl;
-        system("pause");
+
 }
 
 void TipoDePago::setCliente(Cliente datos){
