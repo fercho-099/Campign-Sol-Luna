@@ -182,7 +182,7 @@
 	"TipODePago.h"
 	<cstdlib>
 
-1718377217 c:\users\aibanez\onedrive - frgp.utn.edu.ar\escritorio\campign-sol-luna\camping sol luna\include\fecha.h
+1718813465 c:\users\aibanez\onedrive - frgp.utn.edu.ar\escritorio\campign-sol-luna\camping sol luna\include\fecha.h
 	<iostream>
 
 1718712445 c:\users\aibanez\onedrive - frgp.utn.edu.ar\escritorio\campign-sol-luna\camping sol luna\include\tipodepago.h
@@ -264,7 +264,7 @@
 	<cstring>
 	<chrono>
 
-1718719195 source:c:\users\aibanez\onedrive - frgp.utn.edu.ar\escritorio\campign-sol-luna\camping sol luna\src\tipodepago.cpp
+1718813111 source:c:\users\aibanez\onedrive - frgp.utn.edu.ar\escritorio\campign-sol-luna\camping sol luna\src\tipodepago.cpp
 	<iostream>
 	"TipODePago.h"
 	"Reservas.h"
