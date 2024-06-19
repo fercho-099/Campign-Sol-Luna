@@ -79,9 +79,9 @@ void TipoDePago::CargarPrueba()
 
                         }
                 }
+            else cout<<"Todas estan disponibles"<<endl;
         }
-
-
+    cout<<"Ingrese cual desea: ";
     estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
 }
 
