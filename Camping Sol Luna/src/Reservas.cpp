@@ -59,13 +59,10 @@ long long Reservas::RestanteFecha()
 void Reservas::Mostrar()
 {
 
-    system("cls");
     Fecha aux;
     Datos.Mostrar();
     Desde.Mostrar();
     Hasta.Mostrar();
-    ///aux.to_string(Desde);
-    ///aux.to_string(Hasta);
 }
 
 void Reservas::setTipoDePago(TipoDePago info) ///verificar que se copie el objeto correctamente

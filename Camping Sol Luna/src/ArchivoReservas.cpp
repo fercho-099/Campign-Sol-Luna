@@ -16,6 +16,12 @@ ArchivoReservas::ArchivoReservas(const char *n){
     strcpy(AperturaArchivo,n);
 }
 
+void ArchivoReservas::setAperturaArchivo(const char *n){
+
+    strcpy(AperturaArchivo, n);
+
+}
+
 bool ArchivoReservas::GrabarRegistro(Reservas obj){
 	FILE *p;
 	p=fopen(AperturaArchivo, "ab");
@@ -29,6 +35,7 @@ bool ArchivoReservas::GrabarRegistro(Reservas obj, int TotalRegistros){
 	FILE *p;
 	p=fopen(AperturaArchivo, "ab");
 	if(p==NULL) return false;
+
 	bool escribio=fwrite(&obj, sizeof obj, TotalRegistros, p);
 	fclose(p);
 	return escribio;
@@ -220,7 +227,8 @@ void ArchivoReservas::ModificarRegistros(Reservas &aux){
     }while(ciclo);
 }
 
-bool ArchivoReservas::CrearBackUpManual(){
+/*bool ArchivoReservas::CrearBackUpManual(){
+
 
     int TotalRegistros = this->contarRegistros();
     if(TotalRegistros<=0)return false;
@@ -228,16 +236,43 @@ bool ArchivoReservas::CrearBackUpManual(){
     Reservas *RegistrosReservas;
     RegistrosReservas = new Reservas[TotalRegistros];
     this->LeerRegistrosTotales(*RegistrosReservas, TotalRegistros);
-    ///this("Reservas.bak");
+
+
     ArchivoReservas backup("Reservas.bak");
 
     bool grabo = false;
 
     grabo = backup.GrabarRegistro(*RegistrosReservas, TotalRegistros);///ACA ESTA EL ERROR POR QUE VA A GRABAR LA CANTIDAD DE REGISTRO MENOS 1 POR QUE HAY UNO QUE SE BORRA
 
+
     return grabo;
 
+*/
+
+bool ArchivoReservas::CrearBackUpManual(){
+
+
+    int TotalRegistros = this->contarRegistros();
+    if(TotalRegistros<=0)return false;
+
+    Reservas *RegistrosReservas, obj;
+    RegistrosReservas = new Reservas[TotalRegistros];
+    this->LeerRegistrosTotales(*RegistrosReservas, TotalRegistros);
+
+
+    ArchivoReservas backup("Reservas.bak");
+
+    for(int x=0; x<TotalRegistros; x++){
+
+    obj = RegistrosReservas[x];
+    backup.GrabarRegistro(obj);///ACA ESTA EL ERROR POR QUE VA A GRABAR LA CANTIDAD DE REGISTRO MENOS 1 POR QUE HAY UNO QUE SE BORRA
+
+    }
+    return true;
+
 }
+
+
 
 void ArchivoReservas::ListarRegistros(){
     system("cls");

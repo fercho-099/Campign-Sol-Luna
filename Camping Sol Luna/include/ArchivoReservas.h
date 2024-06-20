@@ -10,6 +10,7 @@ private:
 public:
     ArchivoReservas();///se usa
 	ArchivoReservas(const char *n);///se usa
+    void setAperturaArchivo(const char *n);
 
 	bool GrabarRegistro(Reservas obj);
 	bool GrabarRegistro(Reservas obj, int TotalRegistros);
