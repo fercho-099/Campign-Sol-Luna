@@ -19,6 +19,41 @@ class Fecha
     void Mostrar();
     void CargarActual();
     bool ValidarFecha(int,int,int);
+
+     bool operator>=(Fecha& otra)
+     {
+        if(anio > otra.anio)
+            {
+                return true;
+            }
+        else if(anio == otra.anio && mes > otra.mes)
+            {
+                return true;
+            }
+        else if(anio == otra.anio && mes == otra.mes && dia>= otra.dia)
+        {
+            return true;
+        }
+        else return false;
+     }
+
+     bool operator<=(Fecha& otra)
+     {
+        if(anio < otra.anio)
+            {
+                return true;
+            }
+        else if(anio == otra.anio && mes < otra.mes)
+            {
+                return true;
+            }
+        else if(anio == otra.anio && mes == otra.mes && dia <= otra.dia)
+        {
+            return true;
+        }
+        else return false;
+     }
+
 };
 
 #endif // FECHA_H
