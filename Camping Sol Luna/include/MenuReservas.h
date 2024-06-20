@@ -258,7 +258,7 @@ void MostrarArchivoReservas()
 
         case 1:
 
-            ///ArchivoReservas InfoReservas;
+
             InfoReservas.ListarRegistros();
             loop=false;
 
