@@ -21,14 +21,14 @@ public:
 	void LeerRegistrosTotales(Reservas &, int );///se usa
     Reservas LeerRegistrosDinamicos(Reservas *DatoReserva, int pos);///agregue esto
 
-	int BuscarRegistro(int dni);///ver si no es pretendida por ningun otro metodo donde necesita el retorno
+	int BuscarRegistro(int dni);/// Se Usa
     int BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, int dni);///Agregue esto
 
 	int contarRegistros();///se usa
 
 
 	bool ModificarRegistros(Reservas &obj, int pos);
-	void ModificarRegistros(Reservas &obj);///se usa
+	void ModificarRegistros(Reservas *obj);///se usa
 
 
 

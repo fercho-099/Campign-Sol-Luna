@@ -107,9 +107,15 @@ void ModificarReserva(){/// se necesita verificar QUE RESERVA se debe modificar 
     /*pos = InfoReservas.BuscarRegistro(dni);///usar memoria dinamica, aca se usa memoria comun
     aux = InfoReservas.LeerRegistro(pos);///usar memotia dinamica*/
     pos = InfoReservas.BuscarRegistro(DatoReserva, TotalRegistros, dni);
+
+    if(pos == -1){
+
+        delete []DatoReserva;
+        return;
+    }
     aux = InfoReservas.LeerRegistrosDinamicos(DatoReserva, pos);
 
-    InfoReservas.ModificarRegistros(aux);///ver si se modifica correctamente
+    InfoReservas.ModificarRegistros(&aux);///ver si se modifica correctamente
     if(InfoReservas.grabarRegistros(aux, pos)){
 
         std::cout<<"Se Realizaron los cambios con satisfaccion"<<std::endl;
@@ -214,27 +220,30 @@ void BorrarReserva()
 
 }
 
-void EstadoReserva(){
+void EstadoReserva()
+{
 
-system("cls");
-ArchivoReservas InfoReservas;
-Reservas *DatosReservas;
-int dni;
-int TotalRegistros = InfoReservas.contarRegistros();
-if(TotalRegistros<=0){
+    system("cls");
+    ArchivoReservas InfoReservas;
+    Reservas *DatosReservas;
+    int dni;
+    int TotalRegistros = InfoReservas.contarRegistros();
+    if(TotalRegistros<=0)
+    {
 
-    std::cout<<"No hay reservas gestionadas"<<std::endl;
-    system("pause");
-    return;
+        std::cout<<"No hay reservas gestionadas"<<std::endl;
+        system("pause");
+        return;
 
-}
-DatosReservas = new Reservas[TotalRegistros];
-std::cout<<"Ingrese el Dni de la persona que realizo la reserva: ";
-std::cin>>dni;
+    }
+    DatosReservas = new Reservas[TotalRegistros];
+    InfoReservas.LeerRegistrosTotales(*DatosReservas,TotalRegistros);
+    std::cout<<"Ingrese el Dni de la persona que realizo la reserva: ";
+    std::cin>>dni;
 
-InfoReservas.verificarEstadoReserva(DatosReservas, TotalRegistros, dni);
+    InfoReservas.verificarEstadoReserva(DatosReservas, TotalRegistros, dni);
 
-delete []DatosReservas;
+    delete []DatosReservas;
 
 }
 
