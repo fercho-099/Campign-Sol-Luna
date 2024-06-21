@@ -4,6 +4,7 @@ using namespace std;
 #include "MenuReservas.h"
 #include "Reservas.h"
 #include "ArchivoClientes.h"
+#include "MenuClientes.h"
 
 int main()
 {
@@ -13,6 +14,7 @@ int main()
     Reservas aux;
     Fecha Fdesde;
     Fecha Fhasta;
+    Fecha Salida;
     int valor, diasrest,total;
 
     do{
@@ -36,7 +38,7 @@ int main()
 
    case 2:
 
-            //OpcionesDeClientes();
+            OpcionesDeClientes();
             break;
 
    case 3:
@@ -52,14 +54,19 @@ int main()
             Fhasta.Cargar();
             aux.setFechaDesde(Fdesde);
             aux.setFechaHasta(Fhasta);
+            Salida = aux.getFechaHasta();
+            if( aux.getFechaDesde() >= Salida )
+                {
+                    cout<<"La fecha de salida no puede ser menor a la de entrada"<<endl;
+                    Fhasta.Cargar();
+                    aux.setFechaHasta(Fhasta);
+                }
             cout<<"pago por noche: "<<endl;
             cin>>valor;
             diasrest = aux.RestanteFecha();
             total = diasrest * valor;
             cout<<"Total de noches: "<<diasrest<<endl;
             cout<<"Total a pagar: "<<total<<endl;
-
-
             system("pause");
             break;
 

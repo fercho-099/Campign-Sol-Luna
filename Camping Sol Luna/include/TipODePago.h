@@ -9,6 +9,7 @@ class TipoDePago
 
        Cliente InfoCliente;
        int IDServicio, modoDePago;
+       int Cabana, Carpa;
        char IDSector[30];
        Fecha FechaPago;
        float Monto;
@@ -22,6 +23,8 @@ class TipoDePago
     void setCliente(Cliente );
     void setIDServicio(int );
     void setModoDePago(int);
+    void setCabana(int);
+    void setCarpa(int);
     void setIDSector(const char *);
     void setFechaPago(Fecha);
     void setMonto(float monto);
@@ -29,6 +32,8 @@ class TipoDePago
     Cliente getCliente();
     int getIDServicio();
     int getModoDePago();
+    int getCabana();
+    int getCarpa();
     const char* getIDSector();
     Fecha getFechaDePago();
     float getMonto();
