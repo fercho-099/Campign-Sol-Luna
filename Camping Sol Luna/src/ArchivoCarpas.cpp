@@ -103,9 +103,11 @@ bool ArchivoCarpas::crearBackupCarpas(){
 	p=fopen("Carpas.dat", "rb");
 	if(p==NULL) return false;
 	while(fread(&obj, sizeof obj, 1, p)==1){
-		aux=obj;
-		archiB.grabarRegistro(aux);
+        if(obj.getEstado()==true){
+            aux=obj;
+            archiB.grabarRegistro(aux);
         }
+    }
 	fclose(p);
 	return true;
 }

@@ -336,5 +336,47 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
             }
         }
     }
+}
 
+///Leo
+void ArchivoReservas::mostrarCabaniasDisponibles(){
+    FILE *p;
+	Reservas obj;
+	p=fopen(AperturaArchivo, "rb");
+	if(p==NULL) return;
+	int cant=10;
+	cout<<"Cabanias disponibles:"<<endl;
+	for(int i=0;i<cant;i++){
+        int contador=0;
+        while(fread(&obj, sizeof obj, 1, p)==1){
+            if(obj.getTipoDePago().getVecCabania()[i]==false){
+                contador++;
+            }
+        }
+        if(contador==0){
+            cout<<i+1<<endl;
+        }
+    }
+	fclose(p);
+}
+
+void ArchivoReservas::mostrarCarpasDisponibles(){
+    FILE *p;
+	Reservas obj;
+	p=fopen(AperturaArchivo, "rb");
+	if(p==NULL) return;
+	int cant=20;
+	cout<<"Carpas disponibles:"<<endl;
+	for(int i=0;i<cant;i++){
+        int contador=0;
+        while(fread(&obj, sizeof obj, 1, p)==1){
+            if(obj.getTipoDePago().getVecCarpa()[i]==false){
+                contador++;
+            }
+        }
+        if(contador==0){
+            cout<<i+1<<endl;
+        }
+    }
+	fclose(p);
 }

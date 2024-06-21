@@ -15,6 +15,9 @@ class TipoDePago
        float Monto;
        bool estado;///verifica si se realizo el pago en su totalidad o no.
 
+       bool cabania[10]={false};///Leo
+       bool carpa[20]={false};///Leo
+
    public:
     ///TipoDePago();
     void Cargar();
@@ -38,6 +41,9 @@ class TipoDePago
     Fecha getFechaDePago();
     float getMonto();
     bool getEstado();
+
+    bool *getVecCarpa(){return carpa;}///Leo
+    bool *getVecCabania(){return cabania;}///Leo
 };
 
 #endif // TIPODEPAGO_H

@@ -37,4 +37,6 @@ public:
 	///void VerificarEstadoReserva(int dni);   PREGUNTAR A LEO
 	void verificarEstadoReserva(Reservas *DatosReservas, int TotalRegistros, int dni);
 
+    void mostrarCabaniasDisponibles();///Leo
+    void mostrarCarpasDisponibles();///Leo
 };
