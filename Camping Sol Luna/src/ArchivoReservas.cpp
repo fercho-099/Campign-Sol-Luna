@@ -303,6 +303,7 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
                 DatosReservas[x].Mostrar();
                 std::cout<<std::endl;
                 std::cout<<"La reserva se encuentra activa"<<std::endl;
+                std::cout<<std::endl;
                 system("pause");
             }
 
@@ -311,6 +312,7 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
                 DatosReservas[x].Mostrar();
                 std::cout<<std::endl;
                 std::cout<<"La reserva se encuentra cancelada"<<std::endl;
+                std::cout<<std::endl;
                 system("pause");
             }
 
@@ -319,6 +321,7 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
                 DatosReservas[x].Mostrar();
                 std::cout<<std::endl;
                 std::cout<<"La reserva se encuentra Gestionada. Verificar el archivo de servicio contratado para mas informacion"<<std::endl;
+                std::cout<<std::endl;
                 system("pause");
             }
         }

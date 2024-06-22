@@ -240,7 +240,7 @@ void EstadoReserva()
     InfoReservas.LeerRegistrosTotales(*DatosReservas,TotalRegistros);
     std::cout<<"Ingrese el Dni de la persona que realizo la reserva: ";
     std::cin>>dni;
-
+    std::cout<<std::endl;
     InfoReservas.verificarEstadoReserva(DatosReservas, TotalRegistros, dni);
 
     delete []DatosReservas;
