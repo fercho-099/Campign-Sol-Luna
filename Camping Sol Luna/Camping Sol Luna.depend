@@ -490,7 +490,7 @@
 	<cstring>
 	"Reservas.h"
 
-1719022826 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoreservas.cpp
+1719029096 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoreservas.cpp
 	"../include/ArchivoReservas.h"
 	<iostream>
 	<cstdlib>

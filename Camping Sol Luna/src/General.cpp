@@ -54,6 +54,7 @@ void OpcionesDeInformes(){
         break;
 
     case 0:
+                ciclo = false;
 
         break;
 
