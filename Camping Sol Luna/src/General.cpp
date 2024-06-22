@@ -9,13 +9,13 @@ using namespace std;
 #include "ArchivoClientes.h"
 #include "Reservas.h"
 #include "Cliente.h"
-/*
+
 General::General()
 {
 
 }
 
-/*void General::InformeMensual()
+void General::InformeMensual()
 {
        ArchivoClientes InfoCliente("Clientes.dat");
        Cliente cliente;
@@ -23,7 +23,9 @@ General::General()
        ArchivoCabanias InfoCabanias("Cabanias.dat");
 
        ArchivoCarpas InfoCarpas("Carpas.dat");
-       Archivo Reservas  ("Reservas.dat");
+       ArchivoReservas  InfoReservas("Reservas.dat");
+
+
 
 
 }
@@ -48,4 +50,4 @@ void General::mostrarCarpasEnUso()
 {
 
 }
-*/
+
