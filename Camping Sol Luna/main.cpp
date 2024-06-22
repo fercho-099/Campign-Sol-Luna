@@ -5,6 +5,7 @@ using namespace std;
 #include "Reservas.h"
 #include "ArchivoClientes.h"
 #include "MenuClientes.h"
+#include "General.h"
 
 int main()
 {
@@ -42,7 +43,7 @@ int main()
             break;
 
    case 3:
-            ///OpcionesDeInformes();
+            OpcionesDeInformes();
 
             break;
 

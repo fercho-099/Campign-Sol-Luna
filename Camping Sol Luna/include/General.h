@@ -7,6 +7,8 @@
 #include "Reservas.h"
 #include "Cliente.h"
 
+void OpcionesDeInformes();
+
 class General
 {
 public:

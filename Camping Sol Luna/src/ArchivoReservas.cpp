@@ -31,7 +31,7 @@ bool ArchivoReservas::GrabarRegistro(Reservas obj){
 	return escribio;
 }
 
-bool ArchivoReservas::GrabarRegistro(Reservas obj, int TotalRegistros){
+/*bool ArchivoReservas::GrabarRegistro(Reservas obj, int TotalRegistros){
 	FILE *p;
 	p=fopen(AperturaArchivo, "ab");
 	if(p==NULL) return false;
@@ -39,7 +39,7 @@ bool ArchivoReservas::GrabarRegistro(Reservas obj, int TotalRegistros){
 	bool escribio=fwrite(&obj, sizeof obj, TotalRegistros, p);
 	fclose(p);
 	return escribio;
-}
+}*/
 
 bool ArchivoReservas::grabarRegistros(Reservas obj, int pos){
 
@@ -67,7 +67,7 @@ void ArchivoReservas :: grabarRegistroNuevo(Reservas obj){
 	return;
 }
 
-Reservas ArchivoReservas::LeerRegistro(int pos){
+/*Reservas ArchivoReservas::LeerRegistro(int pos){
 	FILE *p;
 	Reservas obj;
 	obj.setEstado(-4);
@@ -78,7 +78,7 @@ Reservas ArchivoReservas::LeerRegistro(int pos){
 	fread(&obj, sizeof obj, 1, p);
 	fclose(p);
 	return obj;
-}
+}*/
 
 Reservas ArchivoReservas::LeerRegistrosDinamicos(Reservas *DatoReserva, int pos){///probando dinamico
 
