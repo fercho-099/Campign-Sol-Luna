@@ -344,7 +344,7 @@
 	"Funciones.h"
 	"Reservas.h"
 
-1719026107 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\general.cpp
+1719029187 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\general.cpp
 	<iostream>
 	"General.h"
 	"ArchivoReservas.h"
@@ -486,7 +486,7 @@
 	"Reservas.h"
 	"Cliente.h"
 
-1719029096 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivoreservas.h
+1719066309 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivoreservas.h
 	<cstring>
 	"Reservas.h"
 
