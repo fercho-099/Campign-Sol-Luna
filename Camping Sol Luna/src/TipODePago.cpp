@@ -56,13 +56,26 @@ void TipoDePago::CargarPrueba()
 {
     Reservas Reservas;
     ArchivoReservas ArchivoReserva;
-    bool Disponible = true;
+    //bool Disponible = true;
 
     cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
     cin>>IDServicio;
 
+    ///Aca llamaria a una funcion que muestra todas las cabañas o carpas disponibles dependiendo de que id de servicio ingresa
+    if(IDServicio==1){
+        ArchivoReserva.mostrarCarpasDisponibles();
+    }
+    else if(IDServicio==2){
+        ArchivoReserva.mostrarCabaniasDisponibles();
+    }
+
+    cout<<"Ingrese cual desea: ";
+    estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
+
+    /*
     Fecha Inicio = Reservas.getFechaDesde();
     Fecha Salida = Reservas.getFechaHasta();
+
     int Contar = ArchivoReserva.contarRegistros();
 
 
@@ -81,8 +94,7 @@ void TipoDePago::CargarPrueba()
                 }
             else cout<<"Todas estan disponibles"<<endl;
         }
-    cout<<"Ingrese cual desea: ";
-    estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
+    */
 }
 
 
@@ -96,7 +108,7 @@ void TipoDePago::Mostrar(){
         if(modoDePago==1){
             cout<<"Efectivo "<<endl;
         }else cout<<"Tarjeta de debito/credito "<<endl;
-        cout<<" Fecha de Pago"<<endl;
+        cout<<"Fecha de Pago"<<endl;
         FechaPago.Mostrar();
         cout<<"Monto abonado: "<<Monto<<endl;
 

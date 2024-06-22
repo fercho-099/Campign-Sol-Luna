@@ -1,6 +1,8 @@
 #pragma once
 
 #include "ArchivoReservas.h"
+#include "ArchivoCarpas.h"
+#include "ArchivoCabanias.h"
 #include "Reservas.h"
 
 void CargarReserva();
@@ -61,11 +63,21 @@ void CargarReserva(){
     Reservas DatosReservas;
     ArchivoReservas InfoReservas;
     DatosReservas.Cargar();
-    if(InfoReservas.GrabarRegistro(DatosReservas)) {std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
-    system("pause");
+    if(InfoReservas.GrabarRegistro(DatosReservas)) {
+        std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
+    ///Leo: Agrego esta parte para que cuando se cargue una reserva dependiendo de que tipo de servicio tambien se guarde en el archivo correspondiente
+        if(DatosReservas.getTipoDePago().getIDServicio()==1){
+            ArchivoCarpas archiCarpas;
+            archiCarpas.grabarRegistro(DatosReservas);
+        }
+        else if(DatosReservas.getTipoDePago().getIDServicio()==2){
+            ArchivoCabanias archiCabanias;
+            archiCabanias.grabarRegistro(DatosReservas);
+        }
+        system("pause");
     }
     else{
-        std::cout<<"No se Gestionar la reserva"<<std::endl;
+        std::cout<<"No se Gestiona la reserva"<<std::endl;
         system("pause");
     }
 
@@ -114,63 +126,83 @@ delete []DatoReserva;
 }
 
 ///Borrar Reservas Lista
-void BorrarReserva(){
+void BorrarReserva()
+{
     system("cls");
     int dni, TotalCantidad, Opcion;
     ArchivoReservas InfoReservas;
     Reservas *vec, NuevoRegistro;
     bool primeravez=true;
-    if(InfoReservas.CrearBackUpManual()) {
+
+    if(InfoReservas.CrearBackUpManual())
+    {
         std::cout<<"Se ha creado una copia de los registros de Reservas"<<std::endl;
         system("pause");
         system("cls");
         std::cout<<"Ingrese el Dni del Cliente: "<<std::endl;
         std::cin>>dni;
 
-        /*int pos = InfoReservas.BuscarRegistros(dni);/// Devuelve posicion para baja logica.
-        aux = InfoReservas.LeerRegistro(pos);
-        aux.setEstado(3);*/
-
         TotalCantidad = InfoReservas.contarRegistros();
         vec = new Reservas[TotalCantidad];
 
-        InfoReservas.LeerRegistrosTotales(*vec, TotalCantidad);///hasta aca estamos bien
+        InfoReservas.LeerRegistrosTotales(*vec, TotalCantidad);
 
-        for(int x=0; x<TotalCantidad; x++){
+        for(int x=0; x<TotalCantidad; x++)
+        {
 
-            if(vec[x].getTipoDePago().getCliente().getDNI() == dni){
+            if(vec[x].getTipoDePago().getCliente().getDNI() == dni)
+            {
 
                 vec[x].Mostrar();
                 std::cout<<"Desea borrar este archivo? 1 - SI / 2 - NO"<<std::endl;
                 std::cout<<"Digite una opcion: ";
                 std::cin>>Opcion;
 
-                if((Opcion != 1) && (primeravez==true)){
-
-                      NuevoRegistro = vec[x];
-                       InfoReservas.grabarRegistroNuevo(NuevoRegistro);
-                       primeravez = false;
-                }
-
-                else if( Opcion !=1){
+                if((Opcion != 1) && (primeravez==true))
+                {
 
                     NuevoRegistro = vec[x];
-                    if(InfoReservas.GrabarRegistro(NuevoRegistro)){}
+                    InfoReservas.grabarRegistroNuevo(NuevoRegistro);
+                    primeravez = false;///Fer: Este if es por que se crea el nuevo archivo como "wb" asi borra el anterior, el que ya se guardo como back up, linea 170 revisar
+                }
+
+                else if( Opcion !=1)
+                {
+
+                    NuevoRegistro = vec[x];
+                    if(InfoReservas.GrabarRegistro(NuevoRegistro)) {} ///Este if es para guardar ya con el nuevo archivo creado, tiene apertura con "ab".
 
                 }
 
-                else{}
+                else
+                {
+
+                    std::cout<<"Registro Borrado"<<std::endl;
+                    system("pause");
+                }
+
+            }
+
+            else if(primeravez==true)
+            {
+
+                NuevoRegistro = vec[x];
+                InfoReservas.grabarRegistroNuevo(NuevoRegistro);
+                primeravez = false;///Fer: Este if es por que se crea el nuevo archivo como "wb" asi borra el anterior, el que ya se guardo como back up, linea 170 revisar
+            }
+
+            else
+            {
+                NuevoRegistro = vec[x];
+                if(InfoReservas.GrabarRegistro(NuevoRegistro)) {} ///Este if es para guardar ya con el nuevo archivo creado, tiene apertura con "ab".
 
             }
         }
 
 
-
-
-
-
     }
-    else{
+    else
+    {
 
         std::cout<<"No se ha creado copia de los registros de Reservas"<<std::endl;
         system("pause");
@@ -178,7 +210,7 @@ void BorrarReserva(){
 
 
 
-delete []vec;
+    delete []vec;
 
 }
 
@@ -206,9 +238,53 @@ delete []DatosReservas;
 
 }
 
-void MostrarArchivoReservas(){
+void MostrarArchivoReservas()
+{
+
+    system("cls");
+    bool loop = true;
+    int opcion;
+    ArchivoReservas InfoReservas;
+    do
+    {
+        std::cout<<"1 - Mostrar Reservas Activa"<<std::endl;
+        std::cout<<"2 - Mostrar Back Up Reservas"<<std::endl;
+        std::cout<<"0 - Volver al menu anterior"<<std::endl;
+        std::cout<<"Ingrese una opcion: ";
+        std::cin>>opcion;
+
+        switch(opcion)
+        {
+
+        case 1:
 
 
-ArchivoReservas InfoReservas;
-InfoReservas.ListarRegistros();
+            InfoReservas.ListarRegistros();
+            loop=false;
+
+            break;
+
+        case 2:
+
+            InfoReservas.setAperturaArchivo("Reservas.bak");
+            InfoReservas.ListarRegistros();
+            loop=false;
+
+            break;
+
+        case 0:
+
+            loop = false;
+
+            break;
+
+        default:
+
+            std::cout<<"Opcion Incorredcta, seleccione una nueva"<<std::endl;
+            system("pause");
+
+
+        }
+    }
+    while(loop);
 }
