@@ -280,7 +280,7 @@
 	"MenuClientes.h"
 	"General.h"
 
-1718551038 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\reservas.h
+1719195813 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\reservas.h
 	"Fecha.h"
 	"TipODePago.h"
 	<cstdlib>
@@ -288,7 +288,7 @@
 1718925873 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\fecha.h
 	<iostream>
 
-1719073154 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\tipodepago.h
+1719195813 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\tipodepago.h
 	"Fecha.h"
 	"Cliente.h"
 
