@@ -10,46 +10,65 @@ using namespace std;
 
 void TipoDePago::Cargar()
 {
-
-    bool sectorValido= true;
     system("cls");
+    bool sectorValido= true;
+    int dni, pos;
+    ArchivoClientes InfoClientes;
 
-    InfoCliente.Cargar();
-    cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
-    cin>>IDServicio;
 
-    do
+    std::cout<<"Ingrese el DNI para corroborar si el usuario existe: ";
+    std::cin>>dni;
+    pos = InfoClientes.buscarRegistro(dni);
+
+    if(pos == -2)
     {
-        cout<<"Ingrese el Sector correspondiente (A-C): ";
-        cin>>IDSector;
+        InfoCliente.Cargar();
+        cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
+        cin>>IDServicio;
 
-        if((strcmp(IDSector,"a")==0) || (strcmp(IDSector,"A")==0) || (strcmp(IDSector,"b")==0) || (strcmp(IDSector,"B")==0) || (strcmp(IDSector,"c")==0) || (strcmp(IDSector,"C")==0)){
-
-            sectorValido = false;
-        }
-
-        else
+        do
         {
-            cout<<"Opcion Incorrecta, ingrese nuevamente una opcion valida"<<endl;
-            system("pause");
-        }
+            cout<<"Ingrese el Sector correspondiente (A-C): ";
+            cin>>IDSector;
 
-    }while(sectorValido);///esto verifica que el sector ingresado sea el correcto de la letra "a" a la "c" verifica que sea tanto mayuscula como minuscula habilitados para poner un sector valido.
+            if((strcmp(IDSector,"a")==0) || (strcmp(IDSector,"A")==0) || (strcmp(IDSector,"b")==0) || (strcmp(IDSector,"B")==0) || (strcmp(IDSector,"c")==0) || (strcmp(IDSector,"C")==0))
+            {
 
-            cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
-            cin>>modoDePago;
-
-            std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
-            FechaPago.CargarActual();/// poner fecha modo automatico preguntando si paga en el momento o no.
-
-            cout<<"Ingrese el Monto: ";
-            cin>>Monto;
-            if(Monto <= 0){
-                cout<<"Ingrese un Monto mayor a 0: ";
-                cin>>Monto;
+                sectorValido = false;
             }
 
-            estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
+            else
+            {
+                cout<<"Opcion Incorrecta, ingrese nuevamente una opcion valida"<<endl;
+                system("pause");
+            }
+
+        }
+        while(sectorValido); ///esto verifica que el sector ingresado sea el correcto de la letra "a" a la "c" verifica que sea tanto mayuscula como minuscula habilitados para poner un sector valido.
+
+        cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
+        cin>>modoDePago;
+
+        std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
+        FechaPago.CargarActual();/// poner fecha modo automatico preguntando si paga en el momento o no.
+
+        cout<<"Ingrese el Monto: ";
+        cin>>Monto;
+        if(Monto <= 0)
+        {
+            cout<<"Ingrese un Monto mayor a 0: ";
+            cin>>Monto;
+        }
+
+        estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
+    }
+
+    else
+    {
+
+        ///InfoClientes.leerRegistro(pos)
+
+    }
 }
 
 void TipoDePago::CargarPrueba()
