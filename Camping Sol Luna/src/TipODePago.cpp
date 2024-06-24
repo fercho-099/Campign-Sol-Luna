@@ -73,47 +73,46 @@ void TipoDePago::Cargar()
 
 void TipoDePago::CargarPrueba()
 {
-    ///Reservas Reservas;
+    Reservas Reservas;
     ArchivoReservas ArchivoReserva;
+    Fecha Inicio = Reservas.getFechaDesde();
+    Fecha Salida = Reservas.getFechaHasta();
+
     //bool Disponible = true;
 
     cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
     cin>>IDServicio;
-
-    ///Aca llamaria a una funcion que muestra todas las cabañas o carpas disponibles dependiendo de que id de servicio ingresa
-    if(IDServicio==1){
-        ArchivoReserva.mostrarCarpasDisponibles();
-    }
-    else if(IDServicio==2){
-        ArchivoReserva.mostrarCabaniasDisponibles();
-    }
-
-    cout<<"Ingrese cual desea: ";
-    estado = true; ///reservado- Hay que ver como modificar de reservado a pagado si se pago la totalidad. En caso de pagar la totalidad, se debe poner 0 u otro numero, y en caso de cancelado, valor 2.
-
-    /*
-    Fecha Inicio = Reservas.getFechaDesde();
-    Fecha Salida = Reservas.getFechaHasta();
-
     int Contar = ArchivoReserva.contarRegistros();
 
-
     for(int i=0; i<Contar; i++)
+    {
+        ArchivoReserva.LeerRegistro(i);
+
+        if(Reservas.getFechaDesde() >= Inicio && Reservas.getFechaHasta() <= Salida)
         {
-            ArchivoReserva.LeerRegistro(i);
-
-            if(Reservas.getTipoDePago().getIDServicio() == IDServicio)
-                {
-                    if(Reservas.getFechaDesde() >= Inicio && Reservas.getFechaHasta() <= Salida)
-                        {
-
-
-
-                        }
-                }
-            else cout<<"Todas estan disponibles"<<endl;
+            ///Aca llamaria a una funcion que muestra todas las cabañas o carpas disponibles dependiendo de que id de servicio ingresa
+            if(IDServicio==1)
+            {
+                ArchivoReserva.mostrarCarpasDisponibles();
+            }
+            else if(IDServicio==2)
+            {
+                ArchivoReserva.mostrarCabaniasDisponibles();
+            }
         }
-    */
+    }
+
+    if(IDServicio == 1)
+        {
+            cout<<"Ingrese la carpa: "<<endl;
+            cin>>Carpa;
+        }
+    else if(IDServicio == 2)
+        {
+            cout<<"Ingrese cabania: "<<endl;
+            cin>>Cabana;
+        }
+
 }
 
 
