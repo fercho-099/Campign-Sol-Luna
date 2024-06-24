@@ -97,6 +97,8 @@ bool ArchivoClientes::verificarEstadoCliente(int dni){
             return true;
         }
     }
+
+    return false;
 }
 
 bool ArchivoClientes::crearBackupClientes(){
