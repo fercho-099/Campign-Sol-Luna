@@ -2,7 +2,6 @@
 #define TIPODEPAGO_H
 #include "Fecha.h"
 #include "Cliente.h"
-///#include "ArchivoClientes.h"
 
 class TipoDePago
 {

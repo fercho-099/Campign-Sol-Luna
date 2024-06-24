@@ -3,8 +3,8 @@
 using namespace std;
 
 #include "TipODePago.h"
-#include "Reservas.h"
 #include "ArchivoReservas.h"
+#include "ArchivoClientes.h"
 #include <cstring>
 
 
@@ -73,7 +73,7 @@ void TipoDePago::Cargar()
 
 void TipoDePago::CargarPrueba()
 {
-    Reservas Reservas;
+    ///Reservas Reservas;
     ArchivoReservas ArchivoReserva;
     //bool Disponible = true;
 
