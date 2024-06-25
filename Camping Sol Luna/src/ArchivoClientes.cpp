@@ -97,6 +97,7 @@ bool ArchivoClientes::verificarEstadoCliente(int dni){
             return true;
         }
     }
+
     return false;
 }
 

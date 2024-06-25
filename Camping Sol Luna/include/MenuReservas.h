@@ -56,7 +56,7 @@ system("cls");
     }while(loop);
 
 }
-///Fer: Cargar Reserva en teoria tiene que estar lista.
+///Fer: Cargar Reserva Lista
 
 void CargarReserva(){
 
@@ -130,8 +130,7 @@ delete []DatoReserva;
 }
 
 ///Borrar Reservas Lista
-void BorrarReserva()
-{
+void BorrarReserva(){
     system("cls");
     int dni, TotalCantidad, Opcion;
     ArchivoReservas InfoReservas;
@@ -218,8 +217,7 @@ void BorrarReserva()
 
 }
 
-void EstadoReserva()
-{
+void EstadoReserva(){
 
     system("cls");
     ArchivoReservas InfoReservas;
@@ -245,8 +243,7 @@ void EstadoReserva()
 
 }
 
-void MostrarArchivoReservas()
-{
+void MostrarArchivoReservas(){
 
     system("cls");
     bool loop = true;
