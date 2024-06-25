@@ -10,6 +10,36 @@ Fecha::Fecha(){
     anio=0;
 }
 
+bool Fecha::MaximosDias(int Dia, int Mes, int Anio){
+
+
+    dia = Dia;
+    mes = Mes;
+    anio = Anio;
+
+
+    if (dia>=1 && (mes >=1 && mes<=12) && anio >=1 ){
+
+        int dias[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+        if (esBisiesto()) {
+            dias[1]++;
+        }
+        if (dia > dias[mes - 1]) {
+            ///this->CargarActual();///ver si se carga por defecto en caso de ingresar menor a 1 en dia mes y anio.
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    else{
+
+        ///this->CargarActual();
+        return false;
+    }
+}
+
 void Fecha::setDia(int d){
     dia=d;
 }
@@ -70,7 +100,7 @@ bool Fecha::ValidarFecha(int dia, int mes, int anio )
 void Fecha::Cargar()
 {
     bool FechaValida = false;
-
+    bool diasMaximos = false;
     do
     {
         cout<<"El formato de fecha es DD/MM/YYYY"<<endl;
@@ -82,7 +112,9 @@ void Fecha::Cargar()
         cout<<"Ingrese anio: ";
         anio = IngresoNumero();
 
-        FechaValida = ValidarFecha(dia,mes,anio);
+
+        FechaValida = ValidarFecha(dia,mes,anio);///Valida la fecha ingresada sea igual o mayor a la actual.
+        diasMaximos = this->MaximosDias(dia, mes, anio);///fer: el metodo valida que la fecha este dentro de los dias maximos del mes que se ingrese.
 
         if(!FechaValida)
         {
@@ -90,8 +122,15 @@ void Fecha::Cargar()
             system("pause");
             system("cls");
         }
+        if(!diasMaximos){///fer: pregunta si la fecha ingresada
+
+            std::cout<<"Fecha Ingresada Incorrecta, ingrese nuevamente una fecha valida"<<std::endl;
+            system("pause");
+            system("cls");
+        }
     }
-    while(!FechaValida);
+    while((!FechaValida) || (!diasMaximos));
+
     cout << "La fecha se ingreso correctamente." <<endl;
     system("pause");
     system("cls");
@@ -101,6 +140,8 @@ void Fecha::Mostrar(){
     cout<<dia<<":"<<mes<<":"<<anio<<endl;
 }
 
+bool Fecha::esBisiesto(){
 
+return ((anio % 4 == 0 && anio % 100 !=0) || anio % 400 ==0);
 
-
+}
