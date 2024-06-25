@@ -42,7 +42,6 @@
 		<Unit filename="include/Fecha.h" />
 		<Unit filename="include/Funcion Generales.h" />
 		<Unit filename="include/Funciones.h" />
-		<Unit filename="include/General.h" />
 		<Unit filename="include/MenuClientes.h" />
 		<Unit filename="include/MenuInformes.h" />
 		<Unit filename="include/MenuReservas.h" />
@@ -56,7 +55,6 @@
 		<Unit filename="src/Cliente.cpp" />
 		<Unit filename="src/Fecha.cpp" />
 		<Unit filename="src/Funciones.cpp" />
-		<Unit filename="src/General.cpp" />
 		<Unit filename="src/Reservas.cpp" />
 		<Unit filename="src/TipODePago.cpp" />
 		<Extensions>
