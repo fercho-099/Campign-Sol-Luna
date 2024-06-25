@@ -30,8 +30,8 @@ void Reservas::CargarPrueba()
     std::cout<<"Fecha de salida"<<std::endl;
     Hasta.Cargar();
     system("cls");
+    Datos.CargarPrueba(Desde,Hasta);
 
-    Datos.CargarPrueba();
     ///Desde = aux.Cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
     Estado = 1;
 
@@ -56,9 +56,9 @@ long long Reservas::RestanteFecha()
         return diferencia.count() / 86400; ///Convertir segundos a días
 }
 
+
 void Reservas::Mostrar()
 {
-
     Fecha aux;
     Datos.Mostrar();
     Desde.Mostrar();
