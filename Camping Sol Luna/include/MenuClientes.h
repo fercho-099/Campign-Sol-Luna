@@ -21,50 +21,44 @@ void OpcionesDeClientes(){
     int opc;
     while(loop){
         cout<<"-----Camping SOL-LUNA-----"<<endl;
-        cout<<"1 - Ingresar nuevo cliente "<<endl;
-        cout<<"2 - Modificar datos de un cliente "<<endl;
-        cout<<"3 - Dar de baja a un cliente"<<endl;
-        cout<<"4 - Listar a todos los clientes"<<endl;
-        cout<<"5 - Buscar a un cliente"<<endl;
-        cout<<"6 - Verificar estado de un cliente"<<endl;
-        cout<<"7 - Crear una copia de seguridad de los clientes"<<endl;
-        cout<<"0 - Salir del menu"<<endl;
+        cout<<"1 - Modificar datos de un cliente "<<endl;
+        cout<<"2 - Dar de baja a un cliente"<<endl;
+        cout<<"3 - Listar a todos los clientes"<<endl;
+        cout<<"4 - Buscar a un cliente"<<endl;
+        cout<<"5 - Verificar estado de un cliente"<<endl;
+        cout<<"6 - Crear una copia de seguridad de los clientes"<<endl;
+        cout<<"0 - Volver al menu anterior"<<endl;
         cout<<endl;
         cout<<"Ingrese una opcion: ";
         cin>>opc;
         system("cls");
         switch(opc){
         case 1:
-            cargarCliente();
-            system("pause");
-            system("cls");
-            break;
-        case 2:
             modificarCliente();
             system("pause");
             system("cls");
             break;
-        case 3:
+        case 2:
             bajaCliente();
             system("pause");
             system("cls");
             break;
-        case 4:
+        case 3:
             listarClientes();
             system("pause");
             system("cls");
             break;
-        case 5:
+        case 4:
             buscarCliente();
             system("pause");
             system("cls");
             break;
-        case 6:
+        case 5:
             verificarEstadoCliente();
             system("pause");
             system("cls");
             break;
-        case 7:
+        case 6:
             crearBackupClientes();
             system("pause");
             system("cls");
@@ -78,13 +72,6 @@ void OpcionesDeClientes(){
         }
     }
 
-}
-
-void cargarCliente(){
-    Cliente obj;
-    obj.Cargar();
-    ArchivoClientes archiC;
-    archiC.grabarRegistro(obj);
 }
 
 void modificarCliente(){
