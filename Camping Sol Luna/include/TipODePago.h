@@ -14,13 +14,13 @@ class TipoDePago
        Fecha FechaPago;
        float Monto;
        bool estado;///verifica si se realizo el pago en su totalidad o no.
-
        bool cabania[10]={false};///Leo
        bool carpa[20]={false};///Leo
 
    public:
     ///TipoDePago();
     void Cargar();
+    void CargarPrueba(Fecha, Fecha);
     void CargarPrueba();
     void Mostrar();
     void setCliente(Cliente );

@@ -5,9 +5,9 @@
 #include "Reservas.h"
 
 Fecha::Fecha(){
-    dia=0;
-    mes=0;
-    anio=0;
+    dia;
+    mes;
+    anio;
 }
 
 void Fecha::setDia(int d){

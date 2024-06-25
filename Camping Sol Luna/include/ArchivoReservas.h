@@ -17,7 +17,7 @@ public:
 	bool grabarRegistros(Reservas obj, int pos);///se usa en el metodo de modificar reserva ya que recibe como parametro un registro completo de reservas y la posicion donde se va a reescribir los datos modificados en el archivo
     void grabarRegistroNuevo(Reservas obj);///Sirve para grabar en archivo nuevo con una apertura wb y pisando el archivo viejo.
 
-    ///Reservas LeerRegistro(int pos);
+    Reservas LeerRegistro(int pos);
 	void LeerRegistrosTotales(Reservas &, int );///se usa para cargar el vector de objetos en su totalidad
     Reservas LeerRegistrosDinamicos(Reservas *DatoReserva, int pos);///Recibe el vector de registros cargados y la posiccion donde se encuentra en el registro y devuelve ese registro especifico.
 
