@@ -337,7 +337,7 @@
 	"Cliente.h"
 	"Funciones.h"
 
-1719322211 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\fecha.cpp
+1719322805 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\fecha.cpp
 	<ctime>
 	<chrono>
 	"Fecha.h"

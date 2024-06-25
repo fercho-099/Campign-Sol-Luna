@@ -24,20 +24,14 @@ bool Fecha::MaximosDias(int Dia, int Mes, int Anio){
         if (esBisiesto()) {
             dias[1]++;
         }
-        if (dia > dias[mes - 1]) {
-            ///this->CargarActual();///ver si se carga por defecto en caso de ingresar menor a 1 en dia mes y anio.
-            return false;
-        }
-        else{
-            return true;
-        }
+        if (dia > dias[mes - 1]) return false;
+
+        else  return true;
+
     }
 
-    else{
+    else return false;
 
-        ///this->CargarActual();
-        return false;
-    }
 }
 
 void Fecha::setDia(int d){
@@ -65,8 +59,7 @@ int Fecha::getAnio(){
 }
 
 //Alan
-void Fecha::CargarActual()
-{
+void Fecha::CargarActual(){
     time_t now = time(0); // Captura fecha y hora actual
     tm* localTime = localtime(&now); // Creamos el puntero localTime y lo referenciamos al objeto time
     // Accedemos a los atributos de la estructura tm
@@ -76,8 +69,7 @@ void Fecha::CargarActual()
 }
 
 //Alan
-bool Fecha::ValidarFecha(int dia, int mes, int anio )
-{
+bool Fecha::ValidarFecha(int dia, int mes, int anio ){
  // Obtener la fecha actual
     auto fechaActual = std::chrono::system_clock::now();
     auto time_t_fechaActual = std::chrono::system_clock::to_time_t(fechaActual);
@@ -97,8 +89,7 @@ bool Fecha::ValidarFecha(int dia, int mes, int anio )
     return time_t_fechaIngresada >= time_t_actual;
 }
 
-void Fecha::Cargar()
-{
+void Fecha::Cargar(){
     bool FechaValida = false;
     bool diasMaximos = false;
     do
