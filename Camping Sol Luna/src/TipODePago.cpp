@@ -73,128 +73,144 @@ void TipoDePago::Cargar()
 
 void TipoDePago::CargarPrueba()
 {
-    int DiaRestantes, Total;
-    Reservas Reservas;
-    ArchivoReservas ArchivoReserva;
-    ArchivoClientes InfoClientes;
-    Fecha Inicio = Reservas.getFechaDesde();
-    Fecha Salida = Reservas.getFechaHasta();
-    //DiaRestantes = Reservas.RestanteFecha();
-
-    cout<<"Dias: "<<DiaRestantes<<endl;
-    system("pause");
-    cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
-    cin>>IDServicio;
-    int Contar = ArchivoReserva.contarRegistros();
-
-    for(int i=0; i<Contar; i++)
-    {
-        ArchivoReserva.LeerRegistro(i);
-
-        if(Reservas.getFechaDesde() >= Inicio && Reservas.getFechaHasta() <= Salida)
-        {
-            ///Aca llamaria a una funcion que muestra todas las cabañas o carpas disponibles dependiendo de que id de servicio ingresa
-            if(IDServicio==1)
-            {
-                ArchivoReserva.mostrarCarpasDisponibles();
-            }
-            else if(IDServicio==2)
-            {
-                ArchivoReserva.mostrarCabaniasDisponibles();
-            }
-        }
-    }
-
-    if(IDServicio == 1)
-        {
-            cout<<"Ingrese la carpa: "<<endl;
-            cin>>Carpa;
-
-            int valorcarpa = 5000;
-            InfoCliente.Cargar();
-            DiaRestantes = Reservas.RestanteFecha();
-            Total = DiaRestantes * valorcarpa;
-            cout<<"Total a pagar: "<<Total<<endl;
-            int resp;
-            cout<<"Desea continuar con la reserva? 1 SI / 2 NO "<<endl;
-            cin>>resp;
-            if(resp==1)
-                {
-                    cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
-                    cin>>modoDePago;
-                    if(modoDePago > 2)
-                        {
-                            cout<<"Medio de pago invalido, vuelva a ingresar: ";
-                            cin>>modoDePago;
-                        }
-                    else{
-                        std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
-                        FechaPago.CargarActual();/// Pone la fecha en automatico del dia
-                        estado = true;
-                        }
-                }
-            else if(resp==2)
-                {
-                    return ;
-                }
-
-        }
-    else if(IDServicio == 2)
-        {
-            cout<<"Ingrese cabania: "<<endl;
-            cin>>Cabana;
-            int valorcabana = 12000;
-            InfoCliente.Cargar();
-            Total = DiaRestantes * valorcabana;
-            cout<<"Total a pagar: "<<Total<<endl;
-            int resp;
-            cout<<"Desea continuar con la reserva? 1 SI / 2 NO "<<endl;
-            cin>>resp;
-            if(resp==1)
-                {
-                    cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
-                    cin>>modoDePago;
-                    if(modoDePago > 2)
-                        {
-                            cout<<"Medio de pago invalido, vuelva a ingresar: ";
-                            cin>>modoDePago;
-                        }
-                    else{
-                        std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
-                        FechaPago.CargarActual();/// Pone la fecha en automatico del dia
-                        estado = true;
-                        }
-                }
-            else if(resp==2)
-                {
-                    return;
-                }
-
-        }
-
 }
 
 void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
 {
-    int DiaRestantes, Total;
+    int DiaRestantes, resp, valorcarpa = 5000, valorcabana=12000;
+    bool Disponible = false;
     Reservas Reservas;
     ArchivoReservas ArchivoReserva;
     ArchivoClientes InfoClientes;
-    Fecha Inicio = Desde;
-    Fecha Salida = Hasta;
     Reservas.setFechaDesde(Desde);
     Reservas.setFechaHasta(Hasta);
     DiaRestantes = Reservas.RestanteFecha();
 
     cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
     cin>>IDServicio;
+    if(IDServicio > 2)
+    {
+        cout<<"Ingrese un ID de servicio valido: ";
+        cin>>IDServicio;
+    }
     int Contar = ArchivoReserva.contarRegistros();
 
-    for(int i=0; i<Contar; i++)
+    switch (IDServicio)
     {
-        ArchivoReserva.LeerRegistro(i);
+    case 1:
+        for(int i=0; i<Contar; i++)
+        {
+            Reservas = ArchivoReserva.LeerRegistro(i);
 
-        if(Reservas.getFechaDesde() >= Inicio && Reservas.getFechaHasta() <= Salida)
+            if(Reservas.getFechaDesde() >= Desde && Reservas.getFechaHasta() <= Hasta)
+            {
+                ///Aca llamaria a una funcion que muestra todas las cabañas o carpas disponibles dependiendo de que id de servicio ingresa
+                if(IDServicio==1)
+                {
+                    ArchivoReserva.mostrarCarpasDisponibles();
+                    Disponible = true;
+                }
+            }
+
+        }
+        if (!Disponible)
+        {
+            cout << "No hay carpas disponibles en el rango de fechas ingresado"<<endl;
+        }
+        cout<< "Ingrese el numero de carpa: ";
+        cin>> Carpa;
+        InfoCliente.Cargar();
+        Monto = DiaRestantes * valorcarpa;
+        cout<<"Monto total a abonar: "<<Monto<<endl;
+        cout<<"Desea continuar con la reserva? 1 SI / 2 NO "<<endl;
+        cin>>resp;
+        if(resp==1)
+        {
+            cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
+            cin>>modoDePago;
+            if(modoDePago > 2)
+            {
+                cout<<"Medio de pago invalido, vuelva a ingresar: ";
+                cin>>modoDePago;
+            }
+            else
+            {
+                std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
+                FechaPago.CargarActual();/// Pone la fecha en automatico del dia
+                estado = true;
+            }
+        }
+        else if(resp==2)
+        {
+            break;
+        }
+
+        break;
+
+    case 2:
+
+        for(int i=0; i<Contar; i++)
+        {
+            Reservas = ArchivoReserva.LeerRegistro(i);
+
+            if(Reservas.getFechaDesde() >= Desde && Reservas.getFechaHasta() <= Hasta)
+            {
+                ///Aca llamaria a una funcion que muestra todas las cabañas o carpas disponibles dependiendo de que id de servicio ingresa
+                if(IDServicio==1)
+                {
+                    ArchivoReserva.mostrarCabaniasDisponibles();
+                    Disponible = true;
+                }
+            }
+
+        }
+        if (!Disponible)
+        {
+            cout << "No hay carpas disponibles en el rango de fechas especificado" <<endl;
+        }
+        cout<< "Ingrese el numero de carpa: ";
+        cin>> Cabana;
+        InfoCliente.Cargar();
+        Monto = DiaRestantes * valorcabana;
+        cout<<"Monto total a abonar: "<<Monto<<endl;
+        cout<<"Desea continuar con la reserva? 1 SI / 2 NO "<<endl;
+        cin>>resp;
+        if(resp==1)
+        {
+            cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
+            cin>>modoDePago;
+            if(modoDePago > 2)
+            {
+                cout<<"Medio de pago invalido, vuelva a ingresar: ";
+                cin>>modoDePago;
+            }
+            else
+            {
+                std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
+                FechaPago.CargarActual();/// Pone la fecha en automatico del dia
+                estado = true;
+            }
+        }
+        else if(resp==2)
+        {
+            break;
+        }
+        break;
+    default:
+        cout << "Vuelva a ingresar un ID de servicio valido";
+        break;
+    }
+
+}
+
+
+
+
+    /*for(int i=0; i<Contar; i++)
+    {
+        Reservas = ArchivoReserva.LeerRegistro(i);
+
+        if(Reservas.getFechaDesde() >= Desde && Reservas.getFechaHasta() <= Hasta)
         {
             ///Aca llamaria a una funcion que muestra todas las cabañas o carpas disponibles dependiendo de que id de servicio ingresa
             if(IDServicio==1)
@@ -206,6 +222,7 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
                 ArchivoReserva.mostrarCabaniasDisponibles();
             }
         }
+
     }
 
     if(IDServicio == 1)
@@ -216,8 +233,8 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
             int valorcarpa = 5000;
             InfoCliente.Cargar();
             DiaRestantes = Reservas.RestanteFecha();
-            Total = DiaRestantes * valorcarpa;
-            cout<<"Total a pagar: "<<Total<<endl;
+            Monto = DiaRestantes * valorcarpa;
+            cout<<"Total a pagar: "<<Monto<<endl;
             int resp;
             cout<<"Desea continuar con la reserva? 1 SI / 2 NO "<<endl;
             cin>>resp;
@@ -248,8 +265,8 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
             cin>>Cabana;
             int valorcabana = 12000;
             InfoCliente.Cargar();
-            Total = DiaRestantes * valorcabana;
-            cout<<"Total a pagar: "<<Total<<endl;
+            Monto = DiaRestantes * valorcabana;
+            cout<<"Total a pagar: "<<Monto<<endl;
             int resp;
             cout<<"Desea continuar con la reserva? 1 SI / 2 NO "<<endl;
             cin>>resp;
@@ -275,7 +292,7 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
 
         }
 
-}
+}*/
 
 
 void TipoDePago::Mostrar(){

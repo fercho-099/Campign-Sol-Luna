@@ -27,7 +27,7 @@ system("cls");
         cout<<"4 - Verificar Reserva"<<endl;
         cout<<"5 - Mostrar Reservas"<<endl;
         cout<<"0 - Volver al menu anterior"<<endl;
-        cout<<"1 - Crear una reserva prueba "<<endl;
+        cout<<"6 - Crear una reserva prueba "<<endl;
         cout<<endl;
         cout<<"Ingrese una opcion: ";
         cin>>opc;
