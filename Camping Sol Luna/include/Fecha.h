@@ -6,9 +6,13 @@ using namespace std;
 class Fecha
 {
  private:
+
      int dia, mes, anio;
+
  public:
+
     Fecha();
+    bool MaximosDias( int, int , int );
     void setDia(int);
     void setMes(int);
     void setAnio(int);
@@ -19,9 +23,9 @@ class Fecha
     void Mostrar();
     void CargarActual();
     bool ValidarFecha(int,int,int);
+    bool esBisiesto();
 
-     bool operator>=(Fecha& otra)
-     {
+     bool operator>=(Fecha& otra){
         if(anio > otra.anio)
             {
                 return true;
@@ -53,7 +57,6 @@ class Fecha
         }
         else return false;
      }
-
 };
 
 #endif // FECHA_H

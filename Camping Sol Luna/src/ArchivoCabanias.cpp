@@ -40,8 +40,10 @@ bool ArchivoCabanias::listarRegistros(){
 	p=fopen(nombre, "rb");
 	if(p==NULL) return false;
 	while(fread(&obj, sizeof obj, 1, p)==1){
-		obj.Mostrar();
-		cout<<endl;
+        if(obj.getEstado()){
+            obj.Mostrar();
+            cout<<endl;
+        }
 	}
 	fclose(p);
 	return true;

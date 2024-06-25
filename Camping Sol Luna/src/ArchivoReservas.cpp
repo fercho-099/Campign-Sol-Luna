@@ -31,7 +31,7 @@ bool ArchivoReservas::GrabarRegistro(Reservas obj){
 	return escribio;
 }
 
-bool ArchivoReservas::GrabarRegistro(Reservas obj, int TotalRegistros){
+/*bool ArchivoReservas::GrabarRegistro(Reservas obj, int TotalRegistros){
 	FILE *p;
 	p=fopen(AperturaArchivo, "ab");
 	if(p==NULL) return false;
@@ -39,7 +39,7 @@ bool ArchivoReservas::GrabarRegistro(Reservas obj, int TotalRegistros){
 	bool escribio=fwrite(&obj, sizeof obj, TotalRegistros, p);
 	fclose(p);
 	return escribio;
-}
+}*/
 
 bool ArchivoReservas::grabarRegistros(Reservas obj, int pos){
 
@@ -50,7 +50,8 @@ bool ArchivoReservas::grabarRegistros(Reservas obj, int pos){
         retorno = false;
         return retorno;
     }
-    retorno = fwrite(&obj, sizeof (Reservas)*pos, 1, P);
+    fseek(P, sizeof obj* pos,0);
+    retorno = fwrite(&obj, sizeof (Reservas), 1, P);///fwrite(&obj, sizeof (Reservas)*pos, 1, P)
     fclose(P);
     return retorno;
 
@@ -66,7 +67,7 @@ void ArchivoReservas :: grabarRegistroNuevo(Reservas obj){
 	return;
 }
 
-Reservas ArchivoReservas::LeerRegistro(int pos){
+/*Reservas ArchivoReservas::LeerRegistro(int pos){
 	FILE *p;
 	Reservas obj;
 	obj.setEstado(-4);
@@ -77,7 +78,7 @@ Reservas ArchivoReservas::LeerRegistro(int pos){
 	fread(&obj, sizeof obj, 1, p);
 	fclose(p);
 	return obj;
-}
+}*/
 
 Reservas ArchivoReservas::LeerRegistrosDinamicos(Reservas *DatoReserva, int pos){///probando dinamico
 
@@ -107,7 +108,7 @@ void ArchivoReservas::LeerRegistrosTotales(Reservas &obj, int TotalRegistros){
 
 }
 
-int ArchivoReservas::BuscarRegistro(int dni){///ver si no es pretendida por ningun otro metodo donde necesite el retorno
+int ArchivoReservas::BuscarRegistro(int dni){///Se Usa
 	FILE *p;
 	Reservas obj;
 	p=fopen(AperturaArchivo, "rb");
@@ -146,6 +147,9 @@ int ArchivoReservas::BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, i
 
         }
     }
+    system("cls");
+    std::cout<<"El Registro con el dni ingresado no existe"<<std::endl;
+    system("pause>null");
     return -1;
 }
 
@@ -159,95 +163,80 @@ int ArchivoReservas::contarRegistros(){
 	return tam/sizeof(Reservas);
 }
 
-void ArchivoReservas::ModificarRegistros(Reservas &aux){
+void ArchivoReservas::ModificarRegistros(Reservas *aux)
+{
 
-    std::cout<<"------"<<std::endl;
+    std::cout<<"----------"<<std::endl;
     int OpcSwitch;
     Fecha fecha;
     int dia, mes, anio;
     bool ciclo=true;
 
-    do{
+    do
+    {
 
         std::cout<<"Digite la opcion correcta"<<std::endl;
         std::cout<<"1 - Si desea cancelar la reserva"<<std::endl;
         std::cout<<"2 - Si desea cambiar la fecha de entrada"<<std::endl;
         std::cout<<"3 - Si desea cambiar la fecha de salida"<<std::endl;
-        std::cout<<"4 - Desestimar cambio"<<std::endl;
+        std::cout<<"4 - Volver Menu anterior / Cancelar Cambios"<<std::endl;
         std::cout<<"Ingrese una opcion: ";
         std::cin>>OpcSwitch;
+        system("cls");
+        switch(OpcSwitch)
+        {
 
-        switch(OpcSwitch){
+        case 1:
+            aux->setEstado(2);///iria el .
+            ciclo = false;
+            break;
 
-    case 1:
-                aux.setEstado(2);
-        break;
-
-    case 2:
-        std::cout<<"Ingrese Dia: ";
-        std::cin>>dia;
-        std::cout<<std::endl;
-        std::cout<<"Ingrese Mes: ";
-        std::cin>>mes;
-        std::cout<<std::endl;
-        std::cout<<"Ingrese anio: ";
-        std::cin>>anio;
+        case 2:
+            std::cout<<"Ingrese Dia de Entrada: ";
+            std::cin>>dia;
+            std::cout<<std::endl;
+            std::cout<<"Ingrese Mes de Entrada: ";
+            std::cin>>mes;
+            std::cout<<std::endl;
+            std::cout<<"Ingrese anio de Entrada: ";
+            std::cin>>anio;
             fecha.setAnio(anio);
             fecha.setMes(mes);
             fecha.setDia(dia);
-            aux.setFechaDesde(fecha);
-                    break;
+            aux->setFechaDesde(fecha);
+            ciclo = false;
+            break;
 
-    case 3:
+        case 3:
 
-        std::cout<<"Ingrese Dia: ";
-        std::cin>>dia;
-        std::cout<<std::endl;
-        std::cout<<"Ingrese Mes: ";
-        std::cin>>mes;
-        std::cout<<std::endl;
-        std::cout<<"Ingrese anio: ";
-        std::cin>>anio;
+            std::cout<<"Ingrese Dia de Salida: ";
+            std::cin>>dia;
+            std::cout<<std::endl;
+            std::cout<<"Ingrese Mes de Salida: ";
+            std::cin>>mes;
+            std::cout<<std::endl;
+            std::cout<<"Ingrese anio de Salida: ";
+            std::cin>>anio;
             fecha.setAnio(anio);
             fecha.setMes(mes);
             fecha.setDia(dia);
-            aux.setFechaHasta(fecha);
+            aux->setFechaHasta(fecha);
+            ciclo = false;
 
-        break;
+            break;
 
-    case 4:
-                ciclo = false;
-        break;
+        case 4:
+            ciclo = false;
+            break;
 
-    default:
+        default:
 
-        std::cout<<"Opcion Incorrecta"<<std::endl;
-        system("pause");
+            std::cout<<"Opcion Incorrecta"<<std::endl;
+            system("pause");
         }
-    }while(ciclo);
+    }
+    while(ciclo);
 }
-
-/*bool ArchivoReservas::CrearBackUpManual(){
-
-
-    int TotalRegistros = this->contarRegistros();
-    if(TotalRegistros<=0)return false;
-
-    Reservas *RegistrosReservas;
-    RegistrosReservas = new Reservas[TotalRegistros];
-    this->LeerRegistrosTotales(*RegistrosReservas, TotalRegistros);
-
-
-    ArchivoReservas backup("Reservas.bak");
-
-    bool grabo = false;
-
-    grabo = backup.GrabarRegistro(*RegistrosReservas, TotalRegistros);///ACA ESTA EL ERROR POR QUE VA A GRABAR LA CANTIDAD DE REGISTRO MENOS 1 POR QUE HAY UNO QUE SE BORRA
-
-
-    return grabo;
-
-*/
 
 bool ArchivoReservas::CrearBackUpManual(){
 
@@ -265,14 +254,12 @@ bool ArchivoReservas::CrearBackUpManual(){
     for(int x=0; x<TotalRegistros; x++){
 
     obj = RegistrosReservas[x];
-    backup.GrabarRegistro(obj);///ACA ESTA EL ERROR POR QUE VA A GRABAR LA CANTIDAD DE REGISTRO MENOS 1 POR QUE HAY UNO QUE SE BORRA
+    backup.GrabarRegistro(obj);
 
     }
     return true;
 
 }
-
-
 
 void ArchivoReservas::ListarRegistros(){
     system("cls");
@@ -316,6 +303,7 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
                 DatosReservas[x].Mostrar();
                 std::cout<<std::endl;
                 std::cout<<"La reserva se encuentra activa"<<std::endl;
+                std::cout<<std::endl;
                 system("pause");
             }
 
@@ -324,6 +312,7 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
                 DatosReservas[x].Mostrar();
                 std::cout<<std::endl;
                 std::cout<<"La reserva se encuentra cancelada"<<std::endl;
+                std::cout<<std::endl;
                 system("pause");
             }
 
@@ -332,6 +321,7 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
                 DatosReservas[x].Mostrar();
                 std::cout<<std::endl;
                 std::cout<<"La reserva se encuentra Gestionada. Verificar el archivo de servicio contratado para mas informacion"<<std::endl;
+                std::cout<<std::endl;
                 system("pause");
             }
         }

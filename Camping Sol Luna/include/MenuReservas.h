@@ -56,7 +56,7 @@ system("cls");
     }while(loop);
 
 }
-///Fer: Cargar Reserva en teoria tiene que estar lista.
+///Fer: Cargar Reserva Lista
 
 void CargarReserva(){
 
@@ -84,7 +84,7 @@ void CargarReserva(){
 }
 
 ///Modificar Reserva lista
-void ModificarReserva(){/// se necesita verificar QUE RESERVA se debe modificar por que el dni mismo puede tener mas de una reserva activa.
+void ModificarReserva(){
 
     system("cls");
     ArchivoReservas InfoReservas;
@@ -98,18 +98,22 @@ void ModificarReserva(){/// se necesita verificar QUE RESERVA se debe modificar 
         return;
     }
     DatoReserva = new Reservas[TotalRegistros];
-    InfoReservas.LeerRegistrosTotales(*DatoReserva, TotalRegistros);///agregue esto
+    InfoReservas.LeerRegistrosTotales(*DatoReserva, TotalRegistros);
 
     int dni;
     cout<<"Ingrese el Dni del cliente de la reserva que desea modificar: "<<endl;
     cin>>dni;
 
-    /*pos = InfoReservas.BuscarRegistro(dni);///usar memoria dinamica, aca se usa memoria comun
-    aux = InfoReservas.LeerRegistro(pos);///usar memotia dinamica*/
     pos = InfoReservas.BuscarRegistro(DatoReserva, TotalRegistros, dni);
+
+    if(pos == -1){
+
+        delete []DatoReserva;
+        return;
+    }
     aux = InfoReservas.LeerRegistrosDinamicos(DatoReserva, pos);
 
-    InfoReservas.ModificarRegistros(aux);///ver si se modifica correctamente
+    InfoReservas.ModificarRegistros(&aux);
     if(InfoReservas.grabarRegistros(aux, pos)){
 
         std::cout<<"Se Realizaron los cambios con satisfaccion"<<std::endl;
@@ -126,8 +130,7 @@ delete []DatoReserva;
 }
 
 ///Borrar Reservas Lista
-void BorrarReserva()
-{
+void BorrarReserva(){
     system("cls");
     int dni, TotalCantidad, Opcion;
     ArchivoReservas InfoReservas;
@@ -162,15 +165,15 @@ void BorrarReserva()
                 {
 
                     NuevoRegistro = vec[x];
-                    InfoReservas.grabarRegistroNuevo(NuevoRegistro);
-                    primeravez = false;///Fer: Este if es por que se crea el nuevo archivo como "wb" asi borra el anterior, el que ya se guardo como back up, linea 170 revisar
+                    InfoReservas.grabarRegistroNuevo(NuevoRegistro);///Sirve para grabar en archivo nuevo con una apertura wb y pisando el archivo viejo.
+                    primeravez = false;///Fer: Este if es por que se crea el nuevo archivo como "wb" asi borra el anterior, el que ya se guardo como back up. Una vez pasado por aca, salta a la linea 177 revisar
                 }
 
                 else if( Opcion !=1)
                 {
 
                     NuevoRegistro = vec[x];
-                    if(InfoReservas.GrabarRegistro(NuevoRegistro)) {} ///Este if es para guardar ya con el nuevo archivo creado, tiene apertura con "ab".
+                    if(InfoReservas.GrabarRegistro(NuevoRegistro)) {} ///Sirve para guardar ya con el nuevo archivo creado en la linea 169, tiene apertura con "ab".
 
                 }
 
@@ -183,18 +186,18 @@ void BorrarReserva()
 
             }
 
-            else if(primeravez==true)
+            else if(primeravez==true)///a pesar de la linea 177, este else if, sirve por que no siempre coinciden el dni ingresado con el que se quiere ingresar. Se busca el dni y cuando no coincide, entra por esta parte.
             {
 
                 NuevoRegistro = vec[x];
-                InfoReservas.grabarRegistroNuevo(NuevoRegistro);
-                primeravez = false;///Fer: Este if es por que se crea el nuevo archivo como "wb" asi borra el anterior, el que ya se guardo como back up, linea 170 revisar
+                InfoReservas.grabarRegistroNuevo(NuevoRegistro);///Sirve para grabar en archivo nuevo con una apertura wb y pisando el archivo viejo.
+                primeravez = false;///Fer: Mismo motivo que linea 177
             }
 
             else
             {
                 NuevoRegistro = vec[x];
-                if(InfoReservas.GrabarRegistro(NuevoRegistro)) {} ///Este if es para guardar ya con el nuevo archivo creado, tiene apertura con "ab".
+                if(InfoReservas.GrabarRegistro(NuevoRegistro)) {} ///Sirve para guardar ya con el nuevo archivo creado, tiene apertura con "ab".
 
             }
         }
@@ -216,30 +219,31 @@ void BorrarReserva()
 
 void EstadoReserva(){
 
-system("cls");
-ArchivoReservas InfoReservas;
-Reservas *DatosReservas;
-int dni;
-int TotalRegistros = InfoReservas.contarRegistros();
-if(TotalRegistros<=0){
+    system("cls");
+    ArchivoReservas InfoReservas;
+    Reservas *DatosReservas;
+    int dni;
+    int TotalRegistros = InfoReservas.contarRegistros();
+    if(TotalRegistros<=0)
+    {
 
-    std::cout<<"No hay reservas gestionadas"<<std::endl;
-    system("pause");
-    return;
+        std::cout<<"No hay reservas gestionadas"<<std::endl;
+        system("pause");
+        return;
+
+    }
+    DatosReservas = new Reservas[TotalRegistros];
+    InfoReservas.LeerRegistrosTotales(*DatosReservas,TotalRegistros);
+    std::cout<<"Ingrese el Dni de la persona que realizo la reserva: ";
+    std::cin>>dni;
+    std::cout<<std::endl;
+    InfoReservas.verificarEstadoReserva(DatosReservas, TotalRegistros, dni);
+
+    delete []DatosReservas;
 
 }
-DatosReservas = new Reservas[TotalRegistros];
-std::cout<<"Ingrese el Dni de la persona que realizo la reserva: ";
-std::cin>>dni;
 
-InfoReservas.verificarEstadoReserva(DatosReservas, TotalRegistros, dni);
-
-delete []DatosReservas;
-
-}
-
-void MostrarArchivoReservas()
-{
+void MostrarArchivoReservas(){
 
     system("cls");
     bool loop = true;
