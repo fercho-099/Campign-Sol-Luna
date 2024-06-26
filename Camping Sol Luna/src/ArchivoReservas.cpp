@@ -337,15 +337,7 @@ void ArchivoReservas::mostrarCabaniasDisponibles(){
 	int cant=10;
 	cout<<"Cabanias disponibles:"<<endl;
 	for(int i=0;i<cant;i++){
-        int contador=0;
-        while(fread(&obj, sizeof obj, 1, p)==1){
-            if(obj.getTipoDePago().getVecCabania()[i]==false){
-                contador++;
-            }
-        }
-        if(contador==0){
-            cout<<i+1<<endl;
-        }
+
     }
 	fclose(p);
 }

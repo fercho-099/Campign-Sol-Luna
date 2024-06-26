@@ -46,12 +46,12 @@ void OpcionesDeInformes(){
             system("cls");
             break;
         case 4:
-            mostrarCabaniasEnUso();
+            ///mostrarCabaniasEnUso();
             system("pause");
             system("cls");
             break;
         case 5:
-            mostrarCarpasEnUso();
+            ///mostrarCarpasEnUso();
             system("pause");
             system("cls");
             break;
@@ -104,7 +104,7 @@ void facturacionTotal()
 
 }
 
-void mostrarCabaniasEnUso(){
+/*void mostrarCabaniasEnUso(){
     ArchivoCabanias archiC;
     Reservas aux;
     int cant=archiC.contarRegistros();
@@ -112,18 +112,7 @@ void mostrarCabaniasEnUso(){
     int cabanias=10;
     int contador;
     for(int i=0;i<cant;i++){
-        aux=archiC.leerRegistro(i);
-        if(aux.getEstado()){
-            for(int i=0;i<cabanias;i++){
-                contador=0;
-                if(aux.getTipoDePago().getVecCabania()[i]==true){
-                        contador++;
-                    }
-            }
-            if(contador==0){
-                cout<<i+1<<endl;
-            }
-        }
+
     }
 }
 
@@ -137,19 +126,8 @@ void mostrarCarpasEnUso(){
     int carpas=20;
     int contador;
     for(int i=0;i<cant;i++){
-        aux=archiC.leerRegistro(i);
-        if(aux.getEstado()){
-            for(int i=0;i<carpas;i++){
-                contador=0;
-                if(aux.getTipoDePago().getVecCarpa()[i]==true){
-                        contador++;
-                    }
-            }
-            if(contador==0){
-                cout<<i+1<<endl;
-            }
-        }
+
     }
 }
-
+*/
 #endif // MENUINFORMES_H_INCLUDED

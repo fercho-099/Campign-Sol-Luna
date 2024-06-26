@@ -15,10 +15,6 @@ private:
     int Estado;///Fer
 
 public:
-    /*bool operator == (Reservas obj){
-
-        if(obj.getFechaDesde().getDia() == Desde.getDia())
-    }*/
     ///Reservas();
     void Cargar();
     void CargarPrueba();

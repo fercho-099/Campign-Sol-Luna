@@ -10,7 +10,16 @@ class Fecha
      int dia, mes, anio;
 
  public:
-
+     bool operator == (Fecha obj){
+        if(obj.getDia() == dia){
+            if(obj.getMes()==mes){
+                if(obj.getAnio()==anio){
+                    return true;
+                }
+            }return false;
+        }
+        return false;
+    }
     Fecha();
     bool MaximosDias( int, int , int );
     void setDia(int);

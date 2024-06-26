@@ -5,20 +5,6 @@ using namespace std;
 #include <cstring>
 #include <chrono>
 
-void Reservas::Cargar(){
-    system("cls");
-    Fecha aux;
-    Datos.Cargar();
-    ///Desde = aux.Cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
-    system("cls");
-    std::cout<<"Fecha de entrada"<<std::endl;
-    Desde.Cargar();
-    system("cls");
-    std::cout<<"Fecha de salida"<<std::endl;
-    Hasta.Cargar();
-    Estado = 1;
-
-}
 
 void Reservas::CargarPrueba()
 {
@@ -31,11 +17,7 @@ void Reservas::CargarPrueba()
     Hasta.Cargar();
     system("cls");
     Datos.CargarPrueba(Desde,Hasta);
-
-    ///Desde = aux.Cargar();///No esta en diagrama, se diferencia de dos cargar por case sensitive. Una carga automatico la otra carga manual.
     Estado = 1;
-
-
 }
 
 ///Alan
