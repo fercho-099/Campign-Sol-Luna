@@ -5,9 +5,9 @@
 #include "Reservas.h"
 
 Fecha::Fecha(){
-    dia;
-    mes;
-    anio;
+    dia=1;
+    mes=1;
+    anio=1990;
 }
 
 bool Fecha::MaximosDias(int Dia, int Mes, int Anio){

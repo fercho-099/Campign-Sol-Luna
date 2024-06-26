@@ -8,8 +8,7 @@ using namespace std;
 #include <cstring>
 
 
-void TipoDePago::Cargar()
-{
+void TipoDePago::Cargar(){
     system("cls");
     bool sectorValido= true;
     int dni, pos;
@@ -71,12 +70,11 @@ void TipoDePago::Cargar()
     }
 }
 
-void TipoDePago::CargarPrueba()
-{
+void TipoDePago::CargarPrueba(){
 }
 
-void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
-{
+void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta){
+
     int DiaRestantes, resp, valorcarpa = 5000, valorcabana=12000;
     bool Disponible = false;
     Reservas Reservas;
@@ -84,20 +82,27 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
     ArchivoClientes InfoClientes;
     Reservas.setFechaDesde(Desde);
     Reservas.setFechaHasta(Hasta);
-    DiaRestantes = Reservas.RestanteFecha();
+    DiaRestantes = Reservas.RestanteFecha();///ver 1
 
-    cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
-    cin>>IDServicio;
-    if(IDServicio > 2)
+    do
     {
-        cout<<"Ingrese un ID de servicio valido: ";
+        cout<<"Ingrese el ID Servicio(1- Carpa 2- Cabania): ";
         cin>>IDServicio;
-    }
+        if(IDServicio > 2)
+        {
+            cout<<"Ingrese un ID de servicio valido: ";
+            system("pause");
+            system("cls");
+        }
+    }while(IDServicio>2 || IDServicio <1);
+
     int Contar = ArchivoReserva.contarRegistros();
 
     switch (IDServicio)
     {
     case 1:
+
+        if(Contar>0){
         for(int i=0; i<Contar; i++)
         {
             Reservas = ArchivoReserva.LeerRegistro(i);
@@ -113,7 +118,7 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
             }
             else if(Reservas.getFechaDesde() >= Desde && Reservas.getFechaHasta() >= Hasta )
             {
-                 if(IDServicio==1)
+                if(IDServicio==1)
                 {
                     ArchivoReserva.mostrarCarpasDisponibles();
                     Disponible = true;
@@ -122,7 +127,7 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
             }
 
             else if(Reservas.getFechaDesde() <= Desde && Reservas.getFechaHasta() <= Hasta )
-                {
+            {
 
                 if(IDServicio==1)
                 {
@@ -130,8 +135,9 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
                     Disponible = true;
                 }
 
-                }
+            }
 
+        }
         }
         if (!Disponible)
         {
