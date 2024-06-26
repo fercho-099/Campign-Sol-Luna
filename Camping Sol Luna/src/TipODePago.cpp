@@ -111,6 +111,26 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
                     Disponible = true;
                 }
             }
+            else if(Reservas.getFechaDesde() >= Desde && Reservas.getFechaHasta() >= Hasta )
+            {
+                 if(IDServicio==1)
+                {
+                    ArchivoReserva.mostrarCarpasDisponibles();
+                    Disponible = true;
+                }
+
+            }
+
+            else if(Reservas.getFechaDesde() <= Desde && Reservas.getFechaHasta() <= Hasta )
+                {
+
+                if(IDServicio==1)
+                {
+                    ArchivoReserva.mostrarCarpasDisponibles();
+                    Disponible = true;
+                }
+
+                }
 
         }
         if (!Disponible)
