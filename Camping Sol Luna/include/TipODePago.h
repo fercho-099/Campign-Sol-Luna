@@ -12,12 +12,9 @@ class TipoDePago
        int Cabana, Carpa;
        Fecha FechaPago;
        float Monto;
-       bool estado;///verifica si se realizo el pago en su totalidad o no.
+       bool estado;
    public:
-    ///TipoDePago();
-    void Cargar();
-    void CargarPrueba(Fecha, Fecha);
-    void CargarPrueba();
+    void Cargar(Fecha, Fecha);
     void Mostrar();
     void setCliente(Cliente );
     void setIDServicio(int );

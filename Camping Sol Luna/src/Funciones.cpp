@@ -8,21 +8,6 @@ using namespace std;
 
 #include "Funciones.h"
 
-///Alan
-///Valida que el ingreso sea un numero y que sea dntro de los rngos posibles
-/*long long int IngresoNumero()
-{
-    long long int numeros;
-    while (!(cin >> numeros)) {
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout <<"Ingrese un caracter valido: ";
-
-    }
-
-    return numeros;
-}*/
-
 long long int IngresoNumero()
 {
    long long int numero;
@@ -53,39 +38,39 @@ long long int IngresoNumero()
 }
 
 void CargarCadenas(char *vec, int tam) {
-    string input;
-    bool firstAttempt = true;
+    string entrada;
+    bool primerIntento = true;
 
     while (true) {
-        getline(cin, input);
+        getline(cin, entrada);
 
         // Permitir la primera entrada vacía
-        if (firstAttempt) {
-            firstAttempt = false;
-            if (input.empty()) {
+        if (primerIntento) {
+            primerIntento = false;
+            if (entrada.empty()) {
                 continue; // Pedir de nuevo si la primera entrada esta vacía
             }
         }
 
         // Verificar si la entrada esta vacía
-        if (input.empty()) {
-            cerr <<  "linea vacia, vuelva a ingresar el dato:";
+        if (entrada.empty()) {
+            cout <<  "linea vacia, vuelva a ingresar el dato:";
             continue;
         }
 
         // Verificar cada carácter de la entrada
-        bool valid = true;
-        for (char c : input) {
+        bool valido = true;
+        for (char c : entrada) {
             if (!isalpha(c)) {
-                cerr << "La informacion contiene caracteres no validos, vuelva a ingresar el dato: ";
-                valid = false;
+                cout << "La informacion contiene caracteres no validos, vuelva a ingresar el dato: ";
+                valido = false;
                 break;
             }
         }
 
-        if (valid) {
+        if (valido) {
             // Copiar la cadena válida a la variable proporcionada
-            strncpy(vec, input.c_str(), tam - 1);
+            strncpy(vec, entrada.c_str(), tam - 1);
             vec[tam - 1] = '\0'; // Asegurar el carácter nulo al final
             break;
         }

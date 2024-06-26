@@ -6,7 +6,7 @@ using namespace std;
 #include <chrono>
 
 
-void Reservas::CargarPrueba()
+void Reservas::Cargar()
 {
     system("cls");
     Fecha aux;
@@ -16,12 +16,11 @@ void Reservas::CargarPrueba()
     std::cout<<"Fecha de salida"<<std::endl;
     Hasta.Cargar();
     system("cls");
-    Datos.CargarPrueba(Desde,Hasta);
-    Estado = 1;
+    Datos.Cargar(Desde,Hasta);
+    Estado = true;
 }
 
-///Alan
-///Devuelve la cantidad de dia entre fecha de entrada y salida
+
 long long Reservas::RestanteFecha()
 {
         tm tmDesde = {0, 0, 0, Desde.getDia(), Desde.getMes() - 1, Desde.getAnio() - 1900};
@@ -47,7 +46,7 @@ void Reservas::Mostrar()
     Hasta.Mostrar();
 }
 
-void Reservas::setTipoDePago(TipoDePago info) ///verificar que se copie el objeto correctamente
+void Reservas::setTipoDePago(TipoDePago info)
 {
 
     Datos=info;
@@ -61,7 +60,7 @@ void Reservas::setFechaDesde(Fecha desde)
 
 }
 
-void Reservas::setFechaHasta(Fecha hasta)  ///Lo mismo, verificar que se copie el objeto correctamente
+void Reservas::setFechaHasta(Fecha hasta)
 {
 
     Hasta = hasta;
@@ -84,11 +83,11 @@ TipoDePago Reservas::getTipoDePago(){
     return Datos;
 }
 
-void Reservas::setEstado(int e){
+void Reservas::setEstado(bool e){
     Estado=e;
 }
 
-int Reservas::getEstado(){
+bool Reservas::getEstado(){
     return Estado;
 }
 

@@ -8,31 +8,14 @@ using namespace std;
 #include "Cliente.h"
 #include "Funciones.h"
 
-///LEO
-///Meti esta funcion aca por ahora para que ande nomas luego habra que cambiarla
-/*void cargarCadena(char *palabra, int tamano){
-    int i=0;
-    fflush(stdin);
-    for (i=0; i<tamano; i++){
-        palabra[i]=cin.get();
-        if (palabra[i]=='\n'){
-            break;
-        }
-    }
-    palabra[i]='\0';
-    fflush(stdin);
-}*/
-
-Cliente::Cliente(int DNI, const char *nombre, const char *apellido, int telefono)
-{
+Cliente::Cliente(int DNI, const char *nombre, const char *apellido, int telefono){
 	setDNI(DNI);
 	setNombre(nombre);
 	setApellido(apellido);
 	setTelefono(telefono);
 	setEstado(true);
 }
-///LEO
-///Tuve que crear un constructor con parametros por omision para que el programa me deje crear un objeto sin mandarle ningun parametro
+
 Cliente::Cliente()
 {
 	_DNI=0;
@@ -41,10 +24,7 @@ Cliente::Cliente()
 	_telefono=12345;
 	_estado=false;
 }
-///LEO
-///Cree esta funcion que no estaba hecha
-///Alan
-///Validaciones al ingresar datos
+
 void Cliente::Cargar(){
 
 
@@ -68,8 +48,7 @@ void Cliente::Cargar(){
         }
     setEstado(true);
 }
-///LEO
-///Esta funcion tambien faltaba
+
 void Cliente::Mostrar(){
     cout<<"Dni: "<<_DNI<<endl;
     cout<<"Nombre: "<<_nombre<<endl;

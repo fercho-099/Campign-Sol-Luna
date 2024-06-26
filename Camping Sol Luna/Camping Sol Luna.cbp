@@ -40,7 +40,6 @@
 		<Unit filename="include/ArchivoReservas.h" />
 		<Unit filename="include/Cliente.h" />
 		<Unit filename="include/Fecha.h" />
-		<Unit filename="include/Funcion Generales.h" />
 		<Unit filename="include/Funciones.h" />
 		<Unit filename="include/MenuClientes.h" />
 		<Unit filename="include/MenuInformes.h" />

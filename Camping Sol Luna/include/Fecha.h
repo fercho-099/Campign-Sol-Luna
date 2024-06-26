@@ -10,16 +10,6 @@ class Fecha
      int dia, mes, anio;
 
  public:
-     bool operator == (Fecha obj){
-        if(obj.getDia() == dia){
-            if(obj.getMes()==mes){
-                if(obj.getAnio()==anio){
-                    return true;
-                }
-            }return false;
-        }
-        return false;
-    }
     Fecha();
     bool MaximosDias( int, int , int );
     void setDia(int);
@@ -33,40 +23,6 @@ class Fecha
     void CargarActual();
     bool ValidarFecha(int,int,int);
     bool esBisiesto();
-
-     bool operator>=(Fecha& otra){
-        if(anio > otra.anio)
-            {
-                return true;
-            }
-        else if(anio == otra.anio && mes > otra.mes)
-            {
-                return true;
-            }
-        else if(anio == otra.anio && mes == otra.mes && dia>= otra.dia)
-        {
-            return true;
-        }
-        else return false;
-     }
-
-     bool operator<=(Fecha& otra)
-     {
-        if(anio < otra.anio)
-            {
-                return true;
-            }
-        else if(anio == otra.anio && mes < otra.mes)
-            {
-                return true;
-            }
-        else if(anio == otra.anio && mes == otra.mes && dia <= otra.dia)
-        {
-            return true;
-        }
-        else return false;
-     }
-
 };
 
 #endif // FECHA_H

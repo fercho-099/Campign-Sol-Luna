@@ -27,7 +27,6 @@ system("cls");
         cout<<"4 - Verificar Reserva"<<endl;
         cout<<"5 - Mostrar Reservas"<<endl;
         cout<<"0 - Volver al menu anterior"<<endl;
-        cout<<"6 - Crear una reserva prueba "<<endl;
         cout<<endl;
         cout<<"Ingrese una opcion: ";
         cin>>opc;
@@ -47,9 +46,6 @@ system("cls");
         case 5:
             MostrarArchivoReservas();
             break;
-
-        case 6:
-            CargarReservaPrueba();
         case 0:
             loop=false;
             break;
@@ -61,16 +57,14 @@ system("cls");
     }while(loop);
 
 }
-///Fer: Cargar Reserva Lista
 
 void CargarReserva(){
 
     Reservas DatosReservas;
     ArchivoReservas InfoReservas;
-    DatosReservas.CargarPrueba();
+    DatosReservas.Cargar();
     if(InfoReservas.GrabarRegistro(DatosReservas)) {
         std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
-    ///Leo: Agrego esta parte para que cuando se cargue una reserva dependiendo de que tipo de servicio tambien se guarde en el archivo correspondiente
         if(DatosReservas.getTipoDePago().getIDServicio()==1){
             ArchivoCarpas archiCarpas;
             archiCarpas.grabarRegistro(DatosReservas);
@@ -88,33 +82,6 @@ void CargarReserva(){
 
 }
 
-void CargarReservaPrueba(){
-
-    Reservas DatosReservas;
-    ArchivoReservas InfoReservas;
-    DatosReservas.CargarPrueba();
-    if(InfoReservas.GrabarRegistro(DatosReservas)) {
-        std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
-    ///Leo: Agrego esta parte para que cuando se cargue una reserva dependiendo de que tipo de servicio tambien se guarde en el archivo correspondiente
-        if(DatosReservas.getTipoDePago().getIDServicio()==1){
-            ArchivoCarpas archiCarpas;
-            archiCarpas.grabarRegistro(DatosReservas);
-        }
-        else if(DatosReservas.getTipoDePago().getIDServicio()==2){
-            ArchivoCabanias archiCabanias;
-            archiCabanias.grabarRegistro(DatosReservas);
-        }
-        system("pause");
-    }
-    else{
-        std::cout<<"No se Gestiona la reserva"<<std::endl;
-        system("pause");
-    }
-
-}
-
-
-///Modificar Reserva lista
 void ModificarReserva(){
 
     system("cls");
@@ -160,7 +127,6 @@ void ModificarReserva(){
 delete []DatoReserva;
 }
 
-///Borrar Reservas Lista
 void BorrarReserva(){
     system("cls");
     int dni, TotalCantidad, Opcion;

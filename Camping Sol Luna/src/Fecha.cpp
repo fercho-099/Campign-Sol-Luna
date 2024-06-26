@@ -58,7 +58,6 @@ int Fecha::getAnio(){
     return anio;
 }
 
-//Alan
 void Fecha::CargarActual(){
     time_t now = time(0); // Captura fecha y hora actual
     tm* localTime = localtime(&now); // Creamos el puntero localTime y lo referenciamos al objeto time
@@ -68,7 +67,6 @@ void Fecha::CargarActual(){
     anio = localTime->tm_year + 1900; // Sumamos 1900 para obtener el año actual
 }
 
-//Alan
 bool Fecha::ValidarFecha(int dia, int mes, int anio ){
  // Obtener la fecha actual
     auto fechaActual = std::chrono::system_clock::now();
@@ -113,7 +111,7 @@ void Fecha::Cargar(){
             system("pause");
             system("cls");
         }
-        if(!diasMaximos){///fer: pregunta si la fecha ingresada
+        if(!diasMaximos){
 
             std::cout<<"Fecha Ingresada Incorrecta, ingrese nuevamente una fecha valida"<<std::endl;
             system("pause");

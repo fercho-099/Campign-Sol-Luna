@@ -12,18 +12,16 @@ private:
 
     TipoDePago Datos;
     Fecha Desde, Hasta;
-    int Estado;///Fer
+    bool Estado;
 
 public:
-    ///Reservas();
     void Cargar();
-    void CargarPrueba();
     void Mostrar();
     void setTipoDePago(TipoDePago );
     void setFechaDesde(Fecha);
     void setFechaHasta(Fecha);
-    void setEstado(int e);/// 1 reserva guardada / 2 reserva cancelada / 3 reserva gestionada(pase a servicio activo)
-    int getEstado();/// 1 reserva guardada / 2 reserva cancelada / 3 reserva gestionada(pase a servicio activo)
+    void setEstado(bool e);
+    bool getEstado();
     TipoDePago getTipoDePago();
     Fecha getFechaDesde();
     Fecha getFechaHasta();

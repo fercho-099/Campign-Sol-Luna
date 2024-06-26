@@ -31,16 +31,6 @@ bool ArchivoReservas::GrabarRegistro(Reservas obj){
 	return escribio;
 }
 
-/*bool ArchivoReservas::GrabarRegistro(Reservas obj, int TotalRegistros){
-	FILE *p;
-	p=fopen(AperturaArchivo, "ab");
-	if(p==NULL) return false;
-
-	bool escribio=fwrite(&obj, sizeof obj, TotalRegistros, p);
-	fclose(p);
-	return escribio;
-}*/
-
 bool ArchivoReservas::grabarRegistros(Reservas obj, int pos){
 
     bool retorno;
@@ -51,7 +41,7 @@ bool ArchivoReservas::grabarRegistros(Reservas obj, int pos){
         return retorno;
     }
     fseek(P, sizeof obj* pos,0);
-    retorno = fwrite(&obj, sizeof (Reservas), 1, P);///fwrite(&obj, sizeof (Reservas)*pos, 1, P)
+    retorno = fwrite(&obj, sizeof (Reservas), 1, P);
     fclose(P);
     return retorno;
 
@@ -72,7 +62,6 @@ Reservas ArchivoReservas::LeerRegistro(int pos){
 	Reservas obj;
 	obj.setEstado(-4);
 	p=fopen(AperturaArchivo, "rb");
-	//obj.setTipoDePago()
 	if(p==NULL) return obj;
 	fseek(p, pos*sizeof obj,0);
 	fread(&obj, sizeof obj, 1, p);
@@ -80,14 +69,13 @@ Reservas ArchivoReservas::LeerRegistro(int pos){
 	return obj;
 }
 
-Reservas ArchivoReservas::LeerRegistrosDinamicos(Reservas *DatoReserva, int pos){///probando dinamico
+Reservas ArchivoReservas::LeerRegistrosDinamicos(Reservas *DatoReserva, int pos){
 
-Reservas aux;
+        Reservas aux;
 
         aux = DatoReserva[pos];
 
         return aux;
-
 
 }
 
@@ -108,7 +96,7 @@ void ArchivoReservas::LeerRegistrosTotales(Reservas &obj, int TotalRegistros){
 
 }
 
-int ArchivoReservas::BuscarRegistro(int dni){///Se Usa
+int ArchivoReservas::BuscarRegistro(int dni){
 	FILE *p;
 	Reservas obj;
 	p=fopen(AperturaArchivo, "rb");
@@ -125,7 +113,7 @@ int ArchivoReservas::BuscarRegistro(int dni){///Se Usa
 	return -2;
 }
 
-int ArchivoReservas::BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, int dni){///probando dinamico
+int ArchivoReservas::BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, int dni){
 
     int pos, Opcion;
 
@@ -281,17 +269,6 @@ void ArchivoReservas::ListarRegistros(){
 	return;
 }
 
-/**void verificarEstadoReserva(int dni){ PREGUNTAR A LEO SI PUEDO BORRAR YA QUE SE TRABAJA CON MEMORIA DINAMICA
-    ArchivoReservas reg;
-    Reservas aux;
-    int pos=reg.buscarRegistro(dni);
-    aux=reg.leerRegistro(pos);
-    if(aux.getEstado()==false){
-        cout<<"La reserva se encuentra deshabilitada"<<endl;
-    }
-    else cout<<"La reserva se encuentra habilitada"<<endl;
-}*/
-
 void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalRegistros, int dni){
 
     for(int x=0; x<TotalRegistros; x++){
@@ -307,7 +284,7 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
                 system("pause");
             }
 
-            else if(DatosReservas[x].getEstado() == 2){
+            else{
 
                 DatosReservas[x].Mostrar();
                 std::cout<<std::endl;
@@ -316,14 +293,6 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
                 system("pause");
             }
 
-            else{
-
-                DatosReservas[x].Mostrar();
-                std::cout<<std::endl;
-                std::cout<<"La reserva se encuentra Gestionada. Verificar el archivo de servicio contratado para mas informacion"<<std::endl;
-                std::cout<<std::endl;
-                system("pause");
-            }
         }
     }
 }

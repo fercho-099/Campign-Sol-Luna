@@ -9,7 +9,19 @@ using namespace std;
 #include "ArchivoCarpas.h"
 #include <cstring>
 
-void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
+ bool esMenorOIgual(Fecha f1, Fecha f2) {
+        if (f1.getAnio() < f2.getAnio()) return true;
+        if (f1.getAnio() > f2.getAnio()) return false;
+        if (f1.getMes() < f2.getMes()) return true;
+        if (f1.getMes() > f2.getMes()) return false;
+        return f1.getDia() <= f2.getDia();
+    }
+
+bool seSolapan(Fecha Desde1, Fecha Hasta1, Fecha Desde2, Fecha Hasta2) {
+        return esMenorOIgual(Desde1, Hasta2) && esMenorOIgual(Desde2, Hasta1);
+}
+
+void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
 {
 
     int DiaRestantes, valorcarpa = 5000, valorcabana=12000, dni, pos;
@@ -38,99 +50,101 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
 
     switch (IDServicio)
     {
-    case 1:
-    {
-
+    case 1:{
         int Contar = ArchiCarpas.contarRegistros();
-        int contando = 20;
+        int contando = 10;
 
-        if(Contar>0)
-        {
-
-
-            for(int i=0; i<Contar; i++)
-            {
+        if(Contar>0){
+            for(int i=0; i<Contar; i++){
                 reserva = ArchiCarpas.leerRegistro(i);
-
-                if(reserva.getFechaDesde() >= Desde && reserva.getFechaHasta() <= Hasta)
-                {
+                if(seSolapan(reserva.getFechaDesde(),reserva.getFechaHasta(),Desde,Hasta)){
                     contando--;
                 }
-
-                else if(reserva.getFechaDesde() <= Desde && reserva.getFechaHasta() <= Hasta)
-                {
-                    contando--;
-                }
-
             }
-        }
-
-        if (contando==0)
-        {
+        if (contando==0){
             cout << "No hay carpas disponibles en el rango de fechas ingresado"<<endl;
             return;
         }
-        else
-        {
+        else{
             cout<<"Hay "<<contando<<" carpas disponible"<<endl;
             system("pause");
             std::cout<<"Ingrese el DNI para corroborar si el usuario existe: ";
             std::cin>>dni;
             pos = ArchiClientes.buscarRegistro(dni);
-
-            if(pos <0)
-            {
+            system("cls");
+            if(pos <0){
                 InfoCliente.Cargar();
                 ArchiClientes.grabarRegistro(InfoCliente);
                 Monto = DiaRestantes * valorcarpa;
                 cout<<"Monto total a abonar: "<<Monto<<endl;
-
-                do
-                {
+                do{
                     cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
                     cin>>modoDePago;
-
-                    if(modoDePago > 2 || modoDePago<1)
-                    {
+                    if(modoDePago > 2 || modoDePago<1){
                         cout<<"Medio de pago invalido, vuelva a ingresar: ";
                         system("pause");
                     }
-
-
-                }
-                while(modoDePago !=1 && modoDePago !=2);
-
+                }while(modoDePago !=1 && modoDePago !=2);
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();/// Pone la fecha en automatico del dia
                 estado = true;
             }
-
-            else
-            {
-
+            else{
                 InfoCliente = ArchiClientes.leerRegistro(pos);
                 Monto = DiaRestantes * valorcarpa;
                 cout<<"Monto total a abonar: "<<Monto<<endl;
-
-                do
-                {
+                do{
                     cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
                     cin>>modoDePago;
-
-                    if(modoDePago > 2 || modoDePago<1)
-                    {
+                    if(modoDePago > 2 || modoDePago<1){
                         cout<<"Medio de pago invalido, vuelva a ingresar: ";
                         system("pause");
                     }
-
-
-                }
-                while(modoDePago !=1 && modoDePago !=2);
-
+                }while(modoDePago !=1 && modoDePago !=2);
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();/// Pone la fecha en automatico del dia
                 estado = true;
-
+            }
+        }
+        }
+        else{
+            cout<<"Hay "<<contando<<" carpas disponible"<<endl;
+            system("pause");
+            std::cout<<"Ingrese el DNI para corroborar si el usuario existe: ";
+            std::cin>>dni;
+            pos = ArchiClientes.buscarRegistro(dni);
+            if(pos <0){
+                InfoCliente.Cargar();
+                ArchiClientes.grabarRegistro(InfoCliente);
+                Monto = DiaRestantes * valorcarpa;
+                cout<<"Monto total a abonar: "<<Monto<<endl;
+                do{
+                    cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
+                    cin>>modoDePago;
+                    if(modoDePago > 2 || modoDePago<1){
+                        cout<<"Medio de pago invalido, vuelva a ingresar: ";
+                        system("pause");
+                    }
+                }while(modoDePago !=1 && modoDePago !=2);
+                std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
+                FechaPago.CargarActual();/// Pone la fecha en automatico del dia
+                estado = true;
+            }
+            else{
+                InfoCliente = ArchiClientes.leerRegistro(pos);
+                Monto = DiaRestantes * valorcarpa;
+                cout<<"Monto total a abonar: "<<Monto<<endl;
+                do{
+                    cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
+                    cin>>modoDePago;
+                    if(modoDePago > 2 || modoDePago<1){
+                        cout<<"Medio de pago invalido, vuelva a ingresar: ";
+                        system("pause");
+                    }
+                }while(modoDePago !=1 && modoDePago !=2);
+                std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
+                FechaPago.CargarActual();/// Pone la fecha en automatico del dia
+                estado = true;
             }
         }
     }
@@ -141,31 +155,15 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
         int Contar = ArchiCabania.contarRegistros();
         int contando = 10;
 
-        if(Contar>0)
-        {
-
-
-            for(int i=0; i<Contar; i++)
-            {
+        if(Contar>0){
+            for(int i=0; i<Contar; i++){
                 reserva = ArchiCabania.leerRegistro(i);
-
-                if(reserva.getFechaDesde() >= Desde && reserva.getFechaHasta() <= Hasta)
-                {
+                if(seSolapan(reserva.getFechaDesde(),reserva.getFechaHasta(),Desde,Hasta)){
                     contando--;
                 }
-
-                else if(reserva.getFechaDesde() >= Desde || reserva.getFechaHasta()==(Hasta))
-                {
-                    contando--;
-                }
-
-
             }
-        }
-
-        if (contando==0)
-        {
-            cout << "No hay Cabanias disponibles en el rango de fechas ingresado"<<endl;
+        if (contando==0){
+            cout << "No hay cabanias disponibles en el rango de fechas ingresado"<<endl;
             return;
         }
         else
@@ -175,7 +173,7 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
             std::cout<<"Ingrese el DNI para corroborar si el usuario existe: ";
             std::cin>>dni;
             pos = ArchiClientes.buscarRegistro(dni);
-
+            system("cls");
             if(pos <0)
             {
                 InfoCliente.Cargar();
@@ -232,7 +230,48 @@ void TipoDePago::CargarPrueba(Fecha Desde, Fecha Hasta)
             }
         }
 
-
+        }
+        else{
+            cout<<"Hay "<<contando<<" carpas disponible"<<endl;
+            system("pause");
+            std::cout<<"Ingrese el DNI para corroborar si el usuario existe: ";
+            std::cin>>dni;
+            pos = ArchiClientes.buscarRegistro(dni);
+            system("cls");
+            if(pos <0){
+                InfoCliente.Cargar();
+                ArchiClientes.grabarRegistro(InfoCliente);
+                Monto = DiaRestantes * valorcarpa;
+                cout<<"Monto total a abonar: "<<Monto<<endl;
+                do{
+                    cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
+                    cin>>modoDePago;
+                    if(modoDePago > 2 || modoDePago<1){
+                        cout<<"Medio de pago invalido, vuelva a ingresar: ";
+                        system("pause");
+                    }
+                }while(modoDePago !=1 && modoDePago !=2);
+                std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
+                FechaPago.CargarActual();/// Pone la fecha en automatico del dia
+                estado = true;
+            }
+            else{
+                InfoCliente = ArchiClientes.leerRegistro(pos);
+                Monto = DiaRestantes * valorcarpa;
+                cout<<"Monto total a abonar: "<<Monto<<endl;
+                do{
+                    cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
+                    cin>>modoDePago;
+                    if(modoDePago > 2 || modoDePago<1){
+                        cout<<"Medio de pago invalido, vuelva a ingresar: ";
+                        system("pause");
+                    }
+                }while(modoDePago !=1 && modoDePago !=2);
+                std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
+                FechaPago.CargarActual();/// Pone la fecha en automatico del dia
+                estado = true;
+            }
+        }
     break;///case 2
 }
     default:

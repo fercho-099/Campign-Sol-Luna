@@ -5,4 +5,5 @@
 using namespace std;
 long long int IngresoNumero();
 void CargarCadenas(char*, int);
+
 #endif // FUNCIONES_H_INCLUDED

@@ -8,12 +8,11 @@ private:
 	char AperturaArchivo[30];
 
 public:
-    ArchivoReservas();///se usa para back up
-	ArchivoReservas(const char *n);///se usa para bak up
-    void setAperturaArchivo(const char *n);///se usa para bak up
+    ArchivoReservas();
+	ArchivoReservas(const char *n);
+    void setAperturaArchivo(const char *n);
 
-	bool GrabarRegistro(Reservas obj);///se usa para carga normal
-	///bool GrabarRegistro(Reservas obj, int TotalRegistros);///No funciona grabar todo junto
+	bool GrabarRegistro(Reservas obj);
 	bool grabarRegistros(Reservas obj, int pos);///se usa en el metodo de modificar reserva ya que recibe como parametro un registro completo de reservas y la posicion donde se va a reescribir los datos modificados en el archivo
     void grabarRegistroNuevo(Reservas obj);///Sirve para grabar en archivo nuevo con una apertura wb y pisando el archivo viejo.
 
@@ -30,9 +29,8 @@ public:
 
     bool CrearBackUpManual();///Devuelve true o false si se pudo crear un back up correctamente de manera automatica.
 	void ListarRegistros();///Lista la totalidad de registro de un archivo especifico, puede ser el back up o el archivo actual.
-	///void VerificarEstadoReserva(int dni);   PREGUNTAR A LEO
 	void verificarEstadoReserva(Reservas *DatosReservas, int TotalRegistros, int dni);///recibe tres parametro  e informa el estado de reserva de un registro especifico.
 
-    void mostrarCabaniasDisponibles();///Leo
-    void mostrarCarpasDisponibles();///Leo
+    void mostrarCabaniasDisponibles();
+    void mostrarCarpasDisponibles();
 };
