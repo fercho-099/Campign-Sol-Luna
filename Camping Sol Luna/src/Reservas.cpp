@@ -53,7 +53,7 @@ long long Reservas::RestanteFecha()
 
         auto diferencia = chrono::duration_cast<chrono::seconds>(hasta - desde); ///Calcula la diferenia en segundos
 
-        return diferencia.count() / 86400; ///Convertir segundos a días
+        return (1+(diferencia.count() / 86400)); ///Convertir segundos a días
 }
 
 

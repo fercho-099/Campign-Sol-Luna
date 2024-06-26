@@ -358,15 +358,12 @@ void ArchivoReservas::mostrarCarpasDisponibles(){
 	int cant=20;
 	cout<<"Carpas disponibles:"<<endl;
 	for(int i=0;i<cant;i++){
-        int contador=0;
+        int contador=20;
         while(fread(&obj, sizeof obj, 1, p)==1){
-            if(obj.getTipoDePago().getVecCarpa()[i]==false){
-                contador++;
-            }
+
+            contador--;
         }
-        if(contador==0){
-            cout<<i+1<<endl;
-        }
+
     }
 	fclose(p);
 }

@@ -303,7 +303,7 @@
 	"MenuClientes.h"
 	"MenuInformes.h"
 
-1719374565 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\reservas.h
+1719417788 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\reservas.h
 	<cstdlib>
 	"Fecha.h"
 	"TipODePago.h"
@@ -348,7 +348,7 @@
 1718486909 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivocarpas.h
 	"Reservas.h"
 
-1719374565 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
+1719414801 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
 	"ArchivoClientes.h"
 	<cstring>
 
@@ -360,7 +360,7 @@
 	"Cliente.h"
 	"Funciones.h"
 
-1719375939 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\fecha.cpp
+1719415811 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\fecha.cpp
 	<ctime>
 	<chrono>
 	"Fecha.h"
@@ -385,20 +385,22 @@
 	"Reservas.h"
 	"Cliente.h"
 
-1719374565 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\reservas.cpp
+1719415811 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\reservas.cpp
 	<iostream>
 	"Reservas.h"
 	<cstring>
 	<chrono>
 
-1719375789 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\tipodepago.cpp
+1719417023 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\tipodepago.cpp
 	<iostream>
 	"TipODePago.h"
 	"ArchivoReservas.h"
 	"ArchivoClientes.h"
+	"ArchivoCabanias.h"
+	"ArchivoCarpas.h"
 	<cstring>
 
-1719374565 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menureservas.h
+1719411902 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menureservas.h
 	"ArchivoReservas.h"
 	"ArchivoCarpas.h"
 	"ArchivoCabanias.h"
@@ -513,7 +515,7 @@
 	<cstring>
 	"Reservas.h"
 
-1719374565 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoreservas.cpp
+1719411902 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoreservas.cpp
 	"../include/ArchivoReservas.h"
 	<iostream>
 	<cstdlib>

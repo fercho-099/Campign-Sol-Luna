@@ -67,7 +67,7 @@ void CargarReserva(){
 
     Reservas DatosReservas;
     ArchivoReservas InfoReservas;
-    DatosReservas.Cargar();
+    DatosReservas.CargarPrueba();
     if(InfoReservas.GrabarRegistro(DatosReservas)) {
         std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
     ///Leo: Agrego esta parte para que cuando se cargue una reserva dependiendo de que tipo de servicio tambien se guarde en el archivo correspondiente

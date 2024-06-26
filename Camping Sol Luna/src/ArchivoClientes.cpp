@@ -48,6 +48,7 @@ int ArchivoClientes::buscarRegistro(int dni){
 		pos++;
 	}
 	cout<<"El cliente no se encuentra en sistema"<<endl;
+	system("pause");
 	fclose(p);
 	return -2;
 }
