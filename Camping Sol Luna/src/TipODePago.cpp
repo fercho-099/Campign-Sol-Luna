@@ -330,17 +330,6 @@ void TipoDePago::setMonto(float monto){
     Monto = monto;
 }
 
-
-void TipoDePago::setCabana(int _cabana)
-{
-    Cabana = _cabana;
-}
-
-void TipoDePago::setCarpa(int _carpa)
-{
-    Carpa = _carpa;
-}
-
 Cliente TipoDePago::getCliente(){
 
     return InfoCliente;
@@ -355,16 +344,6 @@ int TipoDePago::getIDServicio(){
 int TipoDePago::getModoDePago(){
 
     return modoDePago;
-}
-
-int TipoDePago::getCabana()
-{
-    return Cabana;
-}
-
-int TipoDePago::getCarpa()
-{
-    return Carpa;
 }
 
 Fecha TipoDePago::getFechaDePago(){
