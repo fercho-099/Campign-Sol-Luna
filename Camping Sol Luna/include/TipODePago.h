@@ -5,13 +5,13 @@
 
 class TipoDePago
 {
-   private:
+private:
 
-       Cliente InfoCliente;
-       int IDServicio, modoDePago;
-       Fecha FechaPago;
-       float Monto;
-   public:
+    Cliente InfoCliente;
+    int IDServicio, modoDePago;
+    Fecha FechaPago;
+    float Monto;
+public:
     void Cargar(Fecha, Fecha);
     void Mostrar();
     void setCliente(Cliente );

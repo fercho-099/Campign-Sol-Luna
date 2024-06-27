@@ -5,13 +5,13 @@ using namespace std;
 
 class Fecha
 {
- private:
+private:
 
-     int dia, mes, anio;
+    int dia, mes, anio;
 
- public:
+public:
     Fecha();
-    bool MaximosDias( int, int , int );
+    bool MaximosDias( int, int, int );
     void setDia(int);
     void setMes(int);
     void setAnio(int);

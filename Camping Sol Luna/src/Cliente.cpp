@@ -8,33 +8,35 @@ using namespace std;
 #include "Cliente.h"
 #include "Funciones.h"
 
-Cliente::Cliente(int DNI, const char *nombre, const char *apellido, int telefono){
-	setDNI(DNI);
-	setNombre(nombre);
-	setApellido(apellido);
-	setTelefono(telefono);
-	setEstado(true);
+Cliente::Cliente(int DNI, const char *nombre, const char *apellido, int telefono)
+{
+    setDNI(DNI);
+    setNombre(nombre);
+    setApellido(apellido);
+    setTelefono(telefono);
+    setEstado(true);
 }
 
 Cliente::Cliente()
 {
-	_DNI=0;
-	strcpy(_nombre,"NULL");
-	strcpy(_apellido,"NULL");
-	_telefono=12345;
-	_estado=false;
+    _DNI=0;
+    strcpy(_nombre,"NULL");
+    strcpy(_apellido,"NULL");
+    _telefono=12345;
+    _estado=false;
 }
 
-void Cliente::Cargar(){
+void Cliente::Cargar()
+{
 
 
     cout<<"Ingrese el Dni: ";
     _DNI = IngresoNumero();
     if(_DNI < 1000000)
-        {
-         cout<<"Ingrese un dni valido: ";
-         _DNI = IngresoNumero();
-        }
+    {
+        cout<<"Ingrese un dni valido: ";
+        _DNI = IngresoNumero();
+    }
     cout<<"Ingrese el nombre: ";
     CargarCadenas(_nombre,30);
     cout<<"Ingrese el apellido: ";
@@ -42,14 +44,15 @@ void Cliente::Cargar(){
     cout<<"Ingrese el telefono: ";
     _telefono = IngresoNumero();
     if(_telefono<10000000)
-        {
-          cout<<"Ingrese un telefono valido: ";
-          _telefono = IngresoNumero();
-        }
+    {
+        cout<<"Ingrese un telefono valido: ";
+        _telefono = IngresoNumero();
+    }
     setEstado(true);
 }
 
-void Cliente::Mostrar(){
+void Cliente::Mostrar()
+{
     cout<<"Dni: "<<_DNI<<endl;
     cout<<"Nombre: "<<_nombre<<endl;
     cout<<"Apellido: "<<_apellido<<endl;
@@ -58,48 +61,50 @@ void Cliente::Mostrar(){
 
 void Cliente::setDNI(int DNI)
 {
-	_DNI=DNI;
+    _DNI=DNI;
 }
 
 void Cliente::setNombre(const char *nombre)
 {
-	 strcpy(_nombre,nombre);
+    strcpy(_nombre,nombre);
 }
 
 void Cliente::setApellido(const char *apellido)
 {
-	 strcpy(_apellido,apellido);
+    strcpy(_apellido,apellido);
 }
 
 void Cliente::setTelefono(int telefono)
 {
-	_telefono=telefono;
+    _telefono=telefono;
 }
 
-void Cliente::setEstado(bool e){
+void Cliente::setEstado(bool e)
+{
     _estado=e;
 }
 
 int Cliente::getDNI()
 {
-	return _DNI;
+    return _DNI;
 }
 
 const char* Cliente::getNombre()
 {
-	return _nombre;
+    return _nombre;
 }
 
 const char* Cliente::getApellido()
 {
-	return _apellido;
+    return _apellido;
 }
 
 int Cliente::getTelefono()
 {
-	return _telefono;
+    return _telefono;
 }
 
-bool Cliente::getEstado(){
+bool Cliente::getEstado()
+{
     return _estado;
 }

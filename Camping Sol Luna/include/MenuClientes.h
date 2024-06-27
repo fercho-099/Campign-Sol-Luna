@@ -15,11 +15,13 @@ void buscarCliente();
 void verificarEstadoCliente();
 void crearBackupClientes();
 
-void OpcionesDeClientes(){
+void OpcionesDeClientes()
+{
     system("cls");
     bool loop=true;
     int opc;
-    while(loop){
+    while(loop)
+    {
         cout<<"-----Camping SOL-LUNA-----"<<endl;
         cout<<"1 - Modificar datos de un cliente "<<endl;
         cout<<"2 - Dar de baja a un cliente"<<endl;
@@ -32,7 +34,8 @@ void OpcionesDeClientes(){
         cout<<"Ingrese una opcion: ";
         cin>>opc;
         system("cls");
-        switch(opc){
+        switch(opc)
+        {
         case 1:
             modificarCliente();
             system("pause");
@@ -74,7 +77,8 @@ void OpcionesDeClientes(){
 
 }
 
-void modificarCliente(){
+void modificarCliente()
+{
     int dni;
     char caracter;
     Cliente aux;
@@ -82,29 +86,31 @@ void modificarCliente(){
     cin>>dni;
     ArchivoClientes archiC;
     int pos=archiC.buscarRegistro(dni);
-    if(pos>=0){
+    if(pos>=0)
+    {
         cout<<"Desea modificar este cliente?"<<endl;
         aux=archiC.leerRegistro(pos);
         aux.Mostrar();
         cout<<"S(si)/N(no)"<<endl;
         cin>>caracter;
-        switch(caracter){
+        switch(caracter)
+        {
         case('S'):
-            {
+        {
             aux.Cargar();
             archiC.modificarRegistro(aux,pos);
             cout<<"El cliente fue modificado con exito"<<endl;
             return;
             break;
-            }
+        }
         case('s'):
-            {
+        {
             aux.Cargar();
             archiC.modificarRegistro(aux,pos);
             cout<<"El cliente fue modificado con exito"<<endl;
             return;
             break;
-            }
+        }
         case('N'):
             return;
         case('n'):
@@ -112,10 +118,12 @@ void modificarCliente(){
         default:
             cout<<"Ingrese una opcion valida"<<endl;
         }
-    }else return;
+    }
+    else return;
 }
 
-void bajaCliente(){
+void bajaCliente()
+{
     int dni;
     cout<<"Ingrese el dni del cliente a dar de baja:"<<endl;
     cin>>dni;
@@ -124,17 +132,21 @@ void bajaCliente(){
     int pos=archiC.buscarRegistro(dni);
     aux=archiC.leerRegistro(pos);
     aux.setEstado(false);
-    if(archiC.modificarRegistro(aux,pos)){
+    if(archiC.modificarRegistro(aux,pos))
+    {
         cout<<"Se dio de baja al cliente"<<endl;
-    }else cout<<"No se pudo dar de baja al cliente"<<endl;
+    }
+    else cout<<"No se pudo dar de baja al cliente"<<endl;
 }
 
-void listarClientes(){
+void listarClientes()
+{
     ArchivoClientes archiC;
     archiC.listarRegistros();
 }
 
-void buscarCliente(){
+void buscarCliente()
+{
     int dni;
     ArchivoClientes archiC;
     Cliente aux;
@@ -145,7 +157,8 @@ void buscarCliente(){
     aux.Mostrar();
 }
 
-void verificarEstadoCliente(){
+void verificarEstadoCliente()
+{
     ArchivoClientes archiC;
     int dni;
     cout<<"Ingrese el dni del cliente a verificar:"<<endl;
@@ -153,11 +166,14 @@ void verificarEstadoCliente(){
     archiC.verificarEstadoCliente(dni);
 }
 
-void crearBackupClientes(){
+void crearBackupClientes()
+{
     ArchivoClientes archiC;
-    if(archiC.crearBackupClientes()){
+    if(archiC.crearBackupClientes())
+    {
         cout<<"Se creo la copia de seguridad con exito"<<endl;
-    }else cout<<"No se pudo realizar la copia de seguridad"<<endl;
+    }
+    else cout<<"No se pudo realizar la copia de seguridad"<<endl;
 }
 
 #endif // MENUCLIENTES_H_INCLUDED

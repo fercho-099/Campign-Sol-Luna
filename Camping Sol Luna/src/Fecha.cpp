@@ -4,13 +4,15 @@
 #include "Funciones.h"
 #include "Reservas.h"
 
-Fecha::Fecha(){
+Fecha::Fecha()
+{
     dia=1;
     mes=1;
     anio=1990;
 }
 
-bool Fecha::MaximosDias(int Dia, int Mes, int Anio){
+bool Fecha::MaximosDias(int Dia, int Mes, int Anio)
+{
 
 
     dia = Dia;
@@ -18,10 +20,12 @@ bool Fecha::MaximosDias(int Dia, int Mes, int Anio){
     anio = Anio;
 
 
-    if (dia>=1 && (mes >=1 && mes<=12) && anio >=1 ){
+    if (dia>=1 && (mes >=1 && mes<=12) && anio >=1 )
+    {
 
         int dias[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
-        if (esBisiesto()) {
+        if (esBisiesto())
+        {
             dias[1]++;
         }
         if (dia > dias[mes - 1]) return false;
@@ -34,31 +38,38 @@ bool Fecha::MaximosDias(int Dia, int Mes, int Anio){
 
 }
 
-void Fecha::setDia(int d){
+void Fecha::setDia(int d)
+{
     dia=d;
 }
 
-void Fecha::setMes(int m){
+void Fecha::setMes(int m)
+{
     mes=m;
 }
 
-void Fecha::setAnio(int a){
+void Fecha::setAnio(int a)
+{
     anio=a;
 }
 
-int Fecha::getDia(){
+int Fecha::getDia()
+{
     return dia;
 }
 
-int Fecha::getMes(){
+int Fecha::getMes()
+{
     return mes;
 }
 
-int Fecha::getAnio(){
+int Fecha::getAnio()
+{
     return anio;
 }
 
-void Fecha::CargarActual(){
+void Fecha::CargarActual()
+{
     time_t now = time(0); // Captura fecha y hora actual
     tm* localTime = localtime(&now); // Creamos el puntero localTime y lo referenciamos al objeto time
     // Accedemos a los atributos de la estructura tm
@@ -67,8 +78,9 @@ void Fecha::CargarActual(){
     anio = localTime->tm_year + 1900; // Sumamos 1900 para obtener el año actual
 }
 
-bool Fecha::ValidarFecha(int dia, int mes, int anio ){
- // Obtener la fecha actual
+bool Fecha::ValidarFecha(int dia, int mes, int anio )
+{
+// Obtener la fecha actual
     auto fechaActual = std::chrono::system_clock::now();
     auto time_t_fechaActual = std::chrono::system_clock::to_time_t(fechaActual);
     tm* tm_fechaActual = std::localtime(&time_t_fechaActual);
@@ -87,7 +99,8 @@ bool Fecha::ValidarFecha(int dia, int mes, int anio ){
     return time_t_fechaIngresada >= time_t_actual;
 }
 
-void Fecha::Cargar(){
+void Fecha::Cargar()
+{
     bool FechaValida = false;
     bool diasMaximos = false;
     do
@@ -111,7 +124,8 @@ void Fecha::Cargar(){
             system("pause");
             system("cls");
         }
-        if(!diasMaximos){
+        if(!diasMaximos)
+        {
 
             std::cout<<"Fecha Ingresada Incorrecta, ingrese nuevamente una fecha valida"<<std::endl;
             system("pause");
@@ -125,12 +139,14 @@ void Fecha::Cargar(){
     system("cls");
 }
 
-void Fecha::Mostrar(){
+void Fecha::Mostrar()
+{
     cout<<dia<<":"<<mes<<":"<<anio<<endl;
 }
 
-bool Fecha::esBisiesto(){
+bool Fecha::esBisiesto()
+{
 
-return ((anio % 4 == 0 && anio % 100 !=0) || anio % 400 ==0);
+    return ((anio % 4 == 0 && anio % 100 !=0) || anio % 400 ==0);
 
 }

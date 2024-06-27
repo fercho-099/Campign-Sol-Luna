@@ -6,36 +6,42 @@
 using namespace std;
 
 
-ArchivoReservas::ArchivoReservas(){
+ArchivoReservas::ArchivoReservas()
+{
 
     strcpy(AperturaArchivo,"Reservas.dat");
-    }
+}
 
-ArchivoReservas::ArchivoReservas(const char *n){
+ArchivoReservas::ArchivoReservas(const char *n)
+{
 
     strcpy(AperturaArchivo,n);
 }
 
-void ArchivoReservas::setAperturaArchivo(const char *n){
+void ArchivoReservas::setAperturaArchivo(const char *n)
+{
 
     strcpy(AperturaArchivo, n);
 
 }
 
-bool ArchivoReservas::GrabarRegistro(Reservas obj){
-	FILE *p;
-	p=fopen(AperturaArchivo, "ab");
-	if(p==NULL) return false;
-	bool escribio=fwrite(&obj, sizeof obj, 1, p);
-	fclose(p);
-	return escribio;
+bool ArchivoReservas::GrabarRegistro(Reservas obj)
+{
+    FILE *p;
+    p=fopen(AperturaArchivo, "ab");
+    if(p==NULL) return false;
+    bool escribio=fwrite(&obj, sizeof obj, 1, p);
+    fclose(p);
+    return escribio;
 }
 
-bool ArchivoReservas::grabarRegistros(Reservas obj, int pos){
+bool ArchivoReservas::grabarRegistros(Reservas obj, int pos)
+{
 
     bool retorno;
     FILE *P=fopen(AperturaArchivo,"rb+");
-    if(P==nullptr){
+    if(P==nullptr)
+    {
 
         retorno = false;
         return retorno;
@@ -47,42 +53,47 @@ bool ArchivoReservas::grabarRegistros(Reservas obj, int pos){
 
 }
 
-void ArchivoReservas :: grabarRegistroNuevo(Reservas obj){
+void ArchivoReservas :: grabarRegistroNuevo(Reservas obj)
+{
 
     FILE *p;
-	p=fopen(AperturaArchivo, "wb");
-	if(p==NULL) return;
-	fwrite(&obj, sizeof obj, 1, p);
-	fclose(p);
-	return;
+    p=fopen(AperturaArchivo, "wb");
+    if(p==NULL) return;
+    fwrite(&obj, sizeof obj, 1, p);
+    fclose(p);
+    return;
 }
 
-Reservas ArchivoReservas::LeerRegistro(int pos){
-	FILE *p;
-	Reservas obj;
-	obj.setEstado(-4);
-	p=fopen(AperturaArchivo, "rb");
-	if(p==NULL) return obj;
-	fseek(p, pos*sizeof obj,0);
-	fread(&obj, sizeof obj, 1, p);
-	fclose(p);
-	return obj;
+Reservas ArchivoReservas::LeerRegistro(int pos)
+{
+    FILE *p;
+    Reservas obj;
+    obj.setEstado(-4);
+    p=fopen(AperturaArchivo, "rb");
+    if(p==NULL) return obj;
+    fseek(p, pos*sizeof obj,0);
+    fread(&obj, sizeof obj, 1, p);
+    fclose(p);
+    return obj;
 }
 
-Reservas ArchivoReservas::LeerRegistrosDinamicos(Reservas *DatoReserva, int pos){
+Reservas ArchivoReservas::LeerRegistrosDinamicos(Reservas *DatoReserva, int pos)
+{
 
-        Reservas aux;
+    Reservas aux;
 
-        aux = DatoReserva[pos];
+    aux = DatoReserva[pos];
 
-        return aux;
+    return aux;
 
 }
 
-void ArchivoReservas::LeerRegistrosTotales(Reservas &obj, int TotalRegistros){
+void ArchivoReservas::LeerRegistrosTotales(Reservas &obj, int TotalRegistros)
+{
 
     FILE *P=fopen("Reservas.dat", "rb");
-    if(P==nullptr){
+    if(P==nullptr)
+    {
         std::cout<<"No se pudo abrir el registro"<<std::endl;
         system("pause");
         return;
@@ -96,39 +107,46 @@ void ArchivoReservas::LeerRegistrosTotales(Reservas &obj, int TotalRegistros){
 
 }
 
-int ArchivoReservas::BuscarRegistro(int dni){
-	FILE *p;
-	Reservas obj;
-	p=fopen(AperturaArchivo, "rb");
-	int pos=0;
-	if(p==NULL) return -1;
-	while(fread(&obj, sizeof obj, 1, p)==1){
-		if(obj.getTipoDePago().getCliente().getDNI()==dni){
-			fclose(p);
-			return pos;
-		}
-		pos++;
-	}
-	fclose(p);
-	return -2;
+int ArchivoReservas::BuscarRegistro(int dni)
+{
+    FILE *p;
+    Reservas obj;
+    p=fopen(AperturaArchivo, "rb");
+    int pos=0;
+    if(p==NULL) return -1;
+    while(fread(&obj, sizeof obj, 1, p)==1)
+    {
+        if(obj.getTipoDePago().getCliente().getDNI()==dni)
+        {
+            fclose(p);
+            return pos;
+        }
+        pos++;
+    }
+    fclose(p);
+    return -2;
 }
 
-int ArchivoReservas::BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, int dni){
+int ArchivoReservas::BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, int dni)
+{
 
     int pos, Opcion;
 
-    for(int x=0; x<TotalRegistros; x++){
+    for(int x=0; x<TotalRegistros; x++)
+    {
 
         pos=x;
 
-        if(DatoReserva[x].getTipoDePago().getCliente().getDNI() == dni){
+        if(DatoReserva[x].getTipoDePago().getCliente().getDNI() == dni)
+        {
 
             system("cls");
             DatoReserva[x].Mostrar();
             std::cout<<"----------"<<std::endl;
             std::cout<<"Desea Modificar este registro? 1 - SI / 2 - NO: ";
             std::cin>>Opcion;
-            if(Opcion == 1){
+            if(Opcion == 1)
+            {
 
                 return pos;
             }
@@ -141,14 +159,15 @@ int ArchivoReservas::BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, i
     return -1;
 }
 
-int ArchivoReservas::contarRegistros(){
-	FILE *p;
-	p=fopen(AperturaArchivo, "rb");
-	if(p==NULL) return -1;
-	fseek(p, 0,2);
-	int tam=ftell(p);
-	fclose(p);
-	return tam/sizeof(Reservas);
+int ArchivoReservas::contarRegistros()
+{
+    FILE *p;
+    p=fopen(AperturaArchivo, "rb");
+    if(p==NULL) return -1;
+    fseek(p, 0,2);
+    int tam=ftell(p);
+    fclose(p);
+    return tam/sizeof(Reservas);
 }
 
 void ArchivoReservas::ModificarRegistros(Reservas *aux)
@@ -226,7 +245,8 @@ void ArchivoReservas::ModificarRegistros(Reservas *aux)
     while(ciclo);
 }
 
-bool ArchivoReservas::CrearBackUpManual(){
+bool ArchivoReservas::CrearBackUpManual()
+{
 
 
     int TotalRegistros = this->contarRegistros();
@@ -239,43 +259,51 @@ bool ArchivoReservas::CrearBackUpManual(){
 
     ArchivoReservas backup("Reservas.bak");
 
-    for(int x=0; x<TotalRegistros; x++){
+    for(int x=0; x<TotalRegistros; x++)
+    {
 
-    obj = RegistrosReservas[x];
-    backup.GrabarRegistro(obj);
+        obj = RegistrosReservas[x];
+        backup.GrabarRegistro(obj);
 
     }
     return true;
 
 }
 
-void ArchivoReservas::ListarRegistros(){
+void ArchivoReservas::ListarRegistros()
+{
     system("cls");
-	FILE *p;
-	Reservas obj;
-	p=fopen(AperturaArchivo, "rb");
-	if(p==NULL){
+    FILE *p;
+    Reservas obj;
+    p=fopen(AperturaArchivo, "rb");
+    if(p==NULL)
+    {
 
         std::cout<<"No se pudo abrir el archivo / No existe el archivo"<<std::endl;
         system("pause");
         return;
-	}
-	while(fread(&obj, sizeof obj, 1, p)==1){
-		obj.Mostrar();
-		cout<<"-----------"<<endl;
-	}
-	fclose(p);
-	system("pause");
-	return;
+    }
+    while(fread(&obj, sizeof obj, 1, p)==1)
+    {
+        obj.Mostrar();
+        cout<<"-----------"<<endl;
+    }
+    fclose(p);
+    system("pause");
+    return;
 }
 
-void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalRegistros, int dni){
+void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalRegistros, int dni)
+{
 
-    for(int x=0; x<TotalRegistros; x++){
+    for(int x=0; x<TotalRegistros; x++)
+    {
 
-        if(DatosReservas[x].getTipoDePago().getCliente().getDNI() == dni){
+        if(DatosReservas[x].getTipoDePago().getCliente().getDNI() == dni)
+        {
 
-            if(DatosReservas[x].getEstado() == 1){
+            if(DatosReservas[x].getEstado() == 1)
+            {
 
                 DatosReservas[x].Mostrar();
                 std::cout<<std::endl;
@@ -284,7 +312,8 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
                 system("pause");
             }
 
-            else{
+            else
+            {
 
                 DatosReservas[x].Mostrar();
                 std::cout<<std::endl;
@@ -297,34 +326,3 @@ void ArchivoReservas::verificarEstadoReserva(Reservas *DatosReservas, int TotalR
     }
 }
 
-///Leo
-void ArchivoReservas::mostrarCabaniasDisponibles(){
-    FILE *p;
-	Reservas obj;
-	p=fopen(AperturaArchivo, "rb");
-	if(p==NULL) return;
-	int cant=10;
-	cout<<"Cabanias disponibles:"<<endl;
-	for(int i=0;i<cant;i++){
-
-    }
-	fclose(p);
-}
-
-void ArchivoReservas::mostrarCarpasDisponibles(){
-    FILE *p;
-	Reservas obj;
-	p=fopen(AperturaArchivo, "rb");
-	if(p==NULL) return;
-	int cant=20;
-	cout<<"Carpas disponibles:"<<endl;
-	for(int i=0;i<cant;i++){
-        int contador=20;
-        while(fread(&obj, sizeof obj, 1, p)==1){
-
-            contador--;
-        }
-
-    }
-	fclose(p);
-}

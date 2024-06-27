@@ -12,14 +12,16 @@ void BorrarReserva();
 void EstadoReserva();
 void MostrarArchivoReservas();
 
-void OpcionesDeReservas(){
-system("cls");
- int opc;
- bool loop=true;
+void OpcionesDeReservas()
+{
+    system("cls");
+    int opc;
+    bool loop=true;
 
 
-    do{
-            system("cls");
+    do
+    {
+        system("cls");
         cout<<"-----Camping SOL-LUNA-----"<<endl;
         cout<<"1 - Crear una reserva "<<endl;
         cout<<"2 - Modificar una reserva "<<endl;
@@ -30,7 +32,8 @@ system("cls");
         cout<<endl;
         cout<<"Ingrese una opcion: ";
         cin>>opc;
-        switch(opc){
+        switch(opc)
+        {
         case 1:
             CargarReserva();
             break;
@@ -54,35 +57,42 @@ system("cls");
             std::cout<<"Ingrese una opcion correcta"<<std::endl;
             system("pause");
         }
-    }while(loop);
+    }
+    while(loop);
 
 }
 
-void CargarReserva(){
+void CargarReserva()
+{
 
     Reservas DatosReservas;
     ArchivoReservas InfoReservas;
     DatosReservas.Cargar();
-    if(InfoReservas.GrabarRegistro(DatosReservas)) {
+    if(InfoReservas.GrabarRegistro(DatosReservas))
+    {
         std::cout<<"Se guardo Guardo correctamente la reserva"<<std::endl;
-        if(DatosReservas.getTipoDePago().getIDServicio()==1){
+        if(DatosReservas.getTipoDePago().getIDServicio()==1)
+        {
             ArchivoCarpas archiCarpas;
             archiCarpas.grabarRegistro(DatosReservas);
         }
-        else if(DatosReservas.getTipoDePago().getIDServicio()==2){
+        else if(DatosReservas.getTipoDePago().getIDServicio()==2)
+        {
             ArchivoCabanias archiCabanias;
             archiCabanias.grabarRegistro(DatosReservas);
         }
         system("pause");
     }
-    else{
+    else
+    {
         std::cout<<"No se Gestiona la reserva"<<std::endl;
         system("pause");
     }
 
 }
 
-void ModificarReserva(){
+void ModificarReserva()
+{
 
     system("cls");
     ArchivoReservas InfoReservas;
@@ -90,7 +100,8 @@ void ModificarReserva(){
     int pos;
     int TotalRegistros = InfoReservas.contarRegistros();
 
-    if(TotalRegistros<=0){
+    if(TotalRegistros<=0)
+    {
         std::cout<<"No se pudo realizar modificacion del registro"<<std::endl;
         system("pause");
         return;
@@ -104,7 +115,8 @@ void ModificarReserva(){
 
     pos = InfoReservas.BuscarRegistro(DatoReserva, TotalRegistros, dni);
 
-    if(pos == -1){
+    if(pos == -1)
+    {
 
         delete []DatoReserva;
         return;
@@ -112,22 +124,25 @@ void ModificarReserva(){
     aux = InfoReservas.LeerRegistrosDinamicos(DatoReserva, pos);
 
     InfoReservas.ModificarRegistros(&aux);
-    if(InfoReservas.grabarRegistros(aux, pos)){
+    if(InfoReservas.grabarRegistros(aux, pos))
+    {
 
         std::cout<<"Se Realizaron los cambios con satisfaccion"<<std::endl;
 
     }
-    else{
+    else
+    {
         std::cout<<"No se pudieron realizar los cambios"<<std::endl;
     }
 
     system("pause");
 
 
-delete []DatoReserva;
+    delete []DatoReserva;
 }
 
-void BorrarReserva(){
+void BorrarReserva()
+{
     system("cls");
     int dni, TotalCantidad, Opcion;
     ArchivoReservas InfoReservas;
@@ -214,7 +229,8 @@ void BorrarReserva(){
 
 }
 
-void EstadoReserva(){
+void EstadoReserva()
+{
 
     system("cls");
     ArchivoReservas InfoReservas;
@@ -241,7 +257,8 @@ void EstadoReserva(){
 
 }
 
-void MostrarArchivoReservas(){
+void MostrarArchivoReservas()
+{
 
     system("cls");
     bool loop = true;

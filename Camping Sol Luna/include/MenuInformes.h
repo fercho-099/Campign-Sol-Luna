@@ -14,11 +14,13 @@ void facturacionTotal();
 void mostrarCabaniasReservadas();
 void mostrarCarpasReservadas();
 
-void OpcionesDeInformes(){
+void OpcionesDeInformes()
+{
     system("cls");
     bool loop=true;
     int opc;
-    while(loop){
+    while(loop)
+    {
         cout<<"-----Camping SOL-LUNA-----"<<endl;
         cout<<"1 - Informe mensual "<<endl;
         cout<<"2 - Facturacion total"<<endl;
@@ -28,7 +30,8 @@ void OpcionesDeInformes(){
         cout<<endl;
         cout<<"Ingrese una opcion: ";
         cin>>opc;
-        switch(opc){
+        switch(opc)
+        {
         case 1:
             informeMensual();
             system("pause");
@@ -76,15 +79,19 @@ void informeMensual()
     system("cls");
     std::cout<<"INFORMACION DE CABANIAS"<<std::endl;
     std::cout<<"-----------------------"<<std::endl;
-    for(int i=1;i<=12;i++){
+    for(int i=1; i<=12; i++)
+    {
         contador=0;
         recaudacion=0;
         cout<<"Mes: "<<i<<endl;
         int cantidad=InfoCabanias.contarRegistros();
-        for(int z=0;z<cantidad;z++){
+        for(int z=0; z<cantidad; z++)
+        {
             obj=InfoCabanias.leerRegistro(z);
-            if(obj.getEstado()){
-                if(obj.getFechaDesde().getMes()==i){
+            if(obj.getEstado())
+            {
+                if(obj.getFechaDesde().getMes()==i)
+                {
                     contador++;
                     recaudacion+=obj.getTipoDePago().getMonto();
                 }
@@ -98,15 +105,19 @@ void informeMensual()
     system("cls");
     std::cout<<"INFORMACION DE CARPAS"<<std::endl;
     std::cout<<"---------------------"<<std::endl;
-    for(int i=1;i<=12;i++){
+    for(int i=1; i<=12; i++)
+    {
         contador=0;
         recaudacion=0;
         cout<<"Mes: "<<i<<endl;
         int cantidad=InfoCarpas.contarRegistros();
-        for(int z=0;z<cantidad;z++){
+        for(int z=0; z<cantidad; z++)
+        {
             obj=InfoCarpas.leerRegistro(z);
-            if(obj.getEstado()){
-                if(obj.getFechaDesde().getMes()==i){
+            if(obj.getEstado())
+            {
+                if(obj.getFechaDesde().getMes()==i)
+                {
                     contador++;
                     recaudacion+=obj.getTipoDePago().getMonto();
                 }
@@ -120,16 +131,19 @@ void informeMensual()
     system("pause");
 }
 
-void facturacionTotal(){
+void facturacionTotal()
+{
     system("cls");
     ArchivoReservas archiR;
     Reservas obj;
     int contador=0;
     float recaudacion=0;
     int cantidad=archiR.contarRegistros();
-    for(int i=0;i<cantidad;i++){
+    for(int i=0; i<cantidad; i++)
+    {
         obj=archiR.LeerRegistro(i);
-        if(obj.getEstado()){
+        if(obj.getEstado())
+        {
             contador++;
             recaudacion+=obj.getTipoDePago().getMonto();
         }
@@ -139,38 +153,46 @@ void facturacionTotal(){
     system("pause");
 }
 
-void mostrarCabaniasReservadas(){
+void mostrarCabaniasReservadas()
+{
     ArchivoCabanias archiC;
     Reservas aux;
     int cant=archiC.contarRegistros();
     cout<<"Cabanias reservadas:" <<endl;
-    if(cant==0){
+    if(cant==0)
+    {
         cout<<"No hay cabanias reservadas"<<endl;
         system("pause");
         return;
     }
-    for(int i=0;i<cant;i++){
+    for(int i=0; i<cant; i++)
+    {
         aux=archiC.leerRegistro(i);
-        if(aux.getEstado()){
+        if(aux.getEstado())
+        {
             aux.Mostrar();
             cout<<"--------------------------------"<<endl;
         }
     }
 }
 
-void mostrarCarpasReservadas(){
+void mostrarCarpasReservadas()
+{
     ArchivoCarpas archiC;
     Reservas aux;
     int cant=archiC.contarRegistros();
-    if(cant==0){
+    if(cant==0)
+    {
         cout<<"No hay carpas reservadas"<<endl;
         system("pause");
         return;
     }
     cout<<"Carpas reservadas:"<<endl;
-    for(int i=0;i<cant;i++){
+    for(int i=0; i<cant; i++)
+    {
         aux=archiC.leerRegistro(i);
-        if(aux.getEstado()){
+        if(aux.getEstado())
+        {
             aux.Mostrar();
             cout<<"--------------------------------"<<endl;
         }
