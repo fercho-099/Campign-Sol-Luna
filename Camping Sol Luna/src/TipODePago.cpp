@@ -137,6 +137,7 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 }
             }
         }
+
         else
         {
             cout<<"Hay "<<contando<<" carpas disponible"<<endl;
@@ -144,31 +145,10 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
             std::cout<<"Ingrese el DNI para corroborar si el usuario existe: ";
             std::cin>>dni;
             pos = ArchiClientes.buscarRegistro(dni);
-            if(pos <0)
+            if(pos<0)
             {
                 InfoCliente.Cargar();
                 ArchiClientes.grabarRegistro(InfoCliente);
-                Monto = DiaRestantes * valorcarpa;
-                cout<<"Coste por noche: "<<valorcarpa<<endl;
-                cout<<"Total de dias a reservas: "<<DiaRestantes<<endl;
-                cout<<"Monto total a abonar: "<<Monto<<endl;
-                do
-                {
-                    cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
-                    cin>>modoDePago;
-                    if(modoDePago > 2 || modoDePago<1)
-                    {
-                        cout<<"Medio de pago invalido, vuelva a ingresar: ";
-                        system("pause");
-                    }
-                }
-                while(modoDePago !=1 && modoDePago !=2);
-                std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
-                FechaPago.CargarActual();/// Pone la fecha en automatico del dia
-            }
-            else
-            {
-                InfoCliente = ArchiClientes.leerRegistro(pos);
                 Monto = DiaRestantes * valorcarpa;
                 cout<<"Coste por noche: "<<valorcarpa<<endl;
                 cout<<"Total de dias a reservas: "<<DiaRestantes<<endl;
@@ -192,6 +172,7 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 while(modoDePago !=1 && modoDePago !=2);
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();/// Pone la fecha en automatico del dia
+
             }
         }
     }
@@ -295,7 +276,7 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
         }
         else
         {
-            cout<<"Hay "<<contando<<" carpas disponible"<<endl;
+            cout<<"Hay "<<contando<<" cabanias disponible"<<endl;
             system("pause");
             std::cout<<"Ingrese el DNI para corroborar si el usuario existe: ";
             std::cin>>dni;
@@ -365,7 +346,6 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
     }
 
 }
-
 
 void TipoDePago::Mostrar()
 {

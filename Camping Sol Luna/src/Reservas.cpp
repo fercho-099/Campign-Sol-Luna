@@ -20,7 +20,6 @@ void Reservas::Cargar()
     Estado = true;
 }
 
-
 long long Reservas::RestanteFecha()
 {
     tm tmDesde = {0, 0, 0, Desde.getDia(), Desde.getMes() - 1, Desde.getAnio() - 1900};
@@ -36,7 +35,6 @@ long long Reservas::RestanteFecha()
 
     return (1+(diferencia.count() / 86400)); ///Convertir segundos a días
 }
-
 
 void Reservas::Mostrar()
 {

@@ -297,29 +297,29 @@
 	"ArchivoReservas.h"
 	<cstring>
 
-1719374565 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\main.cpp
+1719497821 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\main.cpp
 	<iostream>
 	<cstring>
 	"MenuReservas.h"
 	"MenuClientes.h"
 	"MenuInformes.h"
 
-1719445841 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\reservas.h
+1719453060 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\reservas.h
 	<cstdlib>
 	"Fecha.h"
 	"TipODePago.h"
 
-1719445841 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\fecha.h
+1719497821 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\fecha.h
 	<iostream>
 
-1719445841 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\tipodepago.h
+1719497821 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\tipodepago.h
 	"Fecha.h"
 	"Cliente.h"
 
-1718400081 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\cliente.h
+1719497821 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\cliente.h
 	<iostream>
 
-1718486909 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivoclientes.h
+1719497821 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivoclientes.h
 	"Cliente.h"
 	"Reservas.h"
 
@@ -332,28 +332,28 @@
 	<cstring>
 	"Reservas.h"
 
-1719374565 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivocabanias.cpp
+1719497821 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivocabanias.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCabanias.h"
 
-1718486909 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivocabanias.h
+1719497821 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivocabanias.h
 	"Reservas.h"
 
-1719374565 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivocarpas.cpp
+1719497821 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivocarpas.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
 	"ArchivoCarpas.h"
 
-1718486909 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivocarpas.h
+1719497821 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivocarpas.h
 	"Reservas.h"
 
-1719414801 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
+1719497821 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoclientes.cpp
 	"ArchivoClientes.h"
 	<cstring>
 
-1719445841 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\cliente.cpp
+1719497821 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\cliente.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -361,7 +361,7 @@
 	"Cliente.h"
 	"Funciones.h"
 
-1719445841 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\fecha.cpp
+1719497821 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\fecha.cpp
 	<ctime>
 	<chrono>
 	"Fecha.h"
@@ -386,13 +386,13 @@
 	"Reservas.h"
 	"Cliente.h"
 
-1719445841 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\reservas.cpp
+1719500188 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\reservas.cpp
 	<iostream>
 	"Reservas.h"
 	<cstring>
 	<chrono>
 
-1719445841 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\tipodepago.cpp
+1719500188 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\tipodepago.cpp
 	<iostream>
 	"TipODePago.h"
 	"ArchivoReservas.h"
@@ -401,7 +401,7 @@
 	"ArchivoCarpas.h"
 	<cstring>
 
-1719452435 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menureservas.h
+1719497821 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menureservas.h
 	"ArchivoReservas.h"
 	"ArchivoCarpas.h"
 	"ArchivoCabanias.h"
@@ -517,11 +517,11 @@
 	"Reservas.h"
 	"Cliente.h"
 
-1719445841 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivoreservas.h
+1719497821 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\archivoreservas.h
 	<cstring>
 	"Reservas.h"
 
-1719452089 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoreservas.cpp
+1719497821 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\archivoreservas.cpp
 	"../include/ArchivoReservas.h"
 	<iostream>
 	<cstdlib>
@@ -552,11 +552,11 @@
 	<cstring>
 	"Funciones.h"
 
-1719445841 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\funciones.h
+1719453060 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\funciones.h
 	<iostream>
 	<limits>
 
-1719445841 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\funciones.cpp
+1719497821 source:c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\src\funciones.cpp
 	<iostream>
 	<limits>
 	<string>
@@ -720,7 +720,7 @@
 	<cstring>
 	"ArchivoClientes.h"
 
-1719374565 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menuclientes.h
+1719500300 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menuclientes.h
 	<cstdlib>
 	<cstring>
 	"ArchivoClientes.h"
@@ -767,7 +767,7 @@
 	"ArchivoCabanias.h"
 	"Reservas.h"
 
-1719445841 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menuinformes.h
+1719497821 c:\users\fercho\documents\github\campign-sol-luna\camping sol luna\include\menuinformes.h
 	<cstring>
 	<cstdlib>
 	"ArchivoReservas.h"
