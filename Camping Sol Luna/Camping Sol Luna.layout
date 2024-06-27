@@ -2,13 +2,15 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="src\ArchivoReservas.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="src\ArchivoReservas.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="414" topLine="6" />
+			<Cursor1 position="1585" topLine="6" />
 		</Cursor>
 		<Folding>
+			<Collapse line="8" />
 			<Collapse line="13" />
 			<Collapse line="18" />
+			<Collapse line="24" />
 			<Collapse line="33" />
 			<Collapse line="49" />
 			<Collapse line="59" />
@@ -25,22 +27,46 @@
 			<Collapse line="313" />
 		</Folding>
 	</File>
-	<File name="include\ArchivoClientes.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Reservas.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="179" topLine="0" />
+			<Cursor1 position="377" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Funciones.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="src\ArchivoCarpas.cpp" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2018" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="src\ArchivoClientes.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="52" topLine="0" />
+			<Cursor1 position="2074" topLine="0" />
 		</Cursor>
 		<Folding>
 			<Collapse line="8" />
+			<Collapse line="13" />
+			<Collapse line="17" />
+			<Collapse line="26" />
+			<Collapse line="37" />
+			<Collapse line="52" />
+			<Collapse line="69" />
+			<Collapse line="79" />
+			<Collapse line="89" />
+			<Collapse line="99" />
+		</Folding>
+	</File>
+	<File name="include\ArchivoReservas.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1347" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Fecha.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="459" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\ArchivoClientes.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1065" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="8" />
+			<Collapse line="12" />
 			<Collapse line="21" />
 			<Collapse line="36" />
 			<Collapse line="55" />
@@ -49,53 +75,6 @@
 			<Collapse line="87" />
 			<Collapse line="106" />
 		</Folding>
-	</File>
-	<File name="include\Reservas.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="377" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\ArchivoReservas.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="147" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\MenuInformes.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2888" topLine="52" />
-		</Cursor>
-		<Folding>
-			<Collapse line="62" />
-			<Collapse line="123" />
-			<Collapse line="161" />
-		</Folding>
-	</File>
-	<File name="src\ArchivoCabanias.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1008" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="7" />
-			<Collapse line="12" />
-			<Collapse line="16" />
-			<Collapse line="25" />
-			<Collapse line="36" />
-			<Collapse line="51" />
-			<Collapse line="68" />
-			<Collapse line="78" />
-			<Collapse line="88" />
-			<Collapse line="98" />
-		</Folding>
-	</File>
-	<File name="include\TipODePago.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="214" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="include\Cliente.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="225" topLine="0" />
-		</Cursor>
 	</File>
 	<File name="src\Fecha.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
 		<Cursor>
@@ -117,11 +96,53 @@
 			<Collapse line="131" />
 		</Folding>
 	</File>
-	<File name="include\MenuClientes.h" open="1" top="1" tabpos="14" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+	<File name="src\ArchivoCabanias.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2713" topLine="67" />
+			<Cursor1 position="1008" topLine="0" />
 		</Cursor>
 		<Folding>
+			<Collapse line="7" />
+			<Collapse line="12" />
+			<Collapse line="16" />
+			<Collapse line="25" />
+			<Collapse line="36" />
+			<Collapse line="51" />
+			<Collapse line="68" />
+			<Collapse line="78" />
+			<Collapse line="88" />
+			<Collapse line="98" />
+		</Folding>
+	</File>
+	<File name="src\Funciones.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2018" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="src\Cliente.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="151" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="19" />
+			<Collapse line="43" />
+			<Collapse line="51" />
+			<Collapse line="56" />
+			<Collapse line="61" />
+			<Collapse line="66" />
+			<Collapse line="70" />
+			<Collapse line="75" />
+			<Collapse line="80" />
+			<Collapse line="85" />
+			<Collapse line="90" />
+			<Collapse line="94" />
+		</Folding>
+	</File>
+	<File name="include\MenuClientes.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3869" topLine="17" />
+		</Cursor>
+		<Folding>
+			<Collapse line="76" />
 			<Collapse line="117" />
 			<Collapse line="131" />
 			<Collapse line="136" />
@@ -129,11 +150,63 @@
 			<Collapse line="155" />
 		</Folding>
 	</File>
-	<File name="src\Reservas.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="include\TipODePago.h" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="388" topLine="6" />
+			<Cursor1 position="562" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\MenuReservas.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2572" topLine="73" />
 		</Cursor>
 		<Folding>
+			<Collapse line="60" />
+			<Collapse line="129" />
+			<Collapse line="216" />
+			<Collapse line="243" />
+		</Folding>
+	</File>
+	<File name="include\MenuInformes.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2131" topLine="68" />
+		</Cursor>
+		<Folding>
+			<Collapse line="122" />
+			<Collapse line="141" />
+			<Collapse line="160" />
+		</Folding>
+	</File>
+	<File name="include\Funciones.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="189" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\ArchivoClientes.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="509" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Cliente.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="301" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\TipODePago.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12536" topLine="322" />
+		</Cursor>
+	</File>
+	<File name="include\ArchivoCarpas.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="420" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Reservas.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1528" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="9" />
 			<Collapse line="24" />
 			<Collapse line="49" />
 			<Collapse line="56" />
@@ -145,99 +218,14 @@
 			<Collapse line="89" />
 		</Folding>
 	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="583" topLine="2" />
+		</Cursor>
+	</File>
 	<File name="include\ArchivoCabanias.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="258" topLine="0" />
 		</Cursor>
-	</File>
-	<File name="src\Cliente.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="367" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="19" />
-			<Collapse line="27" />
-			<Collapse line="51" />
-			<Collapse line="59" />
-			<Collapse line="64" />
-			<Collapse line="69" />
-			<Collapse line="74" />
-			<Collapse line="78" />
-			<Collapse line="83" />
-			<Collapse line="88" />
-			<Collapse line="93" />
-			<Collapse line="98" />
-			<Collapse line="102" />
-		</Folding>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="659" topLine="14" />
-		</Cursor>
-	</File>
-	<File name="include\ArchivoCarpas.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="144" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Funciones.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="189" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\ArchivoCarpas.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="114" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="8" />
-			<Collapse line="13" />
-			<Collapse line="17" />
-			<Collapse line="26" />
-			<Collapse line="37" />
-			<Collapse line="52" />
-			<Collapse line="69" />
-			<Collapse line="79" />
-			<Collapse line="89" />
-			<Collapse line="99" />
-		</Folding>
-	</File>
-	<File name="include\MenuReservas.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1785" topLine="56" />
-		</Cursor>
-		<Folding>
-			<Collapse line="84" />
-			<Collapse line="129" />
-			<Collapse line="216" />
-			<Collapse line="243" />
-		</Folding>
-	</File>
-	<File name="include\Fecha.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="459" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\TipODePago.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="596" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="11" />
-			<Collapse line="19" />
-			<Collapse line="282" />
-			<Collapse line="296" />
-			<Collapse line="302" />
-			<Collapse line="307" />
-			<Collapse line="312" />
-			<Collapse line="318" />
-			<Collapse line="323" />
-			<Collapse line="337" />
-			<Collapse line="343" />
-			<Collapse line="348" />
-			<Collapse line="361" />
-			<Collapse line="366" />
-			<Collapse line="372" />
-		</Folding>
 	</File>
 </CodeBlocks_layout_file>

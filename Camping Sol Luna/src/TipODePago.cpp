@@ -37,7 +37,7 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
 
     do
     {
-        cout<<"Ingrese el ID Servicio(1- Carpas 2- Cabania): ";
+        cout<<"Ingrese el ID Servicio (1- Carpas 2- Cabania): ";
         cin>>IDServicio;
         if(IDServicio > 2)
         {
@@ -76,6 +76,8 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 InfoCliente.Cargar();
                 ArchiClientes.grabarRegistro(InfoCliente);
                 Monto = DiaRestantes * valorcarpa;
+                cout<<"Coste por noche: "<<valorcarpa<<endl;
+                cout<<"Total de dias a reservas: "<<DiaRestantes<<endl;
                 cout<<"Monto total a abonar: "<<Monto<<endl;
                 do{
                     cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
@@ -87,11 +89,12 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 }while(modoDePago !=1 && modoDePago !=2);
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();/// Pone la fecha en automatico del dia
-                estado = true;
             }
             else{
                 InfoCliente = ArchiClientes.leerRegistro(pos);
                 Monto = DiaRestantes * valorcarpa;
+                cout<<"Coste por noche: "<<valorcarpa<<endl;
+                cout<<"Total de dias a reservas: "<<DiaRestantes<<endl;
                 cout<<"Monto total a abonar: "<<Monto<<endl;
                 do{
                     cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
@@ -103,7 +106,6 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 }while(modoDePago !=1 && modoDePago !=2);
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();/// Pone la fecha en automatico del dia
-                estado = true;
             }
         }
         }
@@ -117,6 +119,8 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 InfoCliente.Cargar();
                 ArchiClientes.grabarRegistro(InfoCliente);
                 Monto = DiaRestantes * valorcarpa;
+                cout<<"Coste por noche: "<<valorcarpa<<endl;
+                cout<<"Total de dias a reservas: "<<DiaRestantes<<endl;
                 cout<<"Monto total a abonar: "<<Monto<<endl;
                 do{
                     cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
@@ -128,11 +132,12 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 }while(modoDePago !=1 && modoDePago !=2);
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();/// Pone la fecha en automatico del dia
-                estado = true;
             }
             else{
                 InfoCliente = ArchiClientes.leerRegistro(pos);
                 Monto = DiaRestantes * valorcarpa;
+                cout<<"Coste por noche: "<<valorcarpa<<endl;
+                cout<<"Total de dias a reservas: "<<DiaRestantes<<endl;
                 cout<<"Monto total a abonar: "<<Monto<<endl;
                 do{
                     cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
@@ -144,7 +149,6 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 }while(modoDePago !=1 && modoDePago !=2);
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();/// Pone la fecha en automatico del dia
-                estado = true;
             }
         }
     }
@@ -179,6 +183,8 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 InfoCliente.Cargar();
                 ArchiClientes.grabarRegistro(InfoCliente);
                 Monto = DiaRestantes * valorcabana;
+                cout<<"Coste por noche: "<<valorcabana<<endl;
+                cout<<"Total de dias a reservas: "<<DiaRestantes<<endl;
                 cout<<"Monto total a abonar: "<<Monto<<endl;
 
                 do
@@ -198,7 +204,6 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
 
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();/// Pone la fecha en automatico del dia
-                estado = true;
             }
 
             else
@@ -206,6 +211,8 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
 
                 InfoCliente = ArchiClientes.leerRegistro(pos);
                 Monto = DiaRestantes * valorcabana;
+                cout<<"Coste por noche: "<<valorcabana<<endl;
+                cout<<"Total de dias a reservas: "<<DiaRestantes<<endl;
                 cout<<"Monto total a abonar: "<<Monto<<endl;
 
                 do
@@ -225,8 +232,6 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
 
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();
-                estado = true;
-
             }
         }
 
@@ -241,7 +246,9 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
             if(pos <0){
                 InfoCliente.Cargar();
                 ArchiClientes.grabarRegistro(InfoCliente);
-                Monto = DiaRestantes * valorcarpa;
+                Monto = DiaRestantes * valorcabana;
+                cout<<"Coste por noche: "<<valorcabana<<endl;
+                cout<<"Total de dias a reservas: "<<DiaRestantes<<endl;
                 cout<<"Monto total a abonar: "<<Monto<<endl;
                 do{
                     cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
@@ -253,11 +260,12 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 }while(modoDePago !=1 && modoDePago !=2);
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();/// Pone la fecha en automatico del dia
-                estado = true;
             }
             else{
                 InfoCliente = ArchiClientes.leerRegistro(pos);
-                Monto = DiaRestantes * valorcarpa;
+                Monto = DiaRestantes * valorcabana;
+                cout<<"Coste por noche: "<<valorcabana<<endl;
+                cout<<"Total de dias a reservas: "<<DiaRestantes<<endl;
                 cout<<"Monto total a abonar: "<<Monto<<endl;
                 do{
                     cout<<"Medio a pagar (1-Efectivo 2-Tarjeta de debito/credito): ";
@@ -269,7 +277,6 @@ void TipoDePago::Cargar(Fecha Desde, Fecha Hasta)
                 }while(modoDePago !=1 && modoDePago !=2);
                 std::cout<<"La fecha de pago se cargo correctamente"<<std::endl;
                 FechaPago.CargarActual();/// Pone la fecha en automatico del dia
-                estado = true;
             }
         }
     break;///case 2
@@ -323,22 +330,6 @@ void TipoDePago::setMonto(float monto){
     Monto = monto;
 }
 
-void TipoDePago::setEstado(bool _estado){
-
-    estado = _estado;
-
-}
-
-void TipoDePago::setCabana(int _cabana)
-{
-    Cabana = _cabana;
-}
-
-void TipoDePago::setCarpa(int _carpa)
-{
-    Carpa = _carpa;
-}
-
 Cliente TipoDePago::getCliente(){
 
     return InfoCliente;
@@ -355,16 +346,6 @@ int TipoDePago::getModoDePago(){
     return modoDePago;
 }
 
-int TipoDePago::getCabana()
-{
-    return Cabana;
-}
-
-int TipoDePago::getCarpa()
-{
-    return Carpa;
-}
-
 Fecha TipoDePago::getFechaDePago(){
 
     return FechaPago;
@@ -373,12 +354,6 @@ Fecha TipoDePago::getFechaDePago(){
 float TipoDePago::getMonto(){
 
     return Monto;
-
-}
-
-bool TipoDePago::getEstado(){
-
-    return estado;
 
 }
 
