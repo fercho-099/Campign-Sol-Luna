@@ -66,7 +66,6 @@ void informeMensual()
     ArchivoCarpas InfoCarpas("Carpas.dat");
     Reservas obj;
     int contador;
-    float ocupacionMensual;
     float recaudacion;
     system("cls");
     std::cout<<"INFORMACION DE CLIENTES"<<std::endl;

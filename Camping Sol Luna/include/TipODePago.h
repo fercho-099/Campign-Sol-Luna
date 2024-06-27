@@ -12,7 +12,6 @@ class TipoDePago
        int Cabana, Carpa;
        Fecha FechaPago;
        float Monto;
-       bool estado;
    public:
     void Cargar(Fecha, Fecha);
     void Mostrar();

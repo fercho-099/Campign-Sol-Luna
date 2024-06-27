@@ -40,9 +40,10 @@ long long Reservas::RestanteFecha()
 
 void Reservas::Mostrar()
 {
-    Fecha aux;
     Datos.Mostrar();
+    cout<<"Fecha de ingreso"<<endl;
     Desde.Mostrar();
+    cout<<"Fecha de salida"<<endl;
     Hasta.Mostrar();
 }
 
