@@ -34,11 +34,28 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/ArchivoCabanias.h" />
+		<Unit filename="include/ArchivoCarpas.h" />
+		<Unit filename="include/ArchivoClientes.h" />
+		<Unit filename="include/ArchivoReservas.h" />
+		<Unit filename="include/Cliente.h" />
 		<Unit filename="include/Fecha.h" />
-		<Unit filename="include/Funcion Generales.h" />
-		<Unit filename="include/rlutil.h" />
+		<Unit filename="include/Funciones.h" />
+		<Unit filename="include/MenuClientes.h" />
+		<Unit filename="include/MenuInformes.h" />
+		<Unit filename="include/MenuReservas.h" />
+		<Unit filename="include/Reservas.h" />
+		<Unit filename="include/TipODePago.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/ArchivoCabanias.cpp" />
+		<Unit filename="src/ArchivoCarpas.cpp" />
+		<Unit filename="src/ArchivoClientes.cpp" />
+		<Unit filename="src/ArchivoReservas.cpp" />
+		<Unit filename="src/Cliente.cpp" />
 		<Unit filename="src/Fecha.cpp" />
+		<Unit filename="src/Funciones.cpp" />
+		<Unit filename="src/Reservas.cpp" />
+		<Unit filename="src/TipODePago.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
