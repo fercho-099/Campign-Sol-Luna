@@ -221,6 +221,7 @@ void EstadoReserva(){
     Reservas *DatosReservas;
     int dni;
     int TotalRegistros = InfoReservas.contarRegistros();
+
     if(TotalRegistros<=0)
     {
 

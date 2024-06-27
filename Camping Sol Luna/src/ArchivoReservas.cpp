@@ -126,7 +126,7 @@ int ArchivoReservas::BuscarRegistro(Reservas *DatoReserva, int TotalRegistros, i
             system("cls");
             DatoReserva[x].Mostrar();
             std::cout<<"----------"<<std::endl;
-            std::cout<<"Desea Modificar O borrar Este registro? 1 - SI / 2 - NO: ";
+            std::cout<<"Desea Modificar este registro? 1 - SI / 2 - NO: ";
             std::cin>>Opcion;
             if(Opcion == 1){
 
@@ -175,7 +175,7 @@ void ArchivoReservas::ModificarRegistros(Reservas *aux)
         {
 
         case 1:
-            aux->setEstado(2);///iria el .
+            aux->setEstado(false);
             ciclo = false;
             break;
 
